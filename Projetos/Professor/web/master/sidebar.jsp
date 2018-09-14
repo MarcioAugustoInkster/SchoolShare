@@ -19,8 +19,8 @@
                     <li><a href="/admin"><i class="fa fa-user-secret"></i> Entrar na Conta</a></li>
                 </ul>
             </li>
--->
-            
+            -->
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-user-circle"></i> <span>Professores</span>
@@ -35,7 +35,7 @@
                     <li><a href="#"><i class="fa fa-search"></i> Pesquisar</a></li>
                 </ul>
             </li>
-            
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i> <span>Alunos</span>
@@ -50,7 +50,7 @@
                     <li><a href="#"><i class="fa fa-search"></i> Pesquisar</a></li>
                 </ul>
             </li>
-            
+
         </ul>
     </section>
 </aside>
@@ -58,4 +58,4 @@
 
     <%
         //}
-    %>
+%>
