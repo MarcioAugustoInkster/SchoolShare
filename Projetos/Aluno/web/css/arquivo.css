@@ -1,0 +1,25 @@
+.listaArquivo {
+    margin-top: 16px;
+    padding: 20px;
+    background-color: #f2f3f4;
+    width: auto;
+    border: 2px solid #ccc;
+}
+
+.table-files tr > th, tr > td {
+   
+    padding: 2px 6px;
+    text-align: center;
+}
+
+.table-files tr > th {
+    text-transform: uppercase;
+}
+
+.table-files tr:nth-child(even) {
+    background-color: #ccd1d1;
+}
+
+.table-files tr > td {
+    cursor: pointer;
+}

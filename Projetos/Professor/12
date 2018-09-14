@@ -1,0 +1,37 @@
+public boolean excluir(int id){
+    String sql = "DELETE FROM professor WHERE id = ? ";
+     try{
+        PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
+        ps.setInt(1, id);
+        return ps.executeUpdate() ==1;
+    } catch (SQLException e){
+        e.printStackTrace();
+    }finally{
+        Banco.fecharBanco();
+    }
+    return false;
+}
+
+public ProfessorBean obterPeloId(int id){
+   String sql = "SELECT * FROM professor WHERE id = ?";
+   try{
+        PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
+        
+        ps.setInt(1 , id); 
+        ps.execute();
+        ResultSet resultSet = ps.getResultSet();
+        if(resultSet.next()){
+            ProfessorBean professores = new ProfessorBean();
+            professores.setId(id);
+            professores.setNome(resultSet.getString("nome"));
+            professores.setSobrenome(resultSet.getString("sobrenome"));
+            professores.setCpf(resultSet.getString("cpf"));
+            professores.setTelefone(resultSet.getString("telefone"));
+            professores.setRg(resultSet.getString("rg"));
+            
+            return professores;
+        }    
+    }catch(SQLException e){ e.printStackTrace();
+    }finally {Banco.fecharBanco();} 
+    return null;
+    }
