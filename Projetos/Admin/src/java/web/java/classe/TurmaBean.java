@@ -16,7 +16,7 @@ public class TurmaBean {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public int getProfessorId() {
         return professorId;
     }

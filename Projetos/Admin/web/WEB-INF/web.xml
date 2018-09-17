@@ -60,6 +60,10 @@
         <servlet-name>RepoCreator</servlet-name>
         <servlet-class>web.java.servlets.RepoCreator</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidaAluno</servlet-name>
+        <servlet-class>web.java.servlets.ValidaAluno</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>RepoCreator</servlet-name>
         <url-pattern>/RepoCreator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidaAluno</servlet-name>
+        <url-pattern>/ValidaAluno</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

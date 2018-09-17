@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="web.java.dao.CursoDAO"%>
+<%@page import="web.java.classe.InstituicaoBean"%>
+<%@page import="web.java.classe.CursoBean"%>
 <%@page import="web.java.admin.Mensagem"%>
 <%@page import="java.nio.file.Paths"%>
 <%@page import="java.nio.file.Path"%>
@@ -22,9 +26,9 @@
 <section class="content-header">
     <h1>Repositório&nbsp;:&nbsp;<%=folder%></h1>
     <ol class="breadcrumb">
-        <li><a href="/index.jsp"><i class="fa fa-folder"></i> Início</a></li>
-        <li><a href="/admin/repoIndex.jsp"><i class="fa fa-folder-open"></i> Repositório de Arquivos</a></li>
-        <li><a href="/admin/repoCurso.jsp"><i class="fa fa-folder-o"></i> Curso</a></li>
+        <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/repoIndex.jsp"><i class="fa fa-folder"></i> Repositório de Arquivos</a></li>
+        <li><a href="/admin/repoCurso.jsp"><i class="fa fa-folder-open"></i> Curso</a></li>
         <li class="active">Folder</li>
     </ol>
 </section>
@@ -43,55 +47,44 @@
             <button type="button" class="btn btn-primary btn-flat">Pesquisar</button>
         </span>
     </div>
-    
-    <div class="input-group input-group-sm">
-        <div class="form-group">
-            <table>
-                <tr>
-                    <td>
-                        <button type="button" class="btn btn-block btn-primary btn-sm">Criar Repositório</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
 
     <div class="post clearfix">
         <div class="form-group">
-            <table class="scroll-table">
+            <%
+                List<CursoBean> curso = new CursoDAO().listaCurso();
+                List<InstituicaoBean> instituicao = new CursoDAO().listaInstituicao();
+
+                Iterator<CursoBean> itCurso = curso.iterator();
+                Iterator<InstituicaoBean> itInst = instituicao.iterator();
+            %>
+            <table id="tabelaCurso" class="table-bordered table-hover scroll-table">
                 <thead>
                     <tr>
-                        <th>Head 1</th>
-                        <th>Head 2</th>
-                        <th>Head 3</th>
-                        <th>Head 4</th>
-                        <th>Head 5</th>
+                        <th>#</th>
+                        <th>Instituição</th>
+                        <th>Curso</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <%
+                        int counter = 1;
+
+                        while (itCurso.hasNext() && itInst.hasNext()) {
+                    %>
                     <tr>
-                        <td>Content 1</td>
-                        <td>Content 2</td>
-                        <td>Content 3</td>
-                        <td>Content 4</td>
-                        <td>Content 5</td>
+                        <td><%=counter++%></td>
+                        <td><%=itInst.next().getNome()%></td>
+                        <td><%=itCurso.next().getNome()%></td>
+                        <td><a class="btn-custom btn-app-custom">
+                            <i class="fa fa-upload" onclick="
+                                onCreateCourseFolder('<%=folder%>,
+                                <%=itCurso.next().getId() %>');">
+                            </i>Criar</a></td>
                     </tr>
+                    <% } %>
                 </tbody>
             </table>
-            
-            <label>Lista de Cursos ativo</label>
-            <select multiple="" class="form-control">
-                <%
-                int count = 1;
-                String[] cursos = Listas.listaCursosEntra21();
-
-                for (String lista : cursos) {
-                %>
-                <option value="<%=count++%>"><%=lista%></option>
-                <%
-                }
-                %>
-            </select>
         </div>
     </div>
 
@@ -112,7 +105,7 @@
         } else {
             Mensagem.folderNaoEncontrado();
         }
-    } catch (Exception ex) {
+    }catch (Exception ex) {
         ex.printStackTrace();
 
         Mensagem.folderNaoEncontrado();

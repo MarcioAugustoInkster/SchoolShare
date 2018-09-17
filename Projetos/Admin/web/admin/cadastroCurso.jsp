@@ -9,7 +9,7 @@
     <h1>Cursos <small>Cadastro</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="/admin/cursoIndex.jsp"><i class="fa fa-plus-circle"></i> Registrar</a></li>
+        <li><a href="/admin/cursoIndex.jsp"><i class="fa fa-book"></i> Registrar</a></li>
         <li class="active">Cadastro de Curso</li>
     </ol>
 </section>

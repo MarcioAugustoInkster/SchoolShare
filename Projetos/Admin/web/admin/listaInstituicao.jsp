@@ -8,6 +8,7 @@
     <h1>Lista de Instituições <small>Tabela</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/instituicaoIndex.jsp"><i class="fa fa-home"></i> Instituições</a></li>
         <li class="active">Ver Lista</li>
     </ol>
 </section>

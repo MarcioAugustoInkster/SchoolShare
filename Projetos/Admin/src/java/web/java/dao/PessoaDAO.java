@@ -93,8 +93,75 @@ public class PessoaDAO {
             
             sb.append("<tr>")
             .append("<td>").append(listagem.getNome()).append(" ")
-            .append(listagem.getSobrenome()).append("</td>")
-            .append("<td>").append(listagem.getSexo()).append("</td>")
+            .append(listagem.getSobrenome()).append("</td>");
+            
+            String genero = "";
+            
+            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
+                genero = "Masculino";
+            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
+                genero = "Feminino";
+            }
+            
+            sb.append("<td>").append(genero).append("</td>")
+            .append("<td>").append(listagem.getDataNascimento()).append("</td>")
+            .append("<td>").append(listagem.getEmail()).append("</td>")
+            .append("<td>").append(listagem.getTelefone()).append("</td>")
+            .append("<td>").append(listagem.getLogin()).append("</td>")
+            .append("<td>").append(active).append("</td>")
+            .append("<td><a class=\"btn-custom btn-app-custom\">")
+            .append("<i class=\"fa fa-edit\">").append("</i> Edit</a></td>")
+            .append("</tr>");
+        }
+
+        sb.append("</tbody>")
+        .append("</table>");
+        
+        return sb.toString();
+    }
+    
+    public static String carregaListaAluno() {
+        List<PessoaBean> aluno = new PessoaDAO().listaAluno();
+        
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("<table id=\"tabelaAluno\" class=\"table table-bordered table-hover\">")
+        .append("<thead>")
+        .append("<tr>")
+        .append("<th>Nome Completo</th>")
+        .append("<th>Gênero</th>")
+        .append("<th>Data Nascimento</th>")
+        .append("<th>E-mail</th>")
+        .append("<th>Telefone</th>")
+        .append("<th>Usuário</th>")
+        .append("<th>Ativo</th>")
+        .append("<th>Opções</th>")
+        .append("</tr>")
+        .append("</thead>")
+        .append("<tbody>");
+
+        for (PessoaBean listagem : aluno) {
+            String active = "";
+            
+            if (listagem.isAtivo() != false) {
+                active = "Sim";
+            } else {
+                active = "Não";
+            }
+            
+            sb.append("<tr>")
+            .append("<td>").append(listagem.getNome()).append(" ")
+            .append(listagem.getSobrenome()).append("</td>");
+            
+            String genero = "";
+            
+            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
+                genero = "Masculino";
+            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
+                genero = "Feminino";
+            }
+            
+            sb.append("<td>").append(genero).append("</td>")
             .append("<td>").append(listagem.getDataNascimento()).append("</td>")
             .append("<td>").append(listagem.getEmail()).append("</td>")
             .append("<td>").append(listagem.getTelefone()).append("</td>")
@@ -116,7 +183,8 @@ public class PessoaDAO {
         
         try {
             String sql = "SELECT nome, sobrenome, sexo, data_nascimento, email, telefone, ";
-                sql += "login, tipo, ativo FROM pessoa WHERE tipo>1 GROUP BY nome";
+                sql += "login, tipo, ativo FROM pessoa ";
+                sql += "WHERE tipo=2 AND ativo=1 GROUP BY nome";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -144,5 +212,41 @@ public class PessoaDAO {
             Banco.fecharBanco();
         }
         return listaProfessor;
+    }
+    
+    public List<PessoaBean> listaAluno() {
+        List<PessoaBean> listaAluno = new ArrayList<>();
+        
+        try {
+            String sql = "SELECT nome, sobrenome, sexo, data_nascimento, email, telefone, ";
+                sql += "login, tipo, ativo FROM pessoa ";
+                sql += "WHERE tipo=3 AND ativo=1 GROUP BY nome";
+            
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                PessoaBean pessoa = new PessoaBean();
+                
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setSexo(rs.getString("sexo").charAt(0));
+                pessoa.setDataNascimento(rs.getString("data_nascimento"));
+                pessoa.setEmail(rs.getString("email"));
+                pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setLogin(rs.getString("login"));
+                pessoa.setTipo(rs.getByte("tipo"));
+                pessoa.setAtivo(rs.getBoolean("ativo"));
+                
+                listaAluno.add(pessoa);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return listaAluno;
     }
 }

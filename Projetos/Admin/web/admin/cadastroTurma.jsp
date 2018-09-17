@@ -10,8 +10,9 @@
 <section class="content-header">
     <h1>Turmas <small>Cadastro</small></h1>
     <ol class="breadcrumb">
-        <li><a href="/index.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Admin</li>
+        <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/turmaIndex.jsp"><i class="fa fa-user-circle"></i> Turmas</a></li>
+        <li class="active">Registrar</li>
     </ol>
 </section>
 

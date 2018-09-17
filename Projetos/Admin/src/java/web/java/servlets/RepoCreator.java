@@ -46,26 +46,26 @@ public class RepoCreator extends HttpServlet {
             File file = new File(UPLOAD_DIRECTORY + instDir + id);
 
             if (file.exists() && file.isDirectory()) {
-                response.sendRedirect("/inf/diretorioExiste.jsp");
+                //response.sendRedirect("/inf/diretorioExiste.jsp");
                 return;
-            } else {
-                file.mkdir();
+            } else {out.print(file);
+                //file.mkdir();
 
-                response.sendRedirect("/inf/diretorioSucesso.jsp");
+                //response.sendRedirect("/inf/diretorioSucesso.jsp");
                 return;
             }
         } else if (parameterName.equals(cur)) {
             int id = Integer.parseInt(request.getParameter(cur));
             
-            File file = new File(UPLOAD_DIRECTORY + instDir + "/" + courseDir + id);
+            File file = new File(UPLOAD_DIRECTORY + File.separator + "/" + courseDir + id);
 
             if (file.exists() && file.isDirectory()) {
-                response.sendRedirect("/inf/diretorioExiste.jsp");
+                //response.sendRedirect("/inf/diretorioExiste.jsp");
                 return;
-            } else {
-                file.mkdir();
+            } else {out.print(file);
+                //file.mkdir();
 
-                response.sendRedirect("/inf/diretorioSucesso.jsp");
+                //response.sendRedirect("/inf/diretorioSucesso.jsp");
                 return;
             }
         }

@@ -42,7 +42,7 @@ public class ProfessorDAO {
         
         try {
             String sql = "SELECT id, nome, sobrenome FROM pessoa WHERE ";
-                sql += "tipo>1 GROUP BY nome";
+                sql += "tipo=2 GROUP BY nome";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);

@@ -150,6 +150,10 @@ function onCreateFolder(id) {
     window.location.href = "/repocheck?req=" + id;
 }
 
+function onCreateCourseFolder(inst, id) {
+    window.location.href = "/repocheck?inst=" + inst + "&cur=" + id;
+}
+
 /**
  * Cada folder terá um código ou nome de acesso para os folders 
  * físicos do sistema para leitura
@@ -158,3 +162,4 @@ function onCreateFolder(id) {
 function getRepoInstitution(name) {
     window.location.href = "/admin/folder.jsp?folder=" + name;
 }
+

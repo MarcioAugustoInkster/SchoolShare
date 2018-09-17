@@ -8,8 +8,8 @@
 <section class="content-header">
     <h1>Curso <small>Repositório</small></h1>
     <ol class="breadcrumb">
-        <li><a href="/index.jsp"><i class="fa fa-folder"></i> Início</a></li>
-        <li><a href="/admin/repoIndex.jsp"><i class="fa fa-folder-open"></i> Repositório de Arquivos</a></li>
+        <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/repoIndex.jsp"><i class="fa fa-folder"></i> Repositório de Arquivos</a></li>
         <li class="active">Curso</li>
     </ol>
 </section>
@@ -46,7 +46,11 @@
     </div>
 
     <div class="post">
+        <% if (counter == 0) { %>
+        <label>Não existe ainda folders disponíveis</label>
+        <% } else { %>
         <label>Existem&nbsp;<%=counter%>&nbsp;folders disponíveis</label>
+        <% } %>
     </div>
 </section>
 

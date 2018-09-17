@@ -12,7 +12,7 @@
     <h1>Lista de Cursos <small>Tabela</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="/admin/cursoIndex.jsp"><i class="fa fa-list-alt"></i> Curso</a></li>
+        <li><a href="/admin/cursoIndex.jsp"><i class="fa fa-book"></i> Curso</a></li>
         <li class="active">Lista Cursos</li>
     </ol>
 </section>
@@ -32,15 +32,23 @@
             %>
             <table id="tabelaCurso" class="table table-bordered table-hover">
                 <tr>
+                    <th>#</th>
                     <th>Instituição</th>
                     <th>Curso</th>
+                    <th>Opções</th>
                 </tr>
                 <%
+                    int counter = 1;
+                    
                     while (it1.hasNext() && it2.hasNext()) {
                 %>
                 <tr>
-                    <td><%=it1.next()%></td>
-                    <td><%=it2.next()%></td>
+                    <td><%=counter++%></td>
+                    <td><%=it2.next().getNome() %></td>
+                    <td><%=it1.next().getNome() %></td>
+                    <td><a class="btn-custom btn-app-custom">
+                        <i class="fa fa-edit"></i> Editar</a>
+                    </td>
                 </tr>
                 <%
                     }

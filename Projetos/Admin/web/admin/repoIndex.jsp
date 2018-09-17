@@ -5,7 +5,7 @@
 <section class="content-header">
     <h1>Repositório de Arquivos <small>Gerenciamento</small></h1>
     <ol class="breadcrumb">
-        <li><a href="/index.jsp"><i class="fa fa-folder"></i> Início</a></li>
+        <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
         <li class="active">Repositório de Arquivos</li>
     </ol>
 </section>

@@ -14,70 +14,78 @@
         </script>
 
         <%
-            String message = "";
-            String valida = (String) request.getParameter("valida");
+            String message = "", asteriscs = "", valida = "";
+
+            valida = (String) request.getParameter("valida");
 
             if (valida != null) {
                 if (valida.equals("false")) {
                     message += "<span id=\"errormessage\">";
-                    message += "<b>Login</b> ou <b>Senha</b> incorreto";
+                    message += "<b>Usuário</b> ou <b>Senha</b> está incorreto";
                     message += "</span>";
+
+                    asteriscs = "<label style=\"color:#ff8080;\">&nbsp;*</label>";
                 }
             } else {
                 message = "";
+                asteriscs = "";
             }
         %>
     </head>
     <body>
-        <form action="/validaLogin" method="POST" class="form-login" id="login-authenticate">
-            <div class="form-control-login">
-                <section class="wrapper-title-form">
-                    <b>Portal de Acesso</b>
-                </section>
+        <div class="global-login-wrapper">
+            <div class="login-status">
+                <form action="/validaLogin" method="POST" class="form-login" id="login-authenticate">
+                    <div class="form-control-login">
+                        <header class="wrapper-login-top">
+                            <nav class="nav-login-logo">
+                                <label>Bem vindo ao </label><b>School</b>&nbsp;Share
+                            </nav>
+                            <b>Portal do Aluno</b>
+                        </header>
 
-                <header class="wrapper-login-top">
-                    <nav class="nav-login-logo">
-                        <b>School</b>&nbsp;Share
-                    </nav>
-                </header>
+                        <div class="wrapper-login-center">
+                            <%=message%>
 
-                <div class="wrapper-login-center">
-                    <%=message%>
+                            <div class="center-components">
+                                <label for="campoCredLogin">Usuário<%=asteriscs%></label>
+                                <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login" >
+                            </div>
 
-                    <div class="center-components">
-                        <label for="campoCredLogin">Usuário</label>
-                        <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login" 
-                            value="admin">
-                    </div>
+                            <div class="center-components">
+                                <label for="campoCredSenha">Senha<%=asteriscs%></label>
+                                <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password">
+                            </div>
 
-                    <div class="center-components">
-                        <label for="campoCredSenha">Senha</label>
-                        <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password" 
-                            value="admin">
-                    </div>
+                            <div class="center-components">
+                                <div class="form-checkbox-control">
+                                    <label><input type="checkbox">Lembrar minha Senha</label>
+                                </div>
+                                <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
+                            </div>
 
-                    <div class="center-components">
-                        <div class="form-checkbox-control">
-                            <label><input type="checkbox">Lembrar Senha</label>
+                            <div class="center-components">
+                                <div class="form-checkbox-control">
+                                    <a href="#">Esqueci minha senha</a>
+                                </div>
+                            </div>
+
+                            <div class="login-footer">
+                                <strong>Entrar como&nbsp;<a href="#">Professor</a></strong>
+                                <strong>&nbsp;|&nbsp;Entrar como&nbsp;<a href="#">Administrador</a></strong>
+                            </div>
                         </div>
-                        <button name="submitButtonLogin" id="goSubmitLogin">Login</button>
                     </div>
-
-                    <div class="center-components">
-                        <div class="form-checkbox-control">
-                            <a href="#">Esqueceu a senha?</a>
-                        </div>
-                    </div>
-                </div>
-
-                <footer class="wrapper-login-footer">
-                    <div class="wrapper-version">
-                        <b>Versão</b> 1.7.6
-                    </div>
-                    <strong>2018 <a href="#">SchoolShare</a>.</strong>
-                    Nenhum direito reservado.
-                </footer>
+                </form>
             </div>
-        </form>
+        </div>
+
+        <footer class="wrapper-login-footer">
+            <div class="wrapper-version">
+                <b>Versão</b> 1.7.6
+            </div>
+            <strong>2018 <a href="#">SchoolShare</a>.</strong>
+            Nenhum direito reservado.
+        </footer>
     </body>
 </html>

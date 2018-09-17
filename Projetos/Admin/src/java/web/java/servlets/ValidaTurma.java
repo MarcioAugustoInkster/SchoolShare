@@ -52,11 +52,22 @@ public class ValidaTurma extends HttpServlet {
             turma.setDataFinal(dataFinal);
             turma.setCargaHoraria(cargaHorario);
             
+            out.print(
+                nomeProfessor + "\n" +
+                nomeCurso + "\n" +
+                nomeTurma + "\n" +
+                dataInicio + "\n" +
+                dataFinal + "\n" +
+                cargaHorario + "\n"
+            );
+            
+            /*
             if (TurmaDAO.insereTurma(turma)) {
                 response.sendRedirect("/inf/success.jsp");
             } else {
                 out.print("<h2 style=\"color:8b0000;\">Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");
             }
+            */
         } catch (Exception ex) {
             ex.printStackTrace();
         }

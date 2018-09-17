@@ -5,8 +5,9 @@
 <section class="content-header">
     <h1>Alunos <small>Cadastro</small></h1>
     <ol class="breadcrumb">
-        <li><a href="/index.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Admin</li>
+        <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/admin/alunoIndex.jsp"><i class="fa fa-users"></i> Alunos</a></li>
+        <li class="active">Registrar</li>
     </ol>
 </section>
 

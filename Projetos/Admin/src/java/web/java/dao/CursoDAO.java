@@ -47,9 +47,10 @@ public class CursoDAO {
         listaInstituicao = new ArrayList<>();
         
         try {
-            String sql = "SELECT c.id, c.instituicao_id, c.nome, i.id, i.nome FROM ";
-                sql += "curso c LEFT JOIN instituicao i ON ";
-                sql += "c.instituicao_id = i.id ORDER BY c.nome";
+            String sql = "SELECT c.id, c.instituicao_id, c.nome, i.nome ";
+                sql += "FROM curso c LEFT JOIN instituicao i ";
+                sql += "ON c.instituicao_id = i.id ";
+                sql += "GROUP BY c.nome;";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -64,8 +65,8 @@ public class CursoDAO {
                 curso.setId(rs.getInt("c.id"));
                 curso.setIdInstituicao(rs.getInt("c.instituicao_id"));
                 curso.setNome(rs.getString("c.nome"));
+                
                 // Seleciona registros da tabela Instituição
-                instituicao.setId(rs.getInt("i.id"));
                 instituicao.setNome(rs.getString("i.nome"));
                 
                 listaCurso.add(curso);

@@ -3,35 +3,37 @@
     Author     : Freakazed-PC
 */
 
-table.scroll-table {
+.scroll-table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 2px solid black;
+    border: 1px solid #ccc;
 }
 
-table.scroll-table tbody,
-table.scroll-table thead {
+.scroll-table tbody,
+.scroll-table thead {
     display: block;
 }
 
 .scroll-table > thead tr th { 
     height: 30px;
     line-height: 30px;
-    /*text-align: left;*/
+    text-align: center;
 }
 
-table.scroll-table > tbody {
-    height: 100px;
+.scroll-table > tbody {
+    height: 182px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.scroll-table tbody { border-top: 2px solid black; }
+.scroll-table tbody {
+    border-top: 1px solid #ccc;
+}
 
 .scroll-table tbody td, thead th {
-    width: 20%; /* Optional */
-    border-right: 1px solid black;
+    width: 20%;
+    border-right: 1px solid #ccc;
 }
 
 .scroll-table tbody td:last-child, .scroll-table thead th:last-child {
