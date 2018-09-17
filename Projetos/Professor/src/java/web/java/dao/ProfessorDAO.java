@@ -20,18 +20,26 @@ import web.java.conexao.Banco;
  * @author Daiana
  */
 public class ProfessorDAO {
-    public List<ProfessorBean>obterTodos(){
-        List<ProfessorBean> professor = new ArrayList<>();
-        String sql = "SELECT * FROM professor";
+    public List<PessoaBean>obterTodos(){
+        List<PessoaBean> professor = new ArrayList<>();
+        String sql = "SELECT * FROM pessoa";
         try {
             Statement st = Banco.obterBanco().createStatement();
                 st.execute(sql);
                 ResultSet resultSet = st.getResultSet();
                 while (resultSet.next()){
-                    ProfessorBean professores = new ProfessorBean();
-                    professores.setId(resultSet.getInt("id"));
-                    professores.setNome(resultSet.getString("nome"));
-                    professor.add(professores);
+                    PessoaBean pessoa = new PessoaBean();
+                    pessoa.setId(resultSet.getInt("id"));
+                    pessoa.setNome(resultSet.getString("nome"));
+                    pessoa.setSobrenome(resultSet.getString("sobrenome"));
+                    pessoa.setSexo(resultSet.getString("sexo").charAt(0));
+                    pessoa.setDataDeNascimento(resultSet.getString("data_nascimento"));
+                    pessoa.setEmail(resultSet.getString("email"));
+                    pessoa.setTelefone(resultSet.getString("telefone"));
+                    pessoa.setNivel(resultSet.getByte("nivel"));
+                    pessoa.setAtivo(resultSet.getBoolean("ativo"));
+                    
+                    professor.add(pessoa); 
             }
         }catch(SQLException e){
         e.printStackTrace();
@@ -39,43 +47,10 @@ public class ProfessorDAO {
         Banco.fecharBanco();
         }return professor;
     }
-public int adicionar(ProfessorBean professor){
 
-String sql = "INSERT INTO prfessor(nome,)VALUES(?,?,?,?,?,?,?)";
-    try{ 
-        PreparedStatement ps = Banco.obterBanco().prepareStatement(
-        sql, PreparedStatement.RETURN_GENERATED_KEYS);
-        int quantidade = 1;
-        ps.setString(quantidade++ , professor.getNome());
-        ps.execute();
-        ResultSet resultSet = ps.getGeneratedKeys();
-        if (resultSet.next()){
-            return resultSet.getInt(1);
-        }
 
-    }catch(SQLException e){
-        e.printStackTrace();
-    }finally{
-        Banco.fecharBanco();
-    }return -1;
-}
-
-public boolean excluir(int id){
-    String sql = "DELETE FROM professor WHERE id = ? ";
-     try{
-        PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
-        ps.setInt(1, id);
-        return ps.executeUpdate() ==1;
-    } catch (SQLException e){
-        e.printStackTrace();
-    }finally{
-        Banco.fecharBanco();
-    }
-    return false;
-}
-
-public ProfessorBean obterPeloId(int id){
-   String sql = "SELECT * FROM professor WHERE id = ?";
+public PessoaBean obterPeloId(int id){
+   String sql = "SELECT * FROM pessoa WHERE id = ?";
    try{
         PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
         
@@ -83,15 +58,22 @@ public ProfessorBean obterPeloId(int id){
         ps.execute();
         ResultSet resultSet = ps.getResultSet();
         if(resultSet.next()){
-            ProfessorBean professores = new ProfessorBean();
-            professores.setId(id);
-            professores.setNome(resultSet.getString("nome"));
-            professores.setSobrenome(resultSet.getString("sobrenome"));
-            professores.setCpf(resultSet.getString("cpf"));
-            professores.setTelefone(resultSet.getString("telefone"));
-            professores.setRg(resultSet.getString("rg"));
+            PessoaBean pessoa = new PessoaBean();
+            pessoa.setId(id);
+            pessoa.setNome(resultSet.getString("nome"));
+            pessoa.setSobrenome(resultSet.getString("sobrenome"));
+            pessoa.setSexo(resultSet.getString("sexo").charAt(0));
+            pessoa.setDataDeNascimento(resultSet.getString("data_nscimento"));
+            pessoa.setEmail(resultSet.getString("email"));
+            pessoa.setTelefone(resultSet.getString("telefone"));
+            pessoa.setLogin(resultSet.getString("login"));
+            pessoa.setNivel(resultSet.getByte("nivel"));
+            pessoa.setAtivo(resultSet.getBoolean("ativo"));
+                        
             
-            return professores;
+            
+            
+            return pessoa;
         }    
     }catch(SQLException e){ e.printStackTrace();
     }finally {Banco.fecharBanco();} 
