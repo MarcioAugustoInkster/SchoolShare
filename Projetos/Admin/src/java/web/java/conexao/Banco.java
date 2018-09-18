@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,10 +17,9 @@ import java.sql.Statement;
  * @author Marcio : criado método validaLogin()
  */
 public class Banco {
-
     private static final String HOST = "jdbc:mysql://localhost/schoolshare";
     private static final String USER = "root";
-    private static final String PASSWORD = "my5ql";
+    private static String PASSWORD = "";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
 
@@ -71,25 +71,29 @@ public class Banco {
         }
     }
 
-    private boolean executaSQL() {
+    public static void inicializaScriptBanco() {
         try {
+            PASSWORD = JOptionPane.showInputDialog(null, 
+                "We need your MySQL Password to run the application. Please enter it here.", 
+                " MySQL Password ?", JOptionPane.QUESTION_MESSAGE);
+            //Class.forName("java.sql.Driver");
+            //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/MyDB", "root", password);
+            
+            conecta();
+            
             Statement stmt = conexao.createStatement();
             int i = 0;
-            for (i = 1; i <= 16; i++) {
-                URL resource = getClass().getResource("/web.java.conexao");
-                
-                FileReader fr = new FileReader("D:\\Entra21\\MeuGitHub\\SchoolShareAdmin\\src\\java\\web\\java\\conexao\\entrawebsql.sql" + i + ".sql");
+            //for (i = 1; i <= 16; i++) {
+                FileReader fr = new FileReader("web//java//conexao//entrawebsql.sql");
                 BufferedReader br = new BufferedReader(fr);
                 stmt.execute(br.readLine());
-            }
+            //}
             stmt.close();
             conexao.close();
-            
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, " Records Successfully Inserted into database !", "Success !", 1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        return false;
     }
 
     public static boolean authenticaLogin(String login, StringBuilder senha) {

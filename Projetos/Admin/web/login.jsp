@@ -1,3 +1,9 @@
+<%@page import="web.java.conexao.Banco"%>
+<%
+    //Banco banco = new Banco();
+    //banco.inicializaScriptBanco();
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -112,3 +118,7 @@
         </footer>
     </body>
 </html>
+
+<%
+
+%>
