@@ -26,10 +26,14 @@ public class ValidaLogin extends HttpServlet {
         String login = request.getParameter("fl-cred-login");
         String senha = request.getParameter("fl-cred-password");
         
-        StringBuilder encriptaSenha = new StringBuilder(GeraValor.geraSenhaEncriptado(senha));
-        
         try {
+            if (login.equals("") || senha.equals("")) {
+                response.sendRedirect("/login.jsp?valida=null");
+            } else 
             if (Banco.conecta() != null) {
+                StringBuilder encriptaSenha = new StringBuilder(GeraValor.geraSenhaEncriptado(senha));
+                out.print(senha);
+                out.print(encriptaSenha);
                 if (Banco.authenticaLogin(login, encriptaSenha)) {
                     if (SessaoAdmin.criaSessao(request, login)) {
                         response.sendRedirect("/index.jsp");

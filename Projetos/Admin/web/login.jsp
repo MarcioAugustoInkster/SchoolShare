@@ -7,6 +7,7 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="/css/form-login-ident.css">
         <script src="js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="js/form-login-validation.js" type="text/javascript"></script>
         <script>
             window.onload = function () {
                 $('#campoCredLogin').focus();
@@ -20,12 +21,15 @@
 
             if (valida != null) {
                 if (valida.equals("false")) {
-                    message += "<span id=\"errormessage\">";
+                    message += "<span id=\"errormessage\" class=\"msg-span\">";
                     message += "<b>Usuário</b> ou <b>Senha</b> está incorreto";
                     message += "</span>";
-
-                    asteriscs = "<label style=\"color:#ff8080;\">&nbsp;*</label>";
+                } else if (valida.equals("null")) {
+                    message += "<span id=\"errormessage\" class=\"msg-span\">";
+                    message += "<b>Por favor, preencha com suas credenciais</b>";
+                    message += "</span>";
                 }
+                asteriscs = "<label style=\"color:#ff8080;\">&nbsp;*</label>";
             } else {
                 message = "";
                 asteriscs = "";
@@ -41,7 +45,7 @@
                             <nav class="nav-login-logo">
                                 <label>Bem vindo ao </label><b>School</b>&nbsp;Share
                             </nav>
-                            <b>Portal do Aluno</b>
+                            <b>Portal Administrador</b>
                         </header>
 
                         <div class="wrapper-login-center">
@@ -72,7 +76,7 @@
 
                             <div class="login-footer">
                                 <strong>Entrar como&nbsp;<a href="#">Professor</a></strong>
-                                <strong>&nbsp;|&nbsp;Entrar como&nbsp;<a href="#">Administrador</a></strong>
+                                <strong>&nbsp;|&nbsp;&nbsp;Entrar como&nbsp;<a href="#">Aluno</a></strong>
                             </div>
                         </div>
                     </div>
@@ -84,8 +88,27 @@
             <div class="wrapper-version">
                 <b>Versão</b> 1.7.6
             </div>
-            <strong>2018 <a href="#">SchoolShare</a>.</strong>
-            Nenhum direito reservado.
+
+            <strong>2018 <a href="#popup-login-msg">SchoolShare</a>.</strong>
+            &nbsp;Nenhum direito reservado.
+
+            <div id="popup-login-msg" class="overlay">
+                <div class="popup">
+                    <h2>School&nbsp;<b>Share</b></h2>
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        É um sistema totalmente on-line para pequenas entidades
+                        de ensino, cujo objetivo fornece um ambiente web para 
+                        armazenamento e compartilhamento de arquivos de materiais 
+                        institucionais entre professores e alunos.
+                        <div class="content-info">
+                            Para mais informações, acesse: <b>
+                            <a  href="https://github.com/MarcioAugustoInkster/SchoolShare/tree/master/Projetos">
+                            SchoolShare</a></b>.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

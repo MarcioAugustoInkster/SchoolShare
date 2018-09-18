@@ -262,3 +262,14 @@
     line-height: 40px;
     overflow: hidden;
 }
+.table-list-brand {
+    width: 100%;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+}
+table-list-brand label {
+    font-weight: normal;
+    margin-left: 15px;
+    float: left;
+}

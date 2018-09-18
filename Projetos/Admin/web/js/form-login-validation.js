@@ -1,38 +1,36 @@
-$(document).on("click", "#somebutton", function () {  // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-    $.get("someservlet", function (responseJson) {    // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response JSON...
-        var $ul = $("<ul>").appendTo($("#somediv")); // Create HTML <ul> element and append it to HTML DOM element with ID "somediv".
-        $.each(responseJson, function (index, item) { // Iterate over the JSON array.
-            $("<li>").text(item).appendTo($ul);      // Create HTML <li> element, set its text content with currently iterated item and append it to the <ul>.
-        });
-    });
-});
-
-/*****/
-
+// This code will prevent autofill in general input texts
 $(document).ready(function () {
-    $('#go-submit-login').click(function () {
-        $.post('validaLogin', function (responseText) {
-            $('#login_failed').text(responseText);
+    try {
+        $("input[type='text']").each(function () {
+            $(this).attr("autocomplete", "off");
         });
-    });
+    } catch (e) {
+    }
 });
 
+/* Popup will be displayed through function */
+// Get the modal
+var modal = document.getElementById('myModal');
 
-$("#go-submit-login").click(function () {
-    $.ajax({
-        url: 'validaLogin',
-        data: {name: 'abc'},
-        type: 'post',
-        cache: false,
-        success: function (data) {
-            alert(data);
-            $('#login_failed').html('<b>Usuário</b> ou <b>Login</b> incorreto : ' + data);
-            //.text(responseText);
-        },
-        error: function () {
-            alert('error');
-        }
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function () {
+    modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-    );
-}
-);
+};

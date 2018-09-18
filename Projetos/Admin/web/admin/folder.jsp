@@ -18,6 +18,7 @@
 
 <%
     try {
+        int counter = 0;
         String folder = (String) request.getParameter("folder");
         String dir = DirFolderAccess.uploadFullPath(request) + folder;
         Path path = Paths.get(dir);
@@ -68,27 +69,28 @@
                 </thead>
                 <tbody>
                     <%
-                        int counter = 1;
-
                         while (itCurso.hasNext() && itInst.hasNext()) {
+                            counter = counter + 1;
                     %>
                     <tr>
-                        <td><%=counter++%></td>
+                        <td><%=counter%></td>
                         <td><%=itInst.next().getNome()%></td>
                         <td><%=itCurso.next().getNome()%></td>
                         <td><a class="btn-custom btn-app-custom">
-                            <i class="fa fa-upload" onclick="
-                                onCreateCourseFolder('<%=folder%>,
-                                <%=itCurso.next().getId() %>');">
+                            <i class="fa fa-upload" onclick="">
                             </i>Criar</a></td>
                     </tr>
                     <% } %>
                 </tbody>
             </table>
         </div>
+
+        <div class="table-list-brand">
+            <label>Foram encontrados <b><%=counter%></b> curso(s) registrado(s)</label>
+        </div>
     </div>
 
-    <div class="post">
+    <div class="post clearfix">
         <%
             if (DirFolderAccess.diretorioVazio(path)) {
                 out.println("<div class=\"alert alert-info alert-dismissible\">");
@@ -105,7 +107,7 @@
         } else {
             Mensagem.folderNaoEncontrado();
         }
-    }catch (Exception ex) {
+    } catch (Exception ex) {
         ex.printStackTrace();
 
         Mensagem.folderNaoEncontrado();
