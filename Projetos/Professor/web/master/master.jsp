@@ -13,5 +13,5 @@
         <div class="wrapper">
 
             <%@include file="/master/header.jsp" %>
-            <div class="content-wrapper">
+            <%@include file="/master/sidebar.jsp" %>
 

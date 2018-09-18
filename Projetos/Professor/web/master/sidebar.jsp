@@ -23,22 +23,22 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-user-circle"></i> <span>Professores</span>
+                    <i class="fa fa-user-circle"></i> <span>Gerenciar Dados</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-user-plus"></i> Cadastrar Novo</a></li>
-                    <li><a href="#"><i class="fa fa-list"></i> Consulta Todos</a></li>
-                    <li><a href="#"><i class="fa fa-edit"></i> Editar</a></li>
+                    <li><a href="#"><i class="fa fa-user-plus"></i> Turmas</a></li>
+                    <li><a href="#"><i class="fa fa-list"></i> Turmas Antigas</a></li>
+                    <li><a href="#"><i class="fa fa-edit"></i> Instituições</a></li>
                     <li><a href="#"><i class="fa fa-search"></i> Pesquisar</a></li>
                 </ul>
             </li>
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-users"></i> <span>Alunos</span>
+                    <i class="fa fa-users"></i> <span>Calendário</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
