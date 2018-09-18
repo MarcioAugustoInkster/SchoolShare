@@ -1,7 +1,7 @@
 <%@page import="web.java.conexao.Banco"%>
 <%
-    //Banco banco = new Banco();
-    //banco.inicializaScriptBanco();
+    Banco banco = new Banco();
+    banco.inicializaScriptBanco();
 %>
 
 <!DOCTYPE html>

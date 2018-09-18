@@ -71,11 +71,8 @@ public class Banco {
         }
     }
 
-    public static void inicializaScriptBanco() {
+    public void inicializaScriptBanco() {
         try {
-            PASSWORD = JOptionPane.showInputDialog(null, 
-                "We need your MySQL Password to run the application. Please enter it here.", 
-                " MySQL Password ?", JOptionPane.QUESTION_MESSAGE);
             //Class.forName("java.sql.Driver");
             //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/MyDB", "root", password);
             
@@ -90,9 +87,10 @@ public class Banco {
             //}
             stmt.close();
             conexao.close();
-            JOptionPane.showMessageDialog(null, " Records Successfully Inserted into database !", "Success !", 1);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, " Records Successfully Inserted into database !", "Success !", 1);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            //JOptionPane.showMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
 
