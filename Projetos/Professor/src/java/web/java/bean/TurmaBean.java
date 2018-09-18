@@ -17,6 +17,7 @@ public class TurmaBean {
     private ProfessorBean professor;
     private CursoBean curso;
 
+    
     public ProfessorBean getProfessor() {
         return professor;
     }
