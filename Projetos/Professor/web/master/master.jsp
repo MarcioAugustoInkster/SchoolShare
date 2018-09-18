@@ -13,5 +13,6 @@
         <div class="wrapper">
 
             <%@include file="/master/header.jsp" %>
+            
             <%@include file="/master/sidebar.jsp" %>
 
