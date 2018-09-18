@@ -7,7 +7,7 @@ package web.java.bean;
 
 /**
  *
- * @author Alunos
+ * @author Alan
  */
 public class TurmaBean {
 
