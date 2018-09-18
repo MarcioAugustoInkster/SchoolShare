@@ -111,12 +111,11 @@
                         armazenamento e compartilhamento de arquivos de materiais 
                         institucionais entre professores e alunos.
                         <div class="content-info">
-                            <a>GitHub</a>
-                            <a> alansiloliveira </a>
-                            <a> DaianaBarbettaM </a>
-                            <a> MarcioAugustoInkster </a>
-                            <a> Borbari </a>
-                            <a> SchoolShare.</a>
+                            <b>GitHub</b>
+                            <a href="#">alansiloliveira </a>
+                            <a href="#">DaianaBarbettaM </a>
+                            <a href="#">MarcioAugustoInkster </a>
+                            <a href="#">Borbari </a>
                         </div>
                     </div>
                 </div>

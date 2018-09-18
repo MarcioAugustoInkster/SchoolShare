@@ -239,7 +239,7 @@ a:hover {
     font-family: Tahoma, Arial, sans-serif;
 }
 .popup b {
-    color: #88ff4d;
+    color: #000;
 }
 .popup .close {
     position: absolute;
@@ -264,6 +264,14 @@ a:hover {
 .content-info a {
     text-decoration: none;
     color: rgb(210, 70, 60);
+    display: block;
+    margin: 4px 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+.content-info a:hover {
+    font-weight: bold;
+    margin-left: 4px;
 }
 .content-info {
     text-align: left;
