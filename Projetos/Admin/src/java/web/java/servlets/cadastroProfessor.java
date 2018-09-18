@@ -1,5 +1,5 @@
 
-package web.java.view;
+package web.java.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

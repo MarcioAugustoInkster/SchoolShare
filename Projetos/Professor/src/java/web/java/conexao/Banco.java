@@ -18,7 +18,7 @@ public class Banco {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
 
-    public static Connection obterBanco() {
+    public static Connection conecta() {
         try {
             Class.forName(DRIVER);
             

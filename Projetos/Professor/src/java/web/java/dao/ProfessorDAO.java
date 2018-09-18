@@ -24,7 +24,7 @@ public class ProfessorDAO {
         List<PessoaBean> professor = new ArrayList<>();
         String sql = "SELECT * FROM pessoa";
         try {
-            Statement st = Banco.obterBanco().createStatement();
+            Statement st = Banco.conecta().createStatement();
                 st.execute(sql);
                 ResultSet resultSet = st.getResultSet();
                 while (resultSet.next()){
@@ -52,7 +52,7 @@ public class ProfessorDAO {
 public PessoaBean obterPeloId(int id){
    String sql = "SELECT * FROM pessoa WHERE id = ?";
    try{
-        PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
+        PreparedStatement ps = Banco.conecta().prepareStatement(sql);
         
         ps.setInt(1 , id); 
         ps.execute();
@@ -86,7 +86,7 @@ public boolean alterar(ProfessorBean professores){
             + "nota = ?, telefone= ?, rg = ? WHERE id = ?";
     
     try{
-        PreparedStatement ps = Banco.obterBanco().prepareStatement(sql);
+        PreparedStatement ps = Banco.conecta().prepareStatement(sql);
         ps.setString(1 , professores.getNome());
         ps.setString(2,  professores.getSobrenome());
         ps.setString(3,  professores.getCpf());

@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,9 +18,10 @@ import javax.swing.JOptionPane;
  * @author Marcio : criado método validaLogin()
  */
 public class Banco {
+
     private static final String HOST = "jdbc:mysql://localhost/schoolshare";
     private static final String USER = "root";
-    private static String PASSWORD = "";
+    private static final String PASSWORD = "";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
 
@@ -92,18 +92,15 @@ public class Banco {
         
         /*
         try {
-            //Class.forName("java.sql.Driver");
-            //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/MyDB", "root", password);
-            
-            conecta();
-            
             Statement stmt = conexao.createStatement();
             int i = 0;
-            //for (i = 1; i <= 16; i++) {
-                FileReader fr = new FileReader("web//java//conexao//entrawebsql.sql");
+            for (i = 1; i <= 16; i++) {
+                URL resource = getClass().getResource("/web.java.conexao");
+                
+                FileReader fr = new FileReader("D:\\Entra21\\MeuGitHub\\SchoolShareAdmin\\src\\java\\web\\java\\conexao\\entrawebsql.sql" + i + ".sql");
                 BufferedReader br = new BufferedReader(fr);
                 stmt.execute(br.readLine());
-            //}
+            }
             stmt.close();
             conexao.close();
             
