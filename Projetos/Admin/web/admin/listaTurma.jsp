@@ -1,8 +1,5 @@
-<%@page import="web.java.classe.CursoBean"%>
-<%@page import="web.java.classe.ProfessorBean"%>
 <%@page import="web.java.dao.TurmaDAO"%>
 <%@page import="web.java.classe.TurmaBean"%>
-<%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -25,13 +22,8 @@
         </div>
         <div class="box-body">
             <%
-                List<TurmaBean> turma = new TurmaDAO().listaTurma();
-                List<ProfessorBean> professor = new TurmaDAO().listaProfessor();
-                List<CursoBean> curso = new TurmaDAO().listaCurso();
+                List<TurmaBean> turmas = new TurmaDAO().listaTurma();
 
-                Iterator<TurmaBean> itTurma = turma.iterator();
-                Iterator<ProfessorBean> itProfessor = professor.iterator();
-                Iterator<CursoBean> itCurso = curso.iterator();
             %>
             <table id="tabelaTurma" class="table table-bordered table-hover">
                 <tr>
@@ -44,23 +36,22 @@
                     <th>Carga Horária</th>
                     <th>Opções</th>
                 </tr>
-                <%
+                <%                    
                     int counter = 1;
-
-                    while (itTurma.hasNext() && itProfessor.hasNext() && itCurso.hasNext()) {
+                    for (TurmaBean turma : turmas) {
                 %>
                 <tr>
                     <td><%=counter++%></td>
-                    <td><%=itTurma.next().getNome() %></td>
-                    <td><%=itProfessor.next().getNome()%>&nbsp;
-                        <%=itProfessor.next().getSobrenome()%></td>
-                    <td><%=itCurso.next().getNome() %></td>
-                    <td><%=itTurma.next().getDataInicio() %></td>
-                    <td><%=itTurma.next().getDataFinal() %></td>
-                    <td><%=itTurma.next().getCargaHoraria() %></td>
+                    <td><%=turma.getNome()%></td>
+                    <td><%=turma.getProfessor().getNome()%>&nbsp;
+                        <%=turma.getProfessor().getSobrenome()%></td>
+                    <td><%=turma.getCurso().getNome()%></td>
+                    <td><%=turma.getDataInicio()%></td>
+                    <td><%=turma.getDataFinal()%></td>
+                    <td><%=turma.getCargaHoraria()%></td>
                     <td>
                         <a class="btn-custom btn-app-custom">
-                        <i class="fa fa-edit"></i> Editar</a>
+                            <i class="fa fa-edit"></i> Editar</a>
                     </td>
                 </tr>
                 <%

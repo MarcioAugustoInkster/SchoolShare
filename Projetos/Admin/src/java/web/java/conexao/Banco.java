@@ -1,7 +1,9 @@
 package web.java.conexao;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -71,7 +73,24 @@ public class Banco {
         }
     }
 
-    public void inicializaScriptBanco() {
+    public boolean inicializaScriptBanco() {
+        try{
+    		
+    	    File temp = File.createTempFile("entrawebsql", ".sql" );
+        	
+    	    String absolutePath = temp.getAbsolutePath();
+    	    System.out.println("File path : " + absolutePath);
+    	    
+    	    String filePath = absolutePath.
+    	    	     substring(0,absolutePath.lastIndexOf(File.separator));
+				
+    	    System.out.println("File path : " + filePath);
+    	    return true;
+    	}catch(IOException e){
+    	    e.printStackTrace();
+    	}
+        
+        /*
         try {
             //Class.forName("java.sql.Driver");
             //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/MyDB", "root", password);
@@ -87,11 +106,12 @@ public class Banco {
             //}
             stmt.close();
             conexao.close();
-            //JOptionPane.showMessageDialog(null, " Records Successfully Inserted into database !", "Success !", 1);
+            
+            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
-            //JOptionPane.showMessageDialog(null, e, "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
+        }*/
+        return false;
     }
 
     public static boolean authenticaLogin(String login, StringBuilder senha) {

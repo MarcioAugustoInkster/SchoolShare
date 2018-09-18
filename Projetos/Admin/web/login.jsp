@@ -1,8 +1,11 @@
+<%@page import="java.io.FilenameFilter"%>
+<%@page import="java.util.Properties"%>
+<%@page import="java.net.URL"%>
+<%@page import="java.io.File"%>
+<%@page import="java.nio.file.Paths"%>
+<%@page import="java.nio.file.Path"%>
+<%@page import="web.java.directory.DirFolderAccess"%>
 <%@page import="web.java.conexao.Banco"%>
-<%
-    Banco banco = new Banco();
-    banco.inicializaScriptBanco();
-%>
 
 <!DOCTYPE html>
 <html>
@@ -20,8 +23,7 @@
             };
         </script>
 
-        <%
-            String message = "", asteriscs = "", valida = "";
+        <%            String message = "", asteriscs = "", valida = "";
 
             valida = (String) request.getParameter("valida");
 
@@ -59,7 +61,8 @@
 
                             <div class="center-components">
                                 <label for="campoCredLogin">Usuário<%=asteriscs%></label>
-                                <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login" >
+                                <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login">
+
                             </div>
 
                             <div class="center-components">
@@ -108,9 +111,12 @@
                         armazenamento e compartilhamento de arquivos de materiais 
                         institucionais entre professores e alunos.
                         <div class="content-info">
-                            Para mais informações, acesse: <b>
-                            <a  href="https://github.com/MarcioAugustoInkster/SchoolShare/tree/master/Projetos">
-                            SchoolShare</a></b>.
+                            <a>GitHub</a>
+                            <a> alansiloliveira </a>
+                            <a> DaianaBarbettaM </a>
+                            <a> MarcioAugustoInkster </a>
+                            <a> Borbari </a>
+                            <a> SchoolShare.</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +124,3 @@
         </footer>
     </body>
 </html>
-
-<%
-
-%>

@@ -5,9 +5,28 @@ package web.java.classe;
  * @author Marcio Augusto Schlosser
  */
 public class TurmaBean {
+
     private int id, professorId, cursoId;
     private String nome, dataInicio, dataFinal;
     private short cargaHoraria;
+    private CursoBean curso;
+    private ProfessorBean professor;
+
+    public CursoBean getCurso() {
+        return curso;
+    }
+
+    public void setCurso(CursoBean curso) {
+        this.curso = curso;
+    }
+
+    public ProfessorBean getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(ProfessorBean professor) {
+        this.professor = professor;
+    }
 
     public int getId() {
         return id;
