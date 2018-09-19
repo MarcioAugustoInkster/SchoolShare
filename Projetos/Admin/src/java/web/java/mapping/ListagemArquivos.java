@@ -37,7 +37,9 @@ public class ListagemArquivos {
         fileUser = new ArrayList<>();
 
         try {
-            File dir = new File(DirFolderAccess.uploadFullPath(request));
+            DirFolderAccess dfa = new DirFolderAccess();
+            
+            File dir = new File(dfa.uploadFullPath(request));
             File[] files = dir.listFiles();
 
             if (files.length == 0) {

@@ -21,12 +21,12 @@ public class InstituicaoDAO {
         if (coneccao != null) {
             try {
                 String sql = "INSERT INTO instituicao (";
-                    sql += "nome, endereco, numero, bairro, cidade, estado";
+                    sql += "instituicao, endereco, numero, bairro, cidade, estado";
                     sql += ") VALUES (?, ?, ?, ?, ?, ?)";
                 
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
                 
-                pstmt.setString(1, instituicao.getNome());
+                pstmt.setString(1, instituicao.getInstituicao());
                 pstmt.setString(2, instituicao.getEndereco());
                 pstmt.setString(3, instituicao.getNumero());
                 pstmt.setString(4, instituicao.getBairro());
@@ -48,7 +48,7 @@ public class InstituicaoDAO {
         List<InstituicaoBean> listaInstituicao = new ArrayList<>();
         
         try {
-            String sql = "SELECT id, nome FROM instituicao";
+            String sql = "SELECT id, instituicao FROM instituicao";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -59,7 +59,7 @@ public class InstituicaoDAO {
                 InstituicaoBean instituicao = new InstituicaoBean();
                 
                 instituicao.setId(rs.getInt("id"));
-                instituicao.setNome(rs.getString("nome"));
+                instituicao.setInstituicao(rs.getString("instituicao"));
                 
                 listaInstituicao.add(instituicao);
             }
@@ -75,7 +75,7 @@ public class InstituicaoDAO {
         List<InstituicaoBean> listaInstituicao = new ArrayList<>();
         
         try {
-            String sql = "SELECT id, nome, endereco, numero, bairro, cidade, estado FROM instituicao";
+            String sql = "SELECT id, instituicao, endereco, numero, bairro, cidade, estado FROM instituicao";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -86,7 +86,7 @@ public class InstituicaoDAO {
                 InstituicaoBean instituicao = new InstituicaoBean();
                 
                 instituicao.setId(rs.getInt("id"));
-                instituicao.setNome(rs.getString("nome"));
+                instituicao.setInstituicao(rs.getString("instituicao"));
                 instituicao.setEndereco(rs.getString("endereco"));
                 instituicao.setNumero(rs.getString("numero"));
                 instituicao.setBairro(rs.getString("bairro"));
@@ -101,42 +101,6 @@ public class InstituicaoDAO {
             Banco.fecharBanco();
         }
         return listaInstituicao;
-    }
-    
-    public static String carregaListaInstituicao() {
-        List<InstituicaoBean> instituicao = new InstituicaoDAO().listaInstituicao();
-        
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("<table id=\"tabelaInstituicao\" class=\"table table-bordered table-hover\">")
-        .append("<thead>")
-        .append("<tr>")
-        .append("<th>Instituição</th>")
-        .append("<th>Endereço</th>")
-        .append("<th>Bairro</th>")
-        .append("<th>Cidade</th>")
-        .append("<th>Estado</th>")
-        .append("<th>Opções</th>")
-        .append("</tr>")
-        .append("</thead>")
-        .append("<tbody>");
-
-        for (InstituicaoBean listagem : instituicao) {
-            sb.append("<tr>")
-            .append("<td>").append(listagem.getNome()).append("</td>")
-            .append("<td>").append(listagem.getEndereco()).append("</td>")
-            .append("<td>").append(listagem.getBairro()).append("</td>")
-            .append("<td>").append(listagem.getCidade()).append("</td>")
-            .append("<td>").append(listagem.getEstado()).append("</td>")
-            .append("<td><a class=\"btn-custom btn-app-custom\">")
-            .append("<i class=\"fa fa-edit\">").append("</i> Edit</a></td>")
-            .append("</tr>");
-        }
-
-        sb.append("</tbody>")
-        .append("</table>");
-        
-        return sb.toString();
     }
     
     public static String listaInstituicaoRepo() {
@@ -162,7 +126,7 @@ public class InstituicaoDAO {
         for (InstituicaoBean listagem : instituicao) {
             sb.append("<tr>")
             .append("<td>").append(counter++).append("</td>")
-            .append("<td>").append(listagem.getNome()).append("</td>")
+            .append("<td>").append(listagem.getInstituicao()).append("</td>")
             .append("<td>").append(listagem.getEndereco()).append("</td>")
             .append("<td>").append(listagem.getBairro()).append("</td>")
             .append("<td>").append(listagem.getCidade()).append(" - ")

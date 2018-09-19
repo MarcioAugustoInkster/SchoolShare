@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import web.java.classe.CursoBean;
-import web.java.classe.InstituicaoBean;
 import web.java.conexao.Banco;
 
 /**
@@ -16,8 +15,6 @@ import web.java.conexao.Banco;
  * @author Marcio Augusto Schlosser
  */
 public class CursoDAO {
-    private static List<InstituicaoBean> listaInstituicao;
-    
     public static boolean insereCurso(CursoBean curso) {
         Connection coneccao = Banco.conecta();
         
@@ -29,7 +26,7 @@ public class CursoDAO {
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
 
                 pstmt.setInt(1, curso.getIdInstituicao());
-                pstmt.setString(2, curso.getNome());
+                pstmt.setString(2, curso.getCurso());
                 
                 pstmt.execute();
             } catch (Exception ex) {
@@ -44,13 +41,12 @@ public class CursoDAO {
     
     public List<CursoBean> listaCurso() {
         List<CursoBean> listaCurso = new ArrayList<>();
-        listaInstituicao = new ArrayList<>();
         
         try {
-            String sql = "SELECT c.id, c.instituicao_id, c.nome, i.nome ";
-                sql += "FROM curso c LEFT JOIN instituicao i ";
+            String sql = "SELECT c.id, c.instituicao_id, c.curso, i.instituicao ";
+                sql += "FROM curso c INNER JOIN instituicao i ";
                 sql += "ON c.instituicao_id = i.id ";
-                sql += "GROUP BY c.nome;";
+                sql += "ORDER BY c.curso;";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -59,18 +55,14 @@ public class CursoDAO {
             
             while (rs.next()) {
                 CursoBean curso = new CursoBean();
-                InstituicaoBean instituicao = new InstituicaoBean();
                 
                 // Seleciona registros da tabela Curso
                 curso.setId(rs.getInt("c.id"));
                 curso.setIdInstituicao(rs.getInt("c.instituicao_id"));
-                curso.setNome(rs.getString("c.nome"));
-                
-                // Seleciona registros da tabela Instituição
-                instituicao.setNome(rs.getString("i.nome"));
+                curso.setCurso(rs.getString("c.curso"));
+                curso.setInstituicao(rs.getString("i.instituicao"));
                 
                 listaCurso.add(curso);
-                listaInstituicao.add(instituicao);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -81,7 +73,27 @@ public class CursoDAO {
         return listaCurso;
     }
     
-    public List<InstituicaoBean> listaInstituicao() {
-        return listaInstituicao;
+    public CursoBean pegaCursoId(int id) {
+        String sql = "SELECT curso FROM curso WHERE id = ?";
+        
+        try {
+            PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.execute();
+            
+            ResultSet rs = pstmt.getResultSet();
+            
+            if (rs.next()) {
+                CursoBean curso = new CursoBean();
+                curso.setCurso(rs.getString("curso"));
+                
+                return curso;
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return null;
     }
 }

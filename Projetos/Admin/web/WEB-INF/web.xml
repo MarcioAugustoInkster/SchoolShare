@@ -64,6 +64,10 @@
         <servlet-name>ValidaAluno</servlet-name>
         <servlet-class>web.java.servlets.ValidaAluno</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CriaFolderCurso</servlet-name>
+        <servlet-class>web.java.servlets.CriaFolderCurso</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>ValidaAluno</servlet-name>
         <url-pattern>/ValidaAluno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CriaFolderCurso</servlet-name>
+        <url-pattern>/CriaFolderCurso</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

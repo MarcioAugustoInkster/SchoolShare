@@ -8,7 +8,7 @@
 %>
 
 <header class="main-header">
-    <a href="index.jsp" class="logo">
+    <a href="/index.jsp" class="logo">
         <span class="logo-mini"><b>S</b>S</span>
         <span class="logo-lg"><b>School</b>Share</span>
     </a>

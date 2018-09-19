@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class FolderDirectory {
     public static List<String> findFoldersInDirectory(HttpServletRequest request) {
-        String UPLOAD_DIRECTORY = DirFolderAccess.uploadFullPath(request);
+        DirFolderAccess dir = new DirFolderAccess();
+        
+        String UPLOAD_DIRECTORY = dir.uploadFullPath(request);
         
         File directory = new File(UPLOAD_DIRECTORY);
         

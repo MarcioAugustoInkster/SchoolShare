@@ -32,7 +32,7 @@ public class ValidaCurso extends HttpServlet {
             String nomeCurso = request.getParameter("campoCursoNome");
             
             curso.setIdInstituicao(idInstituicao);
-            curso.setNome(nomeCurso);
+            curso.setCurso(nomeCurso);
             
             if (CursoDAO.insereCurso(curso)) {
                 response.sendRedirect("/inf/success.jsp");

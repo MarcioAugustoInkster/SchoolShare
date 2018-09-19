@@ -47,7 +47,7 @@ public class ValidaTurma extends HttpServlet {
             
             turma.setProfessorId(nomeProfessor);
             turma.setCursoId(nomeCurso);
-            turma.setNome(nomeTurma);
+            turma.setTurma(nomeTurma);
             turma.setDataInicio(dataInicio);
             turma.setDataFinal(dataFinal);
             turma.setCargaHoraria(cargaHorario);

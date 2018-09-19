@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletRequest;
  * @author Marcio Augusto Schlosser
  */
 public class DirFolderAccess {
-    public static String uploadFullPath(HttpServletRequest request) {
+    public String uploadFullPath(HttpServletRequest request) {
         Path path = Paths.get(request.getServletContext().getRealPath(File.separator));
         path = path.getParent().getParent();
+        
         return path.toAbsolutePath() + File.separator + "arquivos"+ File.separator ;
     }
 
@@ -25,7 +26,7 @@ public class DirFolderAccess {
         }
     }
 
-    public static String findDir(File root, String name) {
+    public String findDir(File root, String name) {
         if (root.getName().equals(name)) {
             return root.getAbsolutePath();
         }

@@ -1,26 +1,23 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="web.java.dao.CursoDAO"%>
-<%@page import="web.java.classe.InstituicaoBean"%>
-<%@page import="web.java.classe.CursoBean"%>
 <%@page import="web.java.admin.Mensagem"%>
+<%@page import="web.java.dao.CursoDAO"%>
+<%@page import="web.java.classe.CursoBean"%>
+<%@page import="java.util.List"%>
 <%@page import="java.nio.file.Paths"%>
 <%@page import="java.nio.file.Path"%>
+<%@page import="web.java.directory.DirFolderAccess"%>
 <%@page import="java.nio.file.LinkOption"%>
 <%@page import="java.nio.file.Files"%>
-<%@page import="java.io.File"%>
-<%@page import="java.util.Enumeration"%>
-<%@page import="web.java.directory.DirFolderAccess"%>
-<%@page import="web.java.mapping.Listas"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="/master/master.jsp"%>
 
 <%
     try {
+        DirFolderAccess dfa = new DirFolderAccess();
+        
         int counter = 0;
         String folder = (String) request.getParameter("folder");
-        String dir = DirFolderAccess.uploadFullPath(request) + folder;
+        String dir = dfa.uploadFullPath(request) + folder;
         Path path = Paths.get(dir);
 %>
 
@@ -52,37 +49,34 @@
     <div class="post clearfix">
         <div class="form-group">
             <%
-                List<CursoBean> curso = new CursoDAO().listaCurso();
-                List<InstituicaoBean> instituicao = new CursoDAO().listaInstituicao();
-
-                Iterator<CursoBean> itCurso = curso.iterator();
-                Iterator<InstituicaoBean> itInst = instituicao.iterator();
+                List<CursoBean> cursos = new CursoDAO().listaCurso();
             %>
-            <table id="tabelaCurso" class="table-bordered table-hover scroll-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Instituição</th>
-                        <th>Curso</th>
-                        <th>Opções</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        while (itCurso.hasNext() && itInst.hasNext()) {
-                            counter = counter + 1;
-                    %>
-                    <tr>
-                        <td><%=counter%></td>
-                        <td><%=itInst.next().getNome()%></td>
-                        <td><%=itCurso.next().getNome()%></td>
-                        <td><a class="btn-custom btn-app-custom">
-                            <i class="fa fa-upload" onclick="">
-                            </i>Criar</a></td>
-                    </tr>
-                    <% } %>
-                </tbody>
-            </table>
+            <form action="/folderCurso" method="POST">
+                <table id="tabelaCurso" class="table-bordered table-hover scroll-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Instituição</th>
+                            <th>Curso</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for (CursoBean curso : cursos) {
+                                counter = counter + 1;
+                        %>
+                        <tr>
+                            <td><%=counter%></td>
+                            <td><%=curso.getInstituicao()%></td>
+                            <td><%=curso.getCurso()%></td>
+                            <td><a href="/folderCurso?curso=<%=curso.getId()%>&repo=<%=folder %>" class="btn-custom btn-app-custom">
+                                <i class="fa fa-upload"></i>Criar</a></td>
+                        </tr>
+                        <% }%>
+                    </tbody>
+                </table>
+            </form>
         </div>
 
         <div class="table-list-brand">

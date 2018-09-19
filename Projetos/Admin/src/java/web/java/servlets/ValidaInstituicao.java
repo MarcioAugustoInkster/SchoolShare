@@ -37,7 +37,7 @@ public class ValidaInstituicao extends HttpServlet {
                 cidade = request.getParameter("formInstitutionCity"),
                 estado = request.getParameter("formInstitutionState");
 
-            instituicao.setNome(nome);
+            instituicao.setInstituicao(nome);
             instituicao.setEndereco(endereco);
             instituicao.setNumero(numero);
             instituicao.setBairro(bairro);

@@ -4,14 +4,16 @@ package web.java.classe;
  *
  * @author Marcio Augusto Schlosser
  */
-public class CursoBean {
+public class CursoBean extends InstituicaoBean {
     private int id, idInstituicao;
-    private String nome;
-
+    private String curso;
+    
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -24,11 +26,11 @@ public class CursoBean {
         this.idInstituicao = idInstituicao;
     }
     
-    public String getNome() {
-        return nome;
+    public String getCurso() {
+        return curso;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 }

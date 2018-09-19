@@ -42,10 +42,10 @@
                 %>
                 <tr>
                     <td><%=counter++%></td>
-                    <td><%=turma.getNome()%></td>
+                    <td><%=turma.getTurma()%></td>
                     <td><%=turma.getProfessor().getNome()%>&nbsp;
                         <%=turma.getProfessor().getSobrenome()%></td>
-                    <td><%=turma.getCurso().getNome()%></td>
+                    <td><%=turma.getCurso().getCurso()%></td>
                     <td><%=turma.getDataInicio()%></td>
                     <td><%=turma.getDataFinal()%></td>
                     <td><%=turma.getCargaHoraria()%></td>

@@ -22,8 +22,6 @@ public class RepoCreator extends HttpServlet {
     private String UPLOAD_DIRECTORY;
     private final String instDir = "MKInst0";
     private final String req = "req";
-    private final String courseDir = "MKCur0";
-    private final String cur = "cur";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,8 +29,9 @@ public class RepoCreator extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
+        DirFolderAccess dfa = new DirFolderAccess();
         
-        UPLOAD_DIRECTORY = DirFolderAccess.uploadFullPath(request);
+        UPLOAD_DIRECTORY = dfa.uploadFullPath(request);
         String parameterName = "";
         Enumeration enumeration = request.getParameterNames();
         
@@ -46,26 +45,12 @@ public class RepoCreator extends HttpServlet {
             File file = new File(UPLOAD_DIRECTORY + instDir + id);
 
             if (file.exists() && file.isDirectory()) {
-                //response.sendRedirect("/inf/diretorioExiste.jsp");
+                response.sendRedirect("/inf/diretorioExiste.jsp");
                 return;
-            } else {out.print(file);
-                //file.mkdir();
+            } else {
+                file.mkdir();
 
-                //response.sendRedirect("/inf/diretorioSucesso.jsp");
-                return;
-            }
-        } else if (parameterName.equals(cur)) {
-            int id = Integer.parseInt(request.getParameter(cur));
-            
-            File file = new File(UPLOAD_DIRECTORY + File.separator + "/" + courseDir + id);
-
-            if (file.exists() && file.isDirectory()) {
-                //response.sendRedirect("/inf/diretorioExiste.jsp");
-                return;
-            } else {out.print(file);
-                //file.mkdir();
-
-                //response.sendRedirect("/inf/diretorioSucesso.jsp");
+                response.sendRedirect("/inf/diretorioSucesso.jsp");
                 return;
             }
         }

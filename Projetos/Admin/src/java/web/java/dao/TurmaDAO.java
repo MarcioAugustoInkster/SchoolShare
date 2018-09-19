@@ -16,16 +16,12 @@ import web.java.conexao.Banco;
  * @author Marcio Augusto Schlosser
  */
 public class TurmaDAO {
-
-    private static List<ProfessorBean> listaProfessor;
-    private static List<CursoBean> listaCurso;
-
     public static boolean insereTurma(TurmaBean turma) {
         Connection coneccao = Banco.conecta();
 
         if (coneccao != null) {
             String sql = "INSERT INTO turma ";
-            sql += "(professor_id, curso_id, nome, data_inicio, data_final, carga_horaria) ";
+            sql += "(professor_id, curso_id, turma, data_inicio, data_final, carga_horaria) ";
             sql += "VALUES (?, ?, ?, ?, ?, ?)";
 
             try {
@@ -33,7 +29,7 @@ public class TurmaDAO {
 
                 pstmt.setInt(1, turma.getProfessorId());
                 pstmt.setInt(2, turma.getCursoId());
-                pstmt.setString(3, turma.getNome());
+                pstmt.setString(3, turma.getTurma());
                 pstmt.setString(4, turma.getDataInicio());
                 pstmt.setString(5, turma.getDataFinal());
                 pstmt.setShort(6, turma.getCargaHoraria());
@@ -54,7 +50,7 @@ public class TurmaDAO {
         List<TurmaBean> listaTurma = new ArrayList<>();
 
         try {
-            String sql = "SELECT p.nome, p.sobrenome, c.nome, t.nome, t.data_inicio, ";
+            String sql = "SELECT p.nome, p.sobrenome, c.nome, t.turma, t.data_inicio, ";
             sql += "t.data_final, t.carga_horaria FROM turma t INNER JOIN pessoa p ";
             sql += "ON p.id = t.professor_id INNER JOIN curso c ON c.id = t.curso_id ";
             sql += "ORDER BY t.nome";
@@ -70,7 +66,7 @@ public class TurmaDAO {
                 CursoBean curso = new CursoBean();
 
                 // Seleciona registros da tabela Turma
-                turma.setNome(rs.getString("t.nome"));
+                turma.setTurma(rs.getString("t.turma"));
                 turma.setDataInicio(rs.getString("t.data_inicio"));
                 turma.setDataFinal(rs.getString("t.data_final"));
                 turma.setCargaHoraria(rs.getShort("t.carga_horaria"));
@@ -81,7 +77,7 @@ public class TurmaDAO {
                 
 
                 // Seleciona registros da tabela Curso
-                curso.setNome(rs.getString("c.nome"));
+                curso.setCurso(rs.getString("c.curso"));
 
                 turma.setCurso(curso);
                 turma.setProfessor(professor);
