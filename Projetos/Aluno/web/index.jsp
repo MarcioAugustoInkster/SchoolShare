@@ -28,3 +28,5 @@
        out.print(ListagemArquivos.carregaTabelaArquivo());
     %>
 </div>
+
+<%@include file="/master/rodape.jsp" %>    
