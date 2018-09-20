@@ -11,6 +11,5 @@
 </section>
 
 
-<a href="/perfil">Perfil</a>
 
 <%@include file="/master/rodape.jsp" %>

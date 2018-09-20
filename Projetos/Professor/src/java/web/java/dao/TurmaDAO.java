@@ -25,13 +25,14 @@ public class TurmaDAO {
         List<TurmaBean> listaTurma = new ArrayList<>();
 
         try {
-            String sql = "SELECT p.nome, p.sobrenome, c.nome, t.nome, t.data_inicio, ";
-            sql += "t.data_final, t.carga_horaria FROM turma t LEFT JOIN pessoa p ";
-            sql += "ON p.id = t.professor_id LEFT JOIN curso c ON c.id = t.curso_id ";
+            String sql = "SELECT p.nome, p.sobrenome, c.nome, t.turma, t.data_inicio, ";
+            sql += "t.data_final, t.carga_horaria FROM turma t INNER JOIN pessoa p ";
+            sql += "ON p.id = t.professor_id INNER JOIN curso c ON c.id = t.curso_id ";
             sql += "ORDER BY t.nome";
 
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
+
             ResultSet rs = stmt.getResultSet();
 
             while (rs.next()) {
@@ -39,28 +40,31 @@ public class TurmaDAO {
                 ProfessorBean professor = new ProfessorBean();
                 CursoBean curso = new CursoBean();
 
-                turma.setNome(rs.getString("t.nome"));
+                // Seleciona registros da tabela Turma
+                turma.setTurma(rs.getString("t.turma"));
                 turma.setDataInicio(rs.getString("t.data_inicio"));
                 turma.setDataFinal(rs.getString("t.data_final"));
                 turma.setCargaHoraria(rs.getShort("t.carga_horaria"));
 
+                // Seleciona registros da tabela Professor
                 professor.setNome(rs.getString("p.nome"));
                 professor.setSobrenome(rs.getString("p.sobrenome"));
+                
 
-                turma.setProfessor(professor);
+                // Seleciona registros da tabela Curso
+                curso.setCurso(rs.getString("c.curso"));
+
                 turma.setCurso(curso);
-
-                curso.setNome(rs.getString("c.nome"));
+                turma.setProfessor(professor);
+                
                 listaTurma.add(turma);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             Banco.fecharBanco();
-
         }
 
         return listaTurma;
-
     }
 }

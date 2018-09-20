@@ -34,7 +34,6 @@ public class ProfessorDAO {
                 pessoa.setNome(resultSet.getString("nome"));
                 pessoa.setSobrenome(resultSet.getString("sobrenome"));
                 pessoa.setSexo(resultSet.getString("sexo").charAt(0));
-                pessoa.setDataDeNascimento(resultSet.getString("data_nascimento"));
                 pessoa.setEmail(resultSet.getString("email"));
                 pessoa.setTelefone(resultSet.getString("telefone"));
                 pessoa.setTipo(resultSet.getByte("tipo"));
@@ -64,7 +63,6 @@ public class ProfessorDAO {
                 pessoa.setNome(resultSet.getString("nome"));
                 pessoa.setSobrenome(resultSet.getString("sobrenome"));
                 pessoa.setSexo(resultSet.getString("sexo").charAt(0));
-                pessoa.setDataDeNascimento(resultSet.getString("data_nascimento"));
                 pessoa.setEmail(resultSet.getString("email"));
                 pessoa.setTelefone(resultSet.getString("telefone"));
                 pessoa.setLogin(resultSet.getString("login"));
@@ -83,26 +81,16 @@ public class ProfessorDAO {
 
     public boolean alterar(ProfessorBean professores) {
         String sql = "UPDATE professor SET nome = ?,sobrenome=?,"
-                + "cpf=?, rua=?, bairro=?, cidade= ?, pais= ? ,frequencia = ?, "
+               
+                
                 + "nota = ?, telefone= ?, rg = ? WHERE id = ?";
 
         try {
             PreparedStatement ps = Banco.conecta().prepareStatement(sql);
             ps.setString(1, professores.getNome());
             ps.setString(2, professores.getSobrenome());
-            ps.setString(3, professores.getCpf());
             ps.setString(4, professores.getEmail());
-            ps.setString(5, professores.getRua());
-            ps.setString(6, professores.getBairro());
-            ps.setString(7, professores.getCidade());
-            ps.setString(8, professores.getPais());
             ps.setString(12, professores.getTelefone());
-            ps.setString(13, professores.getRg());
-            ps.setString(14, professores.getFormacao());
-            ps.setString(15, professores.getNomeDaMae());
-            ps.setString(16, professores.getNomeDoPai());
-            ps.setString(17, professores.getEstadoDeNascimento());
-            ps.setString(18, professores.getCidadeDeNascimento());
             return ps.executeUpdate() == 1;
 
         } catch (SQLException e) {
