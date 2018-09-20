@@ -12,28 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.Session;
 import web.java.classe.PessoaBean;
 import web.java.conexao.Banco;
-import web.java.hibernate.util.HibernateUtil;
 
 public class PessoaDAO {
-    public void salvarPessoa(PessoaBean pessoa) {
-        // Uma Sessão para Hibernate será criado e então aberto
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        // Inicia uma transação com Integration do Hibernate
-        session.beginTransaction();
-        // Uma operação para armazenar dados será criado
-        session.persist(pessoa);
-        // A validação e inserção dos dados será feita
-        session.getTransaction().commit();
-        // Para liberar memória alocada
-        session.flush();
-        // Encerra Sessão
-        session.close();
-    }
-    
+
     public static boolean inserePessoa(PessoaBean pessoa) {
         Connection coneccao = Banco.conecta();
         
