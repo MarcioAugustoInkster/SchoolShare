@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alan
  */
-@WebServlet (urlPatterns="/perfils")
+@WebServlet (urlPatterns="/perfil")
 public class Perfil extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        resp.sendRedirect("/professor/perfils.jsp");
+        resp.sendRedirect("/professor/perfil.jsp");
     }
     
     
