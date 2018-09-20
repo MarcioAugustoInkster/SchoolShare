@@ -16,41 +16,42 @@
 
 <section class="content">
     <div class="post">
-        <h4>Escolha um folder de Instituição</h4>
+        <h4>Escolha na lista o destino para repositório de Turmas</h4>
     </div>
 
     <div class="post clearfix">
-        <%
-            FolderDirectory folder = new FolderDirectory();
-            List<String> instituicao = folder.findFoldersInDirectory(request, 1);
-            int counter = 0;
+        <div class="class-folder-list">
+            <ol>
+                <%
+                    FolderDirectory folder = new FolderDirectory();
+                    List<String> instituicao = folder.findFoldersInDirectory(request, 1);
+                    int counter = 0;
 
-            for (String folders : instituicao) {
-                counter = counter + 1;
-        %>
-        <div class="col-default-guide-sh" id="testrepo" onclick="getRepoInstitution('<%=folders%>')">
-            <div class="content-inside-title">
-                <label><%=folders%></label>
-            </div>
-            <div class="content-inside-box">
-                <div class="box-body">
-                    <span class="info-box-icon bg-red-gradient">
-                        <i class="fa fa-archive"></i>
+                    for (String folders : instituicao) {
+                        counter = counter + 1;
+                %>
+                <li>
+                    <span class="icon-box-folder">
+                        <i class="fa fa-archive">
+                            <a href="#" class="listaEmpresa"><%=folders%></a>
+                        </i>
                     </span>
-                </div>
-            </div>
+                    
+                    <ol class="listagemCurso" style="clear:both;"></ol>
+                </li>
+                <%
+                    }
+                %>
+            </ol>
         </div>
-        <%
-            }
-        %>
     </div>
 
     <div class="post">
         <% if (counter == 0) { %>
         <label>Não existe ainda folders disponíveis</label>
-        <% } else { %>
+        <% } else {%>
         <label>Existem&nbsp;<%=counter%>&nbsp;folders disponíveis</label>
-        <% } %>
+        <% }%>
     </div>
 </section>
 

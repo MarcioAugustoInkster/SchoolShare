@@ -261,17 +261,12 @@ a:hover {
     border-top: 1px solid #666;
     padding: 8px 0;
 }
-.content-info a {
+.content-info label {
     text-decoration: none;
     color: rgb(210, 70, 60);
     display: block;
     margin: 4px 0;
     overflow: hidden;
-    border: 1px solid #ccc;
-}
-.content-info a:hover {
-    font-weight: bold;
-    margin-left: 4px;
 }
 .content-info {
     text-align: left;

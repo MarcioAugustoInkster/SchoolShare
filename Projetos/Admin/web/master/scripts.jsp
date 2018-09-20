@@ -72,3 +72,5 @@
     });
 </script>
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
+<!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
+<script type="text/javascript" src="/js/load-contents.js"></script>

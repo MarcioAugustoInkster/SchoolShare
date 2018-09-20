@@ -112,10 +112,10 @@
                         institucionais entre professores e alunos.
                         <div class="content-info">
                             <b>GitHub</b>
-                            <a href="#">alansiloliveira </a>
-                            <a href="#">DaianaBarbettaM </a>
-                            <a href="#">MarcioAugustoInkster </a>
-                            <a href="#">Borbari </a>
+                            <label>alansiloliveira </label>
+                            <label>DaianaBarbettaM </label>
+                            <label>MarcioAugustoInkster </label>
+                            <label>Borbari </label>
                         </div>
                     </div>
                 </div>

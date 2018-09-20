@@ -36,3 +36,5 @@
 <link rel="stylesheet" href="/tema/bower_components/Ionicons/css/ionicons.min.css">
 <!-- Scroll Style for Table components -->
 <link rel="stylesheet" href="/css/scrollable-table.css">
+<!-- Estilos da lista repositórios existentes -->
+<link rel="stylesheet" href="/css/arquivo.css">

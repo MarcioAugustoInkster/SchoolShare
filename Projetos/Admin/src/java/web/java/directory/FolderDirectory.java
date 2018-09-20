@@ -11,10 +11,16 @@ import javax.servlet.http.HttpServletRequest;
  * @author Marcio Augusto Schlosser
  */
 public class FolderDirectory {
-    public static List<String> findFoldersInDirectory(HttpServletRequest request) {
+    public static List<String> findFoldersInDirectory(HttpServletRequest request, int value) {
         DirFolderAccess dir = new DirFolderAccess();
         
-        String UPLOAD_DIRECTORY = dir.uploadFullPath(request);
+        String UPLOAD_DIRECTORY = "";
+        
+        if (value == 1) {
+            UPLOAD_DIRECTORY = dir.uploadFullPath(request);
+        } else if (value == 2) {
+            UPLOAD_DIRECTORY = dir.caminhoCursos(request);
+        }
         
         File directory = new File(UPLOAD_DIRECTORY);
         

@@ -138,8 +138,8 @@ function onRepoCourse() {
     window.location.href = "/admin/repoCurso.jsp";
 }
 
-function on() {
-    window.location.href = "/admin/.jsp";
+function onRepoClass() {
+    window.location.href = "/admin/repoTurma.jsp";
 }
 
 /**
@@ -162,4 +162,5 @@ function onCreateCourseFolder(inst, id) {
 function getRepoInstitution(name) {
     window.location.href = "/admin/folder.jsp?folder=" + name;
 }
+
 
