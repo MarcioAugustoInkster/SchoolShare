@@ -1,3 +1,8 @@
+<%-- 
+    Document   : cadastroDaiana
+    Created on : 03/09/2018, 08:24:29
+    Author     : Daiana
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="web.bean.AlunoBean"%>
@@ -25,7 +30,7 @@
 </section>
 
     <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header with-border">
                 

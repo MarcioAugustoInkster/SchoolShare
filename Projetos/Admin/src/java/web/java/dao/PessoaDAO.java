@@ -1,3 +1,8 @@
+
+/**
+ *
+ * @author Daiana & Marcio
+ */
 package web.java.dao;
 
 import java.sql.Connection;
@@ -7,28 +12,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.Session;
 import web.java.classe.PessoaBean;
 import web.java.conexao.Banco;
-import web.java.hibernate.util.HibernateUtil;
 
 public class PessoaDAO {
-    public void salvarPessoa(PessoaBean pessoa) {
-        // Uma Sessão para Hibernate será criado e então aberto
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        // Inicia uma transação com Integration do Hibernate
-        session.beginTransaction();
-        // Uma operação para armazenar dados será criado
-        session.persist(pessoa);
-        // A validação e inserção dos dados será feita
-        session.getTransaction().commit();
-        // Para liberar memória alocada
-        session.flush();
-        // Encerra Sessão
-        session.close();
-    }
-    
+
     public static boolean inserePessoa(PessoaBean pessoa) {
         Connection coneccao = Banco.conecta();
         
@@ -43,7 +31,7 @@ public class PessoaDAO {
                 pstmt.setString(1, pessoa.getNome());
                 pstmt.setString(2, pessoa.getSobrenome());
                 pstmt.setString(3, String.valueOf(pessoa.getSexo()));
-                pstmt.setString(4, pessoa.getDataNascimento());
+                pstmt.setString(4, pessoa.getDataDeNascimento());
                 pstmt.setString(5, pessoa.getEmail());
                 pstmt.setString(6, pessoa.getTelefone());
                 pstmt.setString(7, pessoa.getLogin());
@@ -104,7 +92,7 @@ public class PessoaDAO {
             }
             
             sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataNascimento()).append("</td>")
+            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
             .append("<td>").append(listagem.getEmail()).append("</td>")
             .append("<td>").append(listagem.getTelefone()).append("</td>")
             .append("<td>").append(listagem.getLogin()).append("</td>")
@@ -162,7 +150,7 @@ public class PessoaDAO {
             }
             
             sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataNascimento()).append("</td>")
+            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
             .append("<td>").append(listagem.getEmail()).append("</td>")
             .append("<td>").append(listagem.getTelefone()).append("</td>")
             .append("<td>").append(listagem.getLogin()).append("</td>")
@@ -197,7 +185,7 @@ public class PessoaDAO {
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setSobrenome(rs.getString("sobrenome"));
                 pessoa.setSexo(rs.getString("sexo").charAt(0));
-                pessoa.setDataNascimento(rs.getString("data_nascimento"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoa.setLogin(rs.getString("login"));
@@ -233,7 +221,7 @@ public class PessoaDAO {
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setSobrenome(rs.getString("sobrenome"));
                 pessoa.setSexo(rs.getString("sexo").charAt(0));
-                pessoa.setDataNascimento(rs.getString("data_nascimento"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoa.setLogin(rs.getString("login"));
