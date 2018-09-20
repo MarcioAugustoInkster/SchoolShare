@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Alunos
  */
 @WebServlet (urlPatterns="/cursos")
-public class cursos extends HttpServlet{
+public class Cursos extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

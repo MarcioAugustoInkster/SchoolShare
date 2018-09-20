@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alunos
  */
-@WebServlet(urlPatterns="")
-public class index extends HttpServlet{
+@WebServlet(urlPatterns="/index")
+public class Index extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/professor/index.jsp").include(req, resp);
+        req.getRequestDispatcher("/index.jsp").include(req, resp);
     }
     
     

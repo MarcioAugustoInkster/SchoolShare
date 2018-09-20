@@ -13,7 +13,15 @@ public class PessoaBean {
             pais,   nomeDaMae, nomeDoPai, estadoDeNascimento,cidadeDeNascimento,
             nacionalidade , dataDeNascimento;
     private char sexo;
-    private byte nivel;
+    private byte tipo;
+
+    public byte getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(byte tipo) {
+        this.tipo = tipo;
+    }
     private boolean ativo;
 
     public boolean isAtivo() {
@@ -24,13 +32,7 @@ public class PessoaBean {
         this.ativo = ativo;
     }
 
-    public byte getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(byte nivel) {
-        this.nivel = nivel;
-    }
+    
 
     public String getSobrenome() {
         return sobrenome;
