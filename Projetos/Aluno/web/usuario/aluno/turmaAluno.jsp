@@ -12,5 +12,7 @@
         <title>SchoolShare | Turma</title>
    
         <h1>Sua Turma</h1>
+        
+        <%=PessoaDAO.carregaListaAluno()%>
     
  <%@include file="/master/rodape.jsp" %>         

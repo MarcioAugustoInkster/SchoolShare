@@ -19,10 +19,133 @@ public class PessoaBean implements Serializable {
     @Id
     @GeneratedValue
     private int id;
-    private String nome, sobrenome, email, login, senha, dataNascimento, telefone;
+    private String nome, email, sobrenome, cpf, rg, login, senha, telefone, 
+            celular,  rua, bairro, cidade, complemento, cep, estado,
+            nomeDaMae, nomeDoPai, estadoNascimento,cidadeNascimento, nacionalidade, 
+            dataDeNascimento;
     private char sexo;
     private byte tipo;
     private boolean ativo;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getNomeDaMae() {
+        return nomeDaMae;
+    }
+
+    public void setNomeDaMae(String nomeDaMae) {
+        this.nomeDaMae = nomeDaMae;
+    }
+
+    public String getNomeDoPai() {
+        return nomeDoPai;
+    }
+
+    public void setNomeDoPai(String nomeDoPai) {
+        this.nomeDoPai = nomeDoPai;
+    }
+
+    public String getEstadoNascimento() {
+        return estadoNascimento;
+    }
+
+    public void setEstadoNascimento(String estadoNascimento) {
+        this.estadoNascimento = estadoNascimento;
+    }
+
+    public String getCidadeNascimento() {
+        return cidadeNascimento;
+    }
+
+    public void setCidadeNascimento(String cidadeNascimento) {
+        this.cidadeNascimento = cidadeNascimento;
+    }
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
 
     public int getId() {
         return id;
@@ -72,14 +195,7 @@ public class PessoaBean implements Serializable {
         this.senha = senha;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataDeNascimento) {
-        this.dataNascimento = dataDeNascimento;
-    }
-
+ 
     public char getSexo() {
         return sexo;
     }

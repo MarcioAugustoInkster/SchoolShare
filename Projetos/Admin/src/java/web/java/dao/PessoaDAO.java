@@ -1,3 +1,8 @@
+
+/**
+ *
+ * @author Daiana & Marcio
+ */
 package web.java.dao;
 
 import java.sql.Connection;
@@ -43,7 +48,7 @@ public class PessoaDAO {
                 pstmt.setString(1, pessoa.getNome());
                 pstmt.setString(2, pessoa.getSobrenome());
                 pstmt.setString(3, String.valueOf(pessoa.getSexo()));
-                pstmt.setString(4, pessoa.getDataNascimento());
+                pstmt.setString(4, pessoa.getDataDeNascimento());
                 pstmt.setString(5, pessoa.getEmail());
                 pstmt.setString(6, pessoa.getTelefone());
                 pstmt.setString(7, pessoa.getLogin());
@@ -104,7 +109,7 @@ public class PessoaDAO {
             }
             
             sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataNascimento()).append("</td>")
+            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
             .append("<td>").append(listagem.getEmail()).append("</td>")
             .append("<td>").append(listagem.getTelefone()).append("</td>")
             .append("<td>").append(listagem.getLogin()).append("</td>")
@@ -162,7 +167,7 @@ public class PessoaDAO {
             }
             
             sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataNascimento()).append("</td>")
+            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
             .append("<td>").append(listagem.getEmail()).append("</td>")
             .append("<td>").append(listagem.getTelefone()).append("</td>")
             .append("<td>").append(listagem.getLogin()).append("</td>")
@@ -197,7 +202,7 @@ public class PessoaDAO {
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setSobrenome(rs.getString("sobrenome"));
                 pessoa.setSexo(rs.getString("sexo").charAt(0));
-                pessoa.setDataNascimento(rs.getString("data_nascimento"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoa.setLogin(rs.getString("login"));
@@ -233,7 +238,7 @@ public class PessoaDAO {
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setSobrenome(rs.getString("sobrenome"));
                 pessoa.setSexo(rs.getString("sexo").charAt(0));
-                pessoa.setDataNascimento(rs.getString("data_nascimento"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoa.setLogin(rs.getString("login"));
