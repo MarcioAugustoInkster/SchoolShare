@@ -1,3 +1,8 @@
+<%-- 
+    Document   : Daiana
+    Created on : 03/09/2018, 08:24:29
+    Author     : Daiana
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -7,10 +12,10 @@
 
 <a href="/usuario/aluno/avaliacaoAluno.jsp"></a>
 
-        <title>SchoolShare | Avaliação</title>
-   
-        <section class="content-header">
-    <h1>Professores <small>Cadastro</small></h1>
+<title>SchoolShare | Avaliação</title>
+
+<section class="content-header">
+    <h3>Avaliação</h3>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Admin</li>
@@ -18,35 +23,97 @@
 </section>
 
 <div class="row">
-    <div class="col-md-6">
-        <div class="box box-primary">
+    <div class="col-md-12">
+        <div class="box box-primary ">
             <div class="box-header with-border">
-                <h3 class="box-title">Avaliacao</h3>
                 
             </div>
+            <div class="box-bod">
+
+                <table class="table table-striped tabela-avaliacao">
+                    <thead>
+                        <tr>
+                            <td class="col-md-4"></td>
+                            <td class="col-md-2"> Muito bom </td>
+                            <td class="col-md-2">  Bom </td>
+                            <td class="col-md-2"> Ruim </td>
+                            <td class="col-md-2">Muito ruim </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>Como foi a aula de hoje?</div>
+                            </td>
+                            <td><input type="radio" class="" id="radioAulaHoje" name="aulaHoje" value=""></td>
+                            <td><input type="radio" class="" id="radioAulaHoje" name="aulaHoje" value=""></td> 
+                            <td><input type="radio" class="" id="radioAulaHoje" name="aulaHoje" value=""></td> 
+                            <td><input type="radio" class="" id="radioAulaHoje" name="aulaHoje" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>Metodologia aplicada pelo instrutor?</div>
+                            </td>
+                            <td><input type="radio" class="" id="radioMetodologia" name="metodologia" value=""></td>
+                            <td><input type="radio" class="" id="radioMetodologia" name="metodologia" value=""></td>
+                            <td><input type="radio" class="" id="radioMetodologia" name="metodologia" value=""></td>
+                            <td><input type="radio" class="" id="radioMetodologia" name="metodologia" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>Postura didática do instrutor?</div>
+                            </td>
+                            <td><input type="radio" class="" id="radioPostura" name="radioPostura" value=""></td> 
+                            <td><input type="radio" class="" id="radioPostura" name="radioPostura" value=""></td>
+                            <td><input type="radio" class="" id="radioPostura" name="radioPostura" value=""></td> 
+                            <td><input type="radio" class="" id="radioPostura" name="radioPostura" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>Computadores e equipamentos?</div>
+                            </td>
+                            <td><input type="radio" class="" id="radioPcEquipamento" name="radioPcEquipamento" value=""></td> 
+                            <td><input type="radio" class="" id="radioPcEquipamento" name="radioPcEquipamento" value=""></td>
+                            <td><input type="radio" class="" id="radioPcEquipamento" name="radioPcEquipamento" value=""></td>
+                            <td><input type="radio" class="" id="radioPcEquipamento" name="radioPcEquipamento" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>Condições físicas do ambiente?</div>
+                            </td>
+                            <td><input type="radio" class="" id="radioCondicoes" name="radioCondicoes" value=""></td>
+                            <td><input type="radio" class="" id="radioCondicoes" name="radioCondicoes" value=""></td>
+                            <td><input type="radio" class="" id="radioCondicoes" name="radioCondicoes" value=""></td>
+                            <td><input type="radio" class="" id="radioCondicoes" name="radioCondicoes" value=""></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div>Observações</div>
+                            </td>
+                            <td colspan="10"><textarea>
+                                
+                                </textarea></td>
+
+                        </tr>
+                    </tbody>    
+                </table>
+            </div>
         </div>
+
     </div>
 </div>
-        
-        
-        
-        
-        <div>
-            <table >
-                <tr>
-                    <td><th>Muito bom</th> <th>Bom</th> <th>Ruim</th> <th>Muito ruim</th></td> 
-                </tr>
-            </table>
-        </div>
-       
-        
-           <tr>
-           <label>Como foi a aula?</label>
-            <input type="radio" id="checkAtivoAluno" name="AlunoRadioAtivo">&nbsp;&nbsp;Ativo
-            </tr>
-           
-      
-   
-    
+
+<button>
+    <label>Salvar</label>
+</button>
+</tr>
+
+
+</body>
+
 <%@include file="/master/rodape.jsp" %>    
-        

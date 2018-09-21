@@ -12,12 +12,11 @@ package web.java.bean;
 public class TurmaBean {
 
     private int id, professorId, cursoId;
-    private String nome, dataInicio, dataFinal;
+    private String turma, dataInicio, dataFinal;
     private short cargaHoraria;
     private ProfessorBean professor;
     private CursoBean curso;
 
-    
     public ProfessorBean getProfessor() {
         return professor;
     }
@@ -58,12 +57,12 @@ public class TurmaBean {
         this.cursoId = cursoId;
     }
 
-    public String getNome() {
-        return nome;
+    public String getTurma() {
+        return turma;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTurma(String turma) {
+        this.turma = turma;
     }
 
     public String getDataInicio() {

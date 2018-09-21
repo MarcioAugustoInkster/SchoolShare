@@ -29,8 +29,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-user-plus"></i> Turmas</a></li>
-                    <li><a href="#"><i class="fa fa-list"></i> Turmas Antigas</a></li>
+                    <li><a href="/turmas"><i class="fa fa-user-plus"></i> Turmas</a></li>
                     <li><a href="#"><i class="fa fa-edit"></i> Instituições</a></li>
                     <li><a href="#"><i class="fa fa-search"></i> Pesquisar</a></li>
                 </ul>
@@ -39,6 +38,14 @@
              <li>
                 <a href="/calendario">
                     <i class="fa fa-th"></i> <span>Calendario</span>
+                    <span class="pull-right-container">
+                    </span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/perfil">
+                    <i class="fa fa-th"></i> <span>Perfil</span>
                     <span class="pull-right-container">
                     </span>
                 </a>

@@ -77,7 +77,7 @@ public class ValidaProfessor extends HttpServlet {
             pessoa.setNome(nome);
             pessoa.setSobrenome(sobrenome);
             pessoa.setSexo(genero.charAt(0));
-            pessoa.setDataNascimento(anoNascimento);
+            pessoa.setDataDeNascimento(anoNascimento);
             pessoa.setEmail(email);
             pessoa.setTelefone(telefone);
             pessoa.setLogin(login);

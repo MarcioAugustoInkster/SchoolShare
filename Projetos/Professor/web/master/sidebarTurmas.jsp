@@ -9,14 +9,7 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <li>
-                <a href="/calendario">
-                    <i class="fa fa-th"></i> <span>Calendario</span>
-                    <span class="pull-right-container">
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="/arquivosTurmas">
+                <a href="/repoTurmas">
                     <i class="fa fa-th"></i> <span>Arquivos da turma</span>
                     <span class="pull-right-container">
                     </span>
