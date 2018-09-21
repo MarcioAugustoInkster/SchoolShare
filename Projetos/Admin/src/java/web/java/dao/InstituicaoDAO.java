@@ -102,45 +102,4 @@ public class InstituicaoDAO {
         }
         return listaInstituicao;
     }
-    
-    public static String listaInstituicaoRepo() {
-        List<InstituicaoBean> instituicao = new InstituicaoDAO().listaInstituicao();
-        
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("<table id=\"tabelaInstituicao\" class=\"table table-bordered table-hover\">")
-        .append("<thead>")
-        .append("<tr>")
-        .append("<th>#</th>")
-        .append("<th>Instituição</th>")
-        .append("<th>Endereço</th>")
-        .append("<th>Bairro</th>")
-        .append("<th>Cidade - Estado</th>")
-        .append("<th><i class=\"fa fa-upload\"></li></th>")
-        .append("</tr>")
-        .append("</thead>")
-        .append("<tbody>");
-
-        int counter = 1;
-        
-        for (InstituicaoBean listagem : instituicao) {
-            sb.append("<tr>")
-            .append("<td>").append(counter++).append("</td>")
-            .append("<td>").append(listagem.getInstituicao()).append("</td>")
-            .append("<td>").append(listagem.getEndereco()).append("</td>")
-            .append("<td>").append(listagem.getBairro()).append("</td>")
-            .append("<td>").append(listagem.getCidade()).append(" - ")
-            .append(listagem.getEstado()).append("</td>")
-            .append("<td><a class=\"btn-custom btn-app-custom\">")
-            .append("<i class=\"fa fa-upload\" onclick=\"onCreateFolder(")
-            .append(listagem.getId())
-            .append(");\">").append("</i> Criar</a></td>")
-            .append("</tr>");
-        }
-
-        sb.append("</tbody>")
-        .append("</table>");
-        
-        return sb.toString();
-    }
 }

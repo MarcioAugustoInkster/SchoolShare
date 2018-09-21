@@ -41,17 +41,16 @@
                     for (TurmaBean turma : turmas) {
                 %>
                 <tr>
-                    <td><%=counter++%></td>
-                    <td><%=turma.getTurma()%></td>
-                    <td><%=turma.getProfessor().getNome()%>&nbsp;
-                        <%=turma.getProfessor().getSobrenome()%></td>
-                    <td><%=turma.getCurso().getCurso()%></td>
+                    <td><%=counter++ %></td>
+                    <td><%=turma.getTurma() %></td>
+                    <td><%=turma.getProfessor().getNome() %></td>
+                    <td><%=turma.getCurso().getCurso() %></td>
                     <td><%=turma.getDataInicio()%></td>
                     <td><%=turma.getDataFinal()%></td>
                     <td><%=turma.getCargaHoraria()%></td>
                     <td>
                         <a class="btn-custom btn-app-custom">
-                            <i class="fa fa-edit"></i> Editar</a>
+                        <i class="fa fa-edit"></i> Editar</a>
                     </td>
                 </tr>
                 <%

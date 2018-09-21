@@ -20,11 +20,11 @@ public class DirFolderAccess {
         return path.toAbsolutePath() + File.separator + "arquivos" + File.separator ;
     }
     
-    public String caminhoCursos(HttpServletRequest request) {
+    public String caminhoCursos(HttpServletRequest request, String repo) {
         Path path = Paths.get(request.getServletContext().getRealPath(File.separator));
         path = path.getParent().getParent();
         
-        return path.toAbsolutePath() + File.separator + "arquivos" + File.separator + "MKInst01" + File.separator;
+        return path.toAbsolutePath() + File.separator + "arquivos" + File.separator + repo + File.separator;
     }
 
     public static boolean diretorioVazio(final Path dir) throws IOException {

@@ -33,11 +33,10 @@
 
                                     for (InstituicaoBean lista : instituicao) {
                                 %>
-                                <option value="<%=lista.getId()%>">
-                                    <%=lista.getNome()%></option>
-                                    <%
-                                        }
-                                    %>
+                                <option value="<%=lista.getId()%>"><%=lista.getInstituicao()%></option>
+                                <%
+                                    }
+                                %>
                             </select>
                         </div>
                         <div class="form-group">

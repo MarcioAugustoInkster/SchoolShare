@@ -1,3 +1,6 @@
+<%@page import="java.util.Arrays"%>
+<%@page import="java.io.FileFilter"%>
+<%@page import="java.io.File"%>
 <%@page import="web.java.directory.FolderDirectory"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.dao.InstituicaoDAO"%>
@@ -20,38 +23,32 @@
     </div>
 
     <div class="post clearfix">
-        <div class="class-folder-list">
-            <ol>
-                <%
-                    FolderDirectory folder = new FolderDirectory();
-                    List<String> instituicao = folder.findFoldersInDirectory(request, 1);
-                    int counter = 0;
+        <div class="box-body">
+            <div class="form-group">
+                <label for="listaEntidades">Selecione um Folder de Instituição</label>
+                <select class="form-control" id="listaEntidades" name="selectFolderEntidades">
+                    <option>[ Escolha uma Instituição ]</option>
+                    <%
+                        FolderDirectory folderinstituicao = new FolderDirectory();
+                        List<String> instituicao = folderinstituicao.procuraRepositorioMaster(request);
+                        
+                        for (String folders : instituicao) {
+                    %>
+                    <option value="<%=folders%>"><%=folders%></option>
+                    <%
+                        }
+                    %>
+                </select>
+            </div>
 
-                    for (String folders : instituicao) {
-                        counter = counter + 1;
-                %>
-                <li>
-                    <span class="icon-box-folder">
-                        <i class="fa fa-archive">
-                            <a href="#" class="listaEmpresa"><%=folders%></a>
-                        </i>
-                    </span>
-                    
-                    <ol class="listagemCurso" style="clear:both;"></ol>
-                </li>
-                <%
-                    }
-                %>
-            </ol>
+            <div class="form-group" id="carregaCursos">
+                
+            </div>
         </div>
     </div>
 
     <div class="post">
-        <% if (counter == 0) { %>
-        <label>Não existe ainda folders disponíveis</label>
-        <% } else {%>
-        <label>Existem&nbsp;<%=counter%>&nbsp;folders disponíveis</label>
-        <% }%>
+        
     </div>
 </section>
 

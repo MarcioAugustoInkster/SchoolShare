@@ -20,7 +20,9 @@ $(document).ready(function () {
 */
 
 $(document).ready(function(){
-    $(".listaEmpresa").click(function () {
-        $('.listagemCurso').load('/admin/test1.jsp');
+    $("#listaEntidades").on('change', function () {
+        var value = $(this).val();
+        
+        $('#carregaCursos').load('/admin/load-select.jsp?curso=' + value);
     });
 });

@@ -1,6 +1,3 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Iterator"%>
-<%@page import="web.java.classe.InstituicaoBean"%>
 <%@page import="web.java.dao.CursoDAO"%>
 <%@page import="web.java.classe.CursoBean"%>
 <%@page import="java.util.List"%>
@@ -25,10 +22,6 @@
         <div class="box-body">
             <%
                 List<CursoBean> curso = new CursoDAO().listaCurso();
-                List<InstituicaoBean> instituicao = new CursoDAO().listaInstituicao();
-                
-                Iterator<CursoBean> it1 = curso.iterator();
-                Iterator<InstituicaoBean> it2 = instituicao.iterator();
             %>
             <table id="tabelaCurso" class="table table-bordered table-hover">
                 <tr>
@@ -40,12 +33,12 @@
                 <%
                     int counter = 1;
                     
-                    while (it1.hasNext() && it2.hasNext()) {
+                   for (CursoBean cursos : curso) {
                 %>
                 <tr>
                     <td><%=counter++%></td>
-                    <td><%=it2.next().getNome() %></td>
-                    <td><%=it1.next().getNome() %></td>
+                    <td><%=cursos.getInstituicao()%></td>
+                    <td><%=cursos.getCurso() %></td>
                     <td><a class="btn-custom btn-app-custom">
                         <i class="fa fa-edit"></i> Editar</a>
                     </td>
