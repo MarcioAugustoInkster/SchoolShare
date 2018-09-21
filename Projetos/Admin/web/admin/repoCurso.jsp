@@ -22,7 +22,7 @@
     <div class="post clearfix">
         <%
             FolderDirectory folder = new FolderDirectory();
-            List<String> instituicao = folder.findFoldersInDirectory(request, 1);
+            List<String> instituicao = folder.procuraRepositorioMaster(request);
             int counter = 0;
 
             for (String folders : instituicao) {
