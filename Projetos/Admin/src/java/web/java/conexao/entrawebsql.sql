@@ -244,10 +244,8 @@ INSERT INTO `schoolshare`.`matricula` (`id`, `aluno_id`, `turma_id`, `data_matri
 ('1', '3', '2', '01-04-2018');
 
 INSERT INTO `schoolshare`.`notas` (`id`, `aluno_id`, `turma_id`, `nota`, `data_nota`) VALUES 
-('1', '1', '2', '6.7', '01-04-2018'),
-('2', '1', '2', '8.2', '03-05-2018'),
-('3', '1', '2', '7.5', '05-04-2018'),
-('4', '1', '2', '6.2', '01-04-2018');
+('1', '1', '2', '6.7',  '8.2', '7.5', '6.2', '01-04-2018'),
+('2', '1', '3', '7.5',  '5.5', '8.4', '8.7', '06-04-2018');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
