@@ -29,11 +29,11 @@
                                     </tr>
                                     <tr>
                                         <th><label for="profNome">Nome:</label></th>
-                                        <td><%= professor.getNome()%>"></td>
-                                    </tr>
+                                        <td><%= professor.getNome()%></td>
+                                    </tr><br>
                                     <tr>
                                         <th><label for="profSobrenome">Sobrenome:</label></th>
-                                        <td><%= professor.getSobrenome()%>"></td>
+                                        <td><%= professor.getSobrenome()%></td>
                                     </tr>
                                     <tr>
                                         <th><label for="profSexo">Sexo:</label></th>
@@ -47,10 +47,7 @@
                                         <th><label for="profRepeteSenha">Repetir Senha</label></th>
                                         <td><input type="password" name="repetirSenha" class="form-control" value="" id="professorRepeteSenha" </td>
                                     </tr>
-                                    <tr>
-                                        <th><label for="profDataDeNascimento">Data de Nascimento:</label></th>
-                                        <td><%= professor.getDataDeNascimento()%></td>
-                                    </tr>
+                                  
                                     <tr>
                                         <th><label for="nivelProf">Nível de Acesso:</label></th>
                                         <td><%= professor.getTipo()%></td>

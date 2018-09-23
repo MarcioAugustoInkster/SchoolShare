@@ -11,7 +11,6 @@
     <h1>Lista de Turnas <small>Tabela</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="/admin/turmaIndex.jsp"><i class="fa fa-user-circle"></i> Turmas</a></li>
         <li class="active">Ver Lista</li>
     </ol>
 </section>
