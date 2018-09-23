@@ -63,20 +63,8 @@ function onClassList() {
 }
 
 /**
- *  Funções de controle de páginas Alunos
+ *  Funções de controle de páginas Notas e Frequencia
  */
-
-function onStudentIndex() {
-    window.location.href = "/admin/alunoIndex.jsp";
-}
-
-function onStudentRegister() {
-    window.location.href = "/admin/cadastroAluno.jsp";
-}
-
-function onStudentList() {
-    window.location.href = "/admin/listaAluno.jsp";
-}
 function onCadastroNota() {
     window.location.href = "/admin/cadastroNota.jsp";
 }
@@ -85,8 +73,24 @@ function onStudentListNota() {
     window.location.href = "/admin/listaNota.jsp";
 }
 
+function onChamadaAluno() {
+    window.location.href = "/admin/chamadaAluno.jsp";
+}
+
 function onNotaIndex() {
     window.location.href = "/admin/notaIndex.jsp";
+}
+
+function onFrequencyIndex() {
+    window.location.href = "/admin/frequenciaIndex.jsp";
+}
+
+function onFrequencyRegister() {
+    window.location.href = "/admin/cadastroFrequencia.jsp";
+}
+
+function onFrequencyList() {
+    window.location.href = "/admin/listaFrequencia.jsp";
 }
 
 

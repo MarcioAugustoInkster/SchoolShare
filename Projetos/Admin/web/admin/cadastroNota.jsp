@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="/master/scripts.jsp" %>
+<%@include file="/master/css.jsp" %>
 
 <%@include file="/master/master.jsp" %>
 
@@ -10,6 +12,17 @@
         <li class="active">Registrar</li>
     </ol>
 </section>
+<script language='JavaScript'>
+function SomenteNumero(e){
+    var tecla=(window.event)?event.keyCode:e.which;   
+    if((tecla>45 && tecla<58)) return true;
+    else{
+    	if (tecla==8 || tecla==0) return true;
+	else  return false;
+    }
+}
+
+</script>
 
 <section class="content">
     <div class="row">
@@ -28,28 +41,23 @@
                             
                         <div class="form-group">
                             <label for="nota1">1° bimestre</label>
-                            <input type="text" class="form-control" id="nota1"
-                                   name="nota1" placeholder="1° nota">
+                            <input type='text' size='10' value='' min="1" max="10" id="nota1" name="nota1"
+                                maxlength="3" placeholder="1° nota" onkeypress='return SomenteNumero(event)'> 
                             
                         <div class="form-group">
                             <label for="nota2">2° bimestre</label>
-                            <input type="text" class="form-control" id="nota2"
-                                   name="nota2" placeholder="2° nota">
+                            <input type='text' size='10' value='' min="1" max="10" id="nota2" name="nota2"
+                                maxlength="3" placeholder="2° nota" onkeypress='return SomenteNumero(event)'> 
                             
                         <div class="form-group">
-                            <label for="nota3"onkeypress="mascara(this, nota3)" maxlength="11"/>>3° bimestre</label>
-                            <input type="text" class="form-control" id="nota3"
-                                   name="nota3" placeholder="3° nota" >
+                            <label for="nota3">3° bimestre</label>
+                            <input type='text' size='10' value='' min="1" max="10" id="nota3" name="nota3"
+                                maxlength="3" placeholder="3° nota" onkeypress='return SomenteNumero(event)'> 
                             
                         <div class="form-group">
                             <label for="nota4">4° bimestre</label>
-                            <input type="text" class="form-control" id="nota4"
-                                   name="nota4" placeholder="4° nota">
-                        <div class="form-group">
-                            <label for="frequencia">Frequencia</label>
-                            <input type="text" class="form-control" id="frequencia" 
-                                   name="frequencia" placeholder="frequencia">
-                            </div>
+                            <input type='text' size='10' value='' min="1" max="10" id="nota4" name="nota4"
+                                maxlength="3" placeholder="4° nota" onkeypress='return SomenteNumero(event)'> 
                             
                             </div>
                             </div>

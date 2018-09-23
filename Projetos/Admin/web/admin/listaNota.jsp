@@ -3,7 +3,8 @@
 <%@page import="web.java.dao.NotaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/master/master.jsp" %>
-
+<%@include file="/master/scripts.jsp" %>
+<%@include file="/master/css.jsp" %>
 
 <section class="content-header">
     <h1>Nota Dos Alunos<small>Tabela</small></h1>
@@ -39,8 +40,8 @@
                         <th><%=notaAlunos.getFrequencia()%></th>
                        
                         <th>
-                            <a style="margin-left: 27%" id="botao_excluir_lista" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
-                            <a id="botao_editar_compra" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success red'><i class="far fa-edit"></i></a>
+                            <a button type="submit" style="margin-left: 27%" id="botao_excluir" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
+                            <a button type="reset" id="botao_editar" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success red'><i class="far fa-edit"></i></a>
                         </th>
                     </tr>
                     <% }%>
