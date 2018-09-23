@@ -1,5 +1,3 @@
-<%@page import="web.java.dao.AlunoDAO"%>
-<%@page import="web.bean.AlunoBean"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.classe.NotaBean"%>
 <%@page import="web.java.dao.NotaDAO"%>
@@ -17,9 +15,8 @@
     </ol>
 </section>
 <!-- tabela Frequencia -->
-            <%  List<AlunoBean> Nome = new AlunoDAO().obterTodos();%>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         <div class="box box-primary ">
             <div class="box-header with-border">
                 
@@ -39,9 +36,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <% for (AlunoBean nome : Nome) {%>
                             <td>
-                                <th><%=nome.getNome()%></th>
                             <td><input type="radio" class="" id="seg" name="aulaHoje" value=""></td>
                             <td><input type="radio" class="" id="ter" name="aulaHoje" value=""></td> 
                             <td><input type="radio" class="" id="qua" name="aulaHoje" value=""></td> 

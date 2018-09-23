@@ -17,6 +17,7 @@
 
     <!-- tabela notas -->
             <%  List<NotaBean> Notas = new NotaDAO().obterNota();%>
+            <div class="col-md-10">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
@@ -58,6 +59,7 @@
                     </tr>
                 </tfoot>
             </table>
+            </div>
                 
                 
 <%@include file="/master/rodape.jsp" %>

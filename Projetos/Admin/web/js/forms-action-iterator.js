@@ -111,7 +111,7 @@ function onEnrollmentList() {
 }
 
 /**
- *  Funções de controle de páginas Frequenica
+ *  Funções de controle de páginas Frequencia
  */
 
 function onFrequencyIndex() {

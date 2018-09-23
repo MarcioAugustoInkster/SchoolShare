@@ -11,11 +11,6 @@
  *
  * Date: 2018-01-20T17:24Z
  */
-
-        $(document).ready(function() {
-            $('#example').DataTable();
-        } );
-    
     ( function( global, factory ) {
 
 	"use strict";
