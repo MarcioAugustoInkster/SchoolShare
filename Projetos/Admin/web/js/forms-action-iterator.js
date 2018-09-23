@@ -77,6 +77,18 @@ function onStudentRegister() {
 function onStudentList() {
     window.location.href = "/admin/listaAluno.jsp";
 }
+function onCadastroNota() {
+    window.location.href = "/admin/cadastroNota.jsp";
+}
+
+function onStudentListNota() {
+    window.location.href = "/admin/listaNota.jsp";
+}
+
+function onNotaIndex() {
+    window.location.href = "/admin/notaIndex.jsp";
+}
+
 
 /**
  *  Funções de controle de páginas Matricula

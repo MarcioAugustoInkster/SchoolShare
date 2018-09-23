@@ -42,8 +42,9 @@
 <script src="/tema/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/tema/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- JQuery interator for multiple browsers -->
-<script src="/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="/js/jquery.mask.js" type="text/javascript"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/jquery-3.3.1.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {

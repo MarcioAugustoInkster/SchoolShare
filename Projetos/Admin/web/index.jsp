@@ -19,6 +19,19 @@
     </div>
 </div>
 
+<div class="col-default-guide-sh" onclick="onNotaIndex();">
+    <div class="content-inside-title">
+        <label>Notas Alunos</label>
+    </div>
+    <div class="content-inside-box">
+        <div class="box-body">
+            <span class="info-box-icon bg-red-gradient">
+                <i class="fa fa-home"></i>
+            </span>
+        </div>
+    </div>
+</div>
+
 <div class="col-default-guide-sh" onclick="onCourseIndex();">
     <div class="content-inside-title">
         <label>Cursos</label>
@@ -78,7 +91,7 @@
     <div class="content-inside-box">
         <div class="box-body">
             <span class="info-box-icon bg-red-gradient">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-archive"></i>
             </span>
         </div>
     </div>
@@ -137,7 +150,7 @@ ANOTHER BOX SELECT CONTENT
     <div class="content-inside-box">
         <div class="box-body">
             <span class="info-box-icon bg-red-gradient">
-                <i class="fa fa-archive"></i>
+                <i class="fa fa-folder"></i>
                 <!--<i class="fa fa-folder-open"></i>-->
             </span>
         </div>

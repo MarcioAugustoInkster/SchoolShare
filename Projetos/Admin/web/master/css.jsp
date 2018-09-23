@@ -44,4 +44,4 @@
 <!-- Scroll Style for Table components -->
 <link rel="stylesheet" href="/css/scrollable-table.css">
 <!-- Estilos da lista repositórios existentes -->
-<link rel="stylesheet" href="/css/arquivo.css">
+<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
