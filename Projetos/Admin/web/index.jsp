@@ -110,19 +110,6 @@
     </div>
 </div>
 
-<div class="col-default-guide-sh" onclick="onNotesIndex();">
-    <div class="content-inside-title">
-        <label>Notas</label>
-    </div>
-    <div class="content-inside-box">
-        <div class="box-body">
-            <span class="info-box-icon bg-red-gradient">
-                <i class="fa fa-sticky-note"></i>
-            </span>
-        </div>
-    </div>
-</div>
-
 <!--
 
 ANOTHER BOX SELECT CONTENT

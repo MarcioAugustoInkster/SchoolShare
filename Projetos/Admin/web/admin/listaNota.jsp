@@ -15,51 +15,50 @@
     </ol>
 </section>
 
-    <!-- tabela notas -->
-            <%  List<NotaBean> Notas = new NotaDAO().obterNota();%>
-            <div class="col-md-10">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                <thead>
-                    <tr>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">1° bim</th>
-                        <th style="text-align: center">2° bim</th>
-                        <th style="text-align: center">3° bim</th>
-                        <th style="text-align: center">4° bim</th>
-                        <th style="text-align: center">Frequencia</th>
-                        <th style="text-align: center">Editar/Excluir</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (NotaBean notaAlunos : Notas) {%>
-                    <tr>
-                        <th><%=notaAlunos.getNome()%></th>
-                        <th><%=notaAlunos.getNota1()%></th>
-                        <th><%=notaAlunos.getNota2()%></th>
-                        <th><%=notaAlunos.getNota3()%></th>
-                        <th><%=notaAlunos.getNota4()%></th>
-                        <th><%=notaAlunos.getFrequencia()%></th>
-                       
-                        <th>
-                            <a button type="submit" style="margin-left: 27%" id="botao_excluir" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
-                            <a button type="reset" id="botao_editar" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success red'><i class="far fa-edit"></i></a>
-                        </th>
-                    </tr>
-                    <% }%>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th style="text-align: center">Nome</th>
-                        <th style="text-align: center">1° bim</th>
-                        <th style="text-align: center">2° bim</th>
-                        <th style="text-align: center">3° bim</th>
-                        <th style="text-align: center">4° bim</th>
-                        <th style="text-align: center">Frequencia</th>
-                        <th style="text-align: center">Editar/Excluir</th>>
-                    </tr>
-                </tfoot>
-            </table>
-            </div>
-                
-                
+<!-- tabela notas -->
+<%  List<NotaBean> Notas = new NotaDAO().obterNota();%>
+<div class="col-md-10">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th style="text-align: center">Nome</th>
+                <th style="text-align: center">1° bim</th>
+                <th style="text-align: center">2° bim</th>
+                <th style="text-align: center">3° bim</th>
+                <th style="text-align: center">4° bim</th>
+                <th style="text-align: center">Frequencia</th>
+                <th style="text-align: center">Editar/Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (NotaBean notaAlunos : Notas) {%>
+            <tr>
+                <th><%=notaAlunos.getNome()%></th>
+                <th><%=notaAlunos.getNota1()%></th>
+                <th><%=notaAlunos.getNota2()%></th>
+                <th><%=notaAlunos.getNota3()%></th>
+                <th><%=notaAlunos.getNota4()%></th>
+                <th><%=notaAlunos.getFrequencia()%></th>
+
+                <th>
+                    <a button type="submit" style="margin-left: 27%" id="botao_excluir" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
+                    <a button type="reset" id="botao_editar" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success red'><i class="far fa-edit"></i></a>
+                </th>
+            </tr>
+            <% }%>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th style="text-align: center">Nome</th>
+                <th style="text-align: center">1° bim</th>
+                <th style="text-align: center">2° bim</th>
+                <th style="text-align: center">3° bim</th>
+                <th style="text-align: center">4° bim</th>
+                <th style="text-align: center">Frequencia</th>
+                <th style="text-align: center">Editar/Excluir</th>>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
 <%@include file="/master/rodape.jsp" %>

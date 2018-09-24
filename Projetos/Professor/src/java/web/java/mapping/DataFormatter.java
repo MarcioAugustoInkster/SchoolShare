@@ -12,7 +12,7 @@ import org.apache.commons.io.FilenameUtils;
  * @author Freakazed-PC
  */
 public class DataFormatter {
-    public static String fileDateTimeToString(File file) {
+    public String fileDateTimeToString(File file) {
         Date dateModified = new Date(file.lastModified());
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         
@@ -21,7 +21,7 @@ public class DataFormatter {
         return getFormattedDate;
     }
     
-    public static String fileDateToString(File file) {
+    public String fileDateToString(File file) {
         Date dateModified = new Date(file.lastModified());
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -30,13 +30,13 @@ public class DataFormatter {
         return getFormattedDate;
     }
     
-    public static String getExtensionFile(File file) {
+    public String getExtensionFile(File file) {
         String extension = FilenameUtils.getExtension(file.getName());
         
         return extension;
     }
     
-    public static Long sizeToKiloByte(File file) {
+    public Long sizeToKiloByte(File file) {
         float fileSize = file.length() / 1024;
         long size = Math.round(fileSize);
         
