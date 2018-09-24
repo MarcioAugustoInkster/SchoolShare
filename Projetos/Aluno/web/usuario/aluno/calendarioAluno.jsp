@@ -7,8 +7,6 @@
 
 <%@page import="web.java.mapping.ListagemArquivos"%>
 
-<%@page import="web.java.mapping.ListagemArquivos"%> 
-
 <%@include file="/master/master.jsp" %>
 
 <a href="/calendarioAluno.jsp"></a>
@@ -21,19 +19,11 @@
     <body>
         <h1>Calendário</h1>
         
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  
+
 <div class="row">
     <div class="col-md-12">
         <div class="box box-primary ">
@@ -43,7 +33,7 @@
             <div class="box-bod">
 
 <div class="container theme-showcase">
-  <h1></h1>
+
 <div id="holder" class="row" ></div>
 </div>
 
