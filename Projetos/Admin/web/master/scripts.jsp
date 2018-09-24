@@ -41,7 +41,6 @@
 <script src="/js/jquery-3.3.1.js"></script>
 <script src="/js/jquery.dataTables.min.js"></script>
 
-
 <script type="text/javascript">
     $(document).ready(function() {
         $("input[name='professorAnoNascimento']").mask('00/00/0000', 
@@ -73,10 +72,17 @@
         {placeholder: '___'});
     });
 </script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c423b8b27046a857a58411049dfc9519962ef98
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
 <script type="text/javascript" src="/js/load-contents.js"></script>
 <!-- Usa Modal para carregar conteúdos á tela -->
 <script type="text/javascript" src="/js/modal-table.js"></script>
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
+<<<<<<< HEAD
+=======
+<script src="/js/admin/lista-nota.js" type="text/javascript"></script>
+>>>>>>> 7c423b8b27046a857a58411049dfc9519962ef98

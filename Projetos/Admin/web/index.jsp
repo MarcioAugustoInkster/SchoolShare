@@ -99,6 +99,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <!-- Container para Cadastro de Integração Escolar -->
 <div class="col-md-12">
     <div class="ink-header-top">
@@ -130,6 +131,14 @@
             </div>
         </div>
     </div>
+=======
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
+<!--
+>>>>>>> 7c423b8b27046a857a58411049dfc9519962ef98
 
     <div class="col-default-guide-sh" onclick="onNotesIndex();">
         <div class="content-inside-title">

@@ -24,6 +24,10 @@
         <servlet-name>Cursos</servlet-name>
         <servlet-class>web.java.paginas.Cursos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Teste</servlet-name>
+        <servlet-class>web.java.servlets.Teste</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/ValidaLogin</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Cursos</servlet-name>
         <url-pattern>/Cursos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Teste</servlet-name>
+        <url-pattern>/Teste</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

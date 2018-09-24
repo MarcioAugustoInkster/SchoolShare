@@ -93,6 +93,10 @@ function onChamadaAluno() {
     window.location.href = "/admin/chamadaAluno.jsp";
 }
 
+function onStudentIndex() {
+    window.location.href = "/admin/alunoIndex.jsp";
+}
+
 function onNotaIndex() {
     window.location.href = "/admin/notaIndex.jsp";
 }

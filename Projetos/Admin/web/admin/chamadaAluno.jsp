@@ -16,13 +16,13 @@
 </section>
 <!-- tabela Frequencia -->
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-11">
         <div class="box box-primary ">
             <div class="box-header with-border">
                 
             </div>
             <div class="box-bod">
-
+                <input type="date" id="data" name="data" required="required">
                 <table class="table table-striped tabela-avaliacao">
                     <thead>
                         <tr>
@@ -61,11 +61,8 @@
 
     </div>
 </div>
-
-<button>
-    <label>Salvar</label>
-</button>
-</tr>
+<button type="submit" class="btn btn-primary">Salvar</button>
+    
 
 
 </body>

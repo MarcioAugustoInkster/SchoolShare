@@ -1,6 +1,6 @@
 <%-- 
-    Document   : cadastroDaiana
-    Created on : 03/09/2018, 08:24:29
+    Document   : SchoolShare
+    Created on : Um dia qualquer...
     Author     : Daiana
 --%>
 
@@ -15,7 +15,7 @@
 </section>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <!-- USERS LIST -->
     <div class="box box-danger">
       <div class="box-header with-border">
