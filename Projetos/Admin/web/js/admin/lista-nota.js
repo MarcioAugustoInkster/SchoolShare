@@ -1,0 +1,3 @@
+$(function(){
+    $("#lista-nota").DataTable();
+});
