@@ -296,6 +296,7 @@ $.extend(Date.prototype, {
       $t.popover({content: '<p><strong>' + time + '</strong></p>'+data.text, html: true, placement: 'auto left'}).popover('toggle');
       return false;
     });
+    
     function dayAddEvent(index, event) {
       if (!!event.allDay) {
         monthAddEvent(index, event);
