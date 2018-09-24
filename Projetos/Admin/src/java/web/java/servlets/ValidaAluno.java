@@ -2,6 +2,7 @@ package web.java.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,39 +41,38 @@ public class ValidaAluno extends HttpServlet {
         try {
             PessoaBean pessoa = new PessoaBean();
 
-            String nome = request.getParameter("professorNome"), 
-                sobrenome = request.getParameter("professorSobrenome"), 
-                genero = request.getParameter("professorGenero"), 
+            String nome = request.getParameter("alunoNome"), 
+                sobrenome = request.getParameter("alunoSobrenome"), 
+                genero = request.getParameter("alunoGenero"), 
                 anoNascimento = DataFormatter.converteStringToDate(
-                    request.getParameter("professorAnoNascimento")),
-                email = request.getParameter("professorEmail"), 
-                telefone = request.getParameter("professorTelefone"), 
-                login = request.getParameter("professorLogin"), 
-                ativo = request.getParameter("professorCheckAtivo");
-            byte tipo = Byte.parseByte(request.getParameter("professorNivelAtivo"));
+                    request.getParameter("alunoAnoNascimento")),
+                email = request.getParameter("alunoEmail"), 
+                telefone = request.getParameter("alunoTelefone"), 
+                login = request.getParameter("alunoLogin"),
+                senha = request.getParameter("alunoSenha"),
+                ativo = request.getParameter("alunoCheckAtivo");
             
-            String senha = GeraValor.geraSenhaEncriptado(
-                request.getParameter("professorSenha")).toString(),
+            byte[] convNome = nome.getBytes(StandardCharsets.ISO_8859_1);
+            nome = new String(convNome, StandardCharsets.UTF_8);
+            
+            byte[] convSobrenome = sobrenome.getBytes(StandardCharsets.ISO_8859_1);
+            sobrenome = new String(convSobrenome, StandardCharsets.UTF_8);
+            
+            byte[] convLogin = login.getBytes(StandardCharsets.ISO_8859_1);
+            login = new String(convLogin, StandardCharsets.UTF_8);
+            
+            byte[] convSenha = senha.getBytes(StandardCharsets.ISO_8859_1);
+            senha = new String(convSenha, StandardCharsets.UTF_8);
+            out.print(anoNascimento);
+            String guardaSenha = GeraValor.geraSenhaEncriptado(senha).toString(),
             repetirSenha = GeraValor.geraSenhaEncriptado(
-                request.getParameter("professorSenhaRepetir")).toString();
+                request.getParameter("alunoSenhaRepetir")).toString();
             
             boolean defineAtivo = true;
             
-            if (ativo == null || ativo.equals("on")) {
+            if (ativo == null) {
                 defineAtivo = false;
             }
-            
-            out.print(nome + "\n");
-            out.print(sobrenome + "\n");
-            out.print(genero + "\n");
-            out.print(anoNascimento + "\n");
-            out.print(email + "\n");
-            out.print(telefone + "\n");
-            out.print(login + "\n");
-            out.print(senha + "\n");
-            out.print(repetirSenha + "\n");
-            out.print(tipo + "\n");
-            out.print(defineAtivo + "\n");
             
             pessoa.setNome(nome);
             pessoa.setSobrenome(sobrenome);
@@ -81,14 +81,14 @@ public class ValidaAluno extends HttpServlet {
             pessoa.setEmail(email);
             pessoa.setTelefone(telefone);
             pessoa.setLogin(login);
-            pessoa.setTipo(tipo);
+            pessoa.setTipo(3);
             pessoa.setAtivo(defineAtivo);
             
-            if (senha.equals(repetirSenha)) {
-                pessoa.setSenha(senha);
+            if (guardaSenha.equals(repetirSenha)) {
+                pessoa.setSenha(guardaSenha);
 
                 if (PessoaDAO.inserePessoa(pessoa)) {
-                    response.sendRedirect("//inf/success.jsp");
+                    response.sendRedirect("/inf/success.jsp");
                 }
             } else {
                 out.print("<2>Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");

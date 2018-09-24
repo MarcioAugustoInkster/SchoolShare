@@ -2,6 +2,7 @@ package web.java.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,31 +49,30 @@ public class ValidaProfessor extends HttpServlet {
                 email = request.getParameter("professorEmail"), 
                 telefone = request.getParameter("professorTelefone"), 
                 login = request.getParameter("professorLogin"), 
+                senha = request.getParameter("professorSenha"),
                 ativo = request.getParameter("professorCheckAtivo");
-            byte tipo = Byte.parseByte(request.getParameter("professorNivelAtivo"));
             
-            String senha = GeraValor.geraSenhaEncriptado(
-                request.getParameter("professorSenha")).toString(),
+            byte[] convNome = nome.getBytes(StandardCharsets.ISO_8859_1);
+            nome = new String(convNome, StandardCharsets.UTF_8);
+            
+            byte[] convSobrenome = sobrenome.getBytes(StandardCharsets.ISO_8859_1);
+            sobrenome = new String(convSobrenome, StandardCharsets.UTF_8);
+            
+            byte[] convLogin = login.getBytes(StandardCharsets.ISO_8859_1);
+            login = new String(convLogin, StandardCharsets.UTF_8);
+            
+            byte[] convSenha = senha.getBytes(StandardCharsets.ISO_8859_1);
+            senha = new String(convSenha, StandardCharsets.UTF_8);
+            
+            String pegaSenha = GeraValor.geraSenhaEncriptado(senha).toString(),
             repetirSenha = GeraValor.geraSenhaEncriptado(
                 request.getParameter("professorSenhaRepetir")).toString();
             
             boolean defineAtivo = true;
             
-            if (ativo == null || ativo.equals("on")) {
+            if (ativo == null) {
                 defineAtivo = false;
             }
-            
-            out.print(nome + "\n");
-            out.print(sobrenome + "\n");
-            out.print(genero + "\n");
-            out.print(anoNascimento + "\n");
-            out.print(email + "\n");
-            out.print(telefone + "\n");
-            out.print(login + "\n");
-            out.print(senha + "\n");
-            out.print(repetirSenha + "\n");
-            out.print(tipo + "\n");
-            out.print(defineAtivo + "\n");
             
             pessoa.setNome(nome);
             pessoa.setSobrenome(sobrenome);
@@ -81,14 +81,14 @@ public class ValidaProfessor extends HttpServlet {
             pessoa.setEmail(email);
             pessoa.setTelefone(telefone);
             pessoa.setLogin(login);
-            pessoa.setTipo(tipo);
+            pessoa.setTipo(2);
             pessoa.setAtivo(defineAtivo);
             
-            if (senha.equals(repetirSenha)) {
-                pessoa.setSenha(senha);
+            if (pegaSenha.equals(repetirSenha)) {
+                pessoa.setSenha(pegaSenha);
 
                 if (PessoaDAO.inserePessoa(pessoa)) {
-                    response.sendRedirect("//inf/success.jsp");
+                    //response.sendRedirect("/inf/success.jsp");
                 }
             } else {
                 out.print("<2>Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");

@@ -63,20 +63,36 @@ function onClassList() {
 }
 
 /**
- *  Funções de controle de páginas Alunos
+ *  Funções de controle de páginas Notas e Frequencia
  */
-
-function onStudentIndex() {
-    window.location.href = "/admin/alunoIndex.jsp";
+function onCadastroNota() {
+    window.location.href = "/admin/cadastroNota.jsp";
 }
 
-function onStudentRegister() {
-    window.location.href = "/admin/cadastroAluno.jsp";
+function onStudentListNota() {
+    window.location.href = "/admin/listaNota.jsp";
 }
 
-function onStudentList() {
-    window.location.href = "/admin/listaAluno.jsp";
+function onChamadaAluno() {
+    window.location.href = "/admin/chamadaAluno.jsp";
 }
+
+function onNotaIndex() {
+    window.location.href = "/admin/notaIndex.jsp";
+}
+
+function onFrequencyIndex() {
+    window.location.href = "/admin/frequenciaIndex.jsp";
+}
+
+function onFrequencyRegister() {
+    window.location.href = "/admin/cadastroFrequencia.jsp";
+}
+
+function onFrequencyList() {
+    window.location.href = "/admin/listaFrequencia.jsp";
+}
+
 
 /**
  *  Funções de controle de páginas Matricula
@@ -94,8 +110,20 @@ function onEnrollmentList() {
     window.location.href = "/admin/listaMatricula.jsp";
 }
 
+/*
+ * 
+ * @returns Notas de Alunos
+ */
+function onNotesIndex() {
+    window.location.href = "/admin/notasIndex.jsp";
+}
+
+function onNotesRegister() {
+    window.location.href = "/admin/notasNovo.jsp";
+}
+
 /**
- *  Funções de controle de páginas Frequenica
+ *  Funções de controle de páginas Frequencia
  */
 
 function onFrequencyIndex() {
@@ -140,6 +168,14 @@ function onRepoCourse() {
 
 function onRepoClass() {
     window.location.href = "/admin/repoTurma.jsp";
+}
+
+function onRepoTeacher() {
+    window.location.href = "/admin/repoProfessor.jsp";
+}
+
+function onRepoStudent() {
+    window.location.href = "/admin/repoAluno.jsp";
 }
 
 /**

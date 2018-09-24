@@ -20,7 +20,7 @@ public class CursoDAO {
         
         if (coneccao != null) {
             String sql = "INSERT INTO curso ";
-                sql += "(instituicao_id, nome) VALUES (?, ?)";
+                sql += "(instituicao_id, curso) VALUES (?, ?)";
 
             try {
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);

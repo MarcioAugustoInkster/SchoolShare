@@ -3,8 +3,6 @@ package web.java.servlets;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +14,9 @@ import web.java.directory.DirFolderAccess;
 
 /**
  *
- * @author Freakazed-PC
+    Document   : CriaFolderCurso
+    Created on : 19/09/2018, 11:13:24
+    Author     : Marcio Augusto Schlosser
  */
 @WebServlet(urlPatterns = "/folderCurso")
 
@@ -56,13 +56,5 @@ public class CriaFolderCurso extends HttpServlet {
         } else {
             out.print("Diretório \"" + rootRepo + "\" não encontrado");
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        
-        response.setContentType("text/html;charset=UTF-8");
-        
     }
 }

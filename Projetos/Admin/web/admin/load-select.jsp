@@ -2,33 +2,33 @@
 <%@page import="java.util.List"%>
 <%@page import="web.java.directory.FolderDirectory"%>
 
-<label for="listaCursos">Selecione um Folder de Curso</label>
-<select class="form-control" id="listaCursos" name="selectFolderCursos">
-    <%
-        FolderDirectory foldercurso = new FolderDirectory();
-        
-        String folder = request.getParameter("curso");
-        List<String> cursos = foldercurso.procuraRepositorioCurso(request, folder);
+<div class="form-group">
+    <label for="listaCursos">Selecione um Folder de Curso</label>
+    <select class="form-control" id="listaCursos" name="selectFolderCursos">
+        <%
+            FolderDirectory foldercurso = new FolderDirectory();
 
-        for (String folders : cursos) {
-    %>
-    <option value="<%=folders%>"><%=folders%></option>
-    <%
-        }
-    %>
-</select>
+            String folder = request.getParameter("curso");
+            List<String> cursos = foldercurso.procuraRepositorioCurso(request, folder);
 
-<%
-    /*
-        File file = new File("D:\\Entra21\\Projects\\SchoolShare\\Projetos\\Admin\\arquivos\\MKInst02\\");
-        String[] names = file.list();
-
-        for (String name : names) {
-            if (new File("D:\\Entra21\\Projects\\SchoolShare\\Projetos\\Admin\\arquivos\\MKInst02\\" + name).isDirectory()) {
-                out.println(name);
+            for (String folders : cursos) {
+        %>
+        <option value="<%=folders%>"><%=folders%></option>
+        <%
             }
-        }
-     */
-%>
+        %>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="campoTurmaNome">Descrição da Turma</label>
+    <small>&nbsp;&nbsp;&nbsp;Exemplo: TURM-01</small>
+    <input type="text" class="form-control" id="campoTurmaNome" name="turmaDescricao">
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Criar Repositório" class="btn btn-primary">
+</div>
+
 
 

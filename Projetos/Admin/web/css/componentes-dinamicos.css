@@ -1,0 +1,17 @@
+/**
+ *
+ * @author Marcio
+ */
+.textAvaliacao {
+    resize: none;
+}
+
+.tabela-avaliacao tr th,
+.tabela-avaliacao tr td {
+    text-align: center;
+}
+
+.tabela-avaliacao tr th,
+.tabela-avaliacao tr td {
+    border: none;
+}

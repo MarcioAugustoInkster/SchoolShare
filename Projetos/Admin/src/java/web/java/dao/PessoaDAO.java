@@ -16,7 +16,6 @@ import web.java.classe.PessoaBean;
 import web.java.conexao.Banco;
 
 public class PessoaDAO {
-
     public static boolean inserePessoa(PessoaBean pessoa) {
         Connection coneccao = Banco.conecta();
         
@@ -36,136 +35,50 @@ public class PessoaDAO {
                 pstmt.setString(6, pessoa.getTelefone());
                 pstmt.setString(7, pessoa.getLogin());
                 pstmt.setString(8, pessoa.getSenha());
-                pstmt.setByte(9, pessoa.getTipo());
+                pstmt.setInt(9, pessoa.getTipo());
                 pstmt.setBoolean(10, pessoa.isAtivo());
 
                 pstmt.execute();
+                
+                return true;
             } catch (Exception ex) {
                 ex.printStackTrace();
             } finally {
                 Banco.fecharBanco();
             }
-            return true;
         }
         return false;
     }
     
-    public static String carregaListaProfessor() {
-        List<PessoaBean> professor = new PessoaDAO().listaProfessor();
+    public List<PessoaBean> listaNomeProfessor() {
+        List<PessoaBean> listaProfessor = new ArrayList<>();
         
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("<table id=\"tabelaProfessor\" class=\"table table-bordered table-hover\">")
-        .append("<thead>")
-        .append("<tr>")
-        .append("<th>Nome Completo</th>")
-        .append("<th>Gênero</th>")
-        .append("<th>Data Nascimento</th>")
-        .append("<th>E-mail</th>")
-        .append("<th>Telefone</th>")
-        .append("<th>Usuário</th>")
-        .append("<th>Ativo</th>")
-        .append("<th>Opções</th>")
-        .append("</tr>")
-        .append("</thead>")
-        .append("<tbody>");
-
-        for (PessoaBean listagem : professor) {
-            String active = "";
+        try {
+            String sql = "SELECT id, nome, sobrenome FROM pessoa ";
+                sql += "WHERE tipo=2 AND ativo=1 GROUP BY nome";
             
-            if (listagem.isAtivo() != false) {
-                active = "Sim";
-            } else {
-                active = "Não";
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                PessoaBean pessoa = new PessoaBean();
+                
+                pessoa.setId(rs.getInt("id"));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                
+                listaProfessor.add(pessoa);
             }
-            
-            sb.append("<tr>")
-            .append("<td>").append(listagem.getNome()).append(" ")
-            .append(listagem.getSobrenome()).append("</td>");
-            
-            String genero = "";
-            
-            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                genero = "Masculino";
-            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                genero = "Feminino";
-            }
-            
-            sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
-            .append("<td>").append(listagem.getEmail()).append("</td>")
-            .append("<td>").append(listagem.getTelefone()).append("</td>")
-            .append("<td>").append(listagem.getLogin()).append("</td>")
-            .append("<td>").append(active).append("</td>")
-            .append("<td><a class=\"btn-custom btn-app-custom\">")
-            .append("<i class=\"fa fa-edit\">").append("</i> Edit</a></td>")
-            .append("</tr>");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
         }
-
-        sb.append("</tbody>")
-        .append("</table>");
-        
-        return sb.toString();
+        return listaProfessor;
     }
-    
-    public static String carregaListaAluno() {
-        List<PessoaBean> aluno = new PessoaDAO().listaAluno();
-        
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("<table id=\"tabelaAluno\" class=\"table table-bordered table-hover\">")
-        .append("<thead>")
-        .append("<tr>")
-        .append("<th>Nome Completo</th>")
-        .append("<th>Gênero</th>")
-        .append("<th>Data Nascimento</th>")
-        .append("<th>E-mail</th>")
-        .append("<th>Telefone</th>")
-        .append("<th>Usuário</th>")
-        .append("<th>Ativo</th>")
-        .append("<th>Opções</th>")
-        .append("</tr>")
-        .append("</thead>")
-        .append("<tbody>");
 
-        for (PessoaBean listagem : aluno) {
-            String active = "";
-            
-            if (listagem.isAtivo() != false) {
-                active = "Sim";
-            } else {
-                active = "Não";
-            }
-            
-            sb.append("<tr>")
-            .append("<td>").append(listagem.getNome()).append(" ")
-            .append(listagem.getSobrenome()).append("</td>");
-            
-            String genero = "";
-            
-            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                genero = "Masculino";
-            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                genero = "Feminino";
-            }
-            
-            sb.append("<td>").append(genero).append("</td>")
-            .append("<td>").append(listagem.getDataDeNascimento()).append("</td>")
-            .append("<td>").append(listagem.getEmail()).append("</td>")
-            .append("<td>").append(listagem.getTelefone()).append("</td>")
-            .append("<td>").append(listagem.getLogin()).append("</td>")
-            .append("<td>").append(active).append("</td>")
-            .append("<td><a class=\"btn-custom btn-app-custom\">")
-            .append("<i class=\"fa fa-edit\">").append("</i> Edit</a></td>")
-            .append("</tr>");
-        }
-
-        sb.append("</tbody>")
-        .append("</table>");
-        
-        return sb.toString();
-    }
-    
     public List<PessoaBean> listaProfessor() {
         List<PessoaBean> listaProfessor = new ArrayList<>();
         
@@ -206,7 +119,7 @@ public class PessoaDAO {
         List<PessoaBean> listaAluno = new ArrayList<>();
         
         try {
-            String sql = "SELECT nome, sobrenome, sexo, data_nascimento, email, telefone, ";
+            String sql = "SELECT id, nome, sobrenome, sexo, data_nascimento, email, telefone, ";
                 sql += "login, tipo, ativo FROM pessoa ";
                 sql += "WHERE tipo=3 AND ativo=1 GROUP BY nome";
             
@@ -218,6 +131,7 @@ public class PessoaDAO {
             while (rs.next()) {
                 PessoaBean pessoa = new PessoaBean();
                 
+                pessoa.setId(rs.getInt("id"));
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setSobrenome(rs.getString("sobrenome"));
                 pessoa.setSexo(rs.getString("sexo").charAt(0));
@@ -236,5 +150,40 @@ public class PessoaDAO {
             Banco.fecharBanco();
         }
         return listaAluno;
+    }
+    
+    public PessoaBean listaUsuarioPorLogin(String login) {
+        PessoaBean aluno = null;
+        
+        String sql = "SELECT nome, sobrenome, login FROM pessoa WHERE login='" + login + "' AND tipo=3";
+        
+        try {
+            PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
+            
+            pstmt.setString(1, login);
+            
+            ResultSet rs = pstmt.getResultSet();
+            
+            while (rs.next()) {
+                aluno = new PessoaBean();
+                
+                //aluno.setId(rs.getInt("id"));
+                aluno.setNome(rs.getString("nome"));
+                aluno.setSobrenome(rs.getString("sobrenome"));
+                //aluno.setSexo(rs.getString("sexo").charAt(0));
+                //aluno.setDataDeNascimento(rs.getString("data_nascimento"));
+                //aluno.setEmail(rs.getString("email"));
+                //aluno.setTelefone(rs.getString("telefone"));
+                aluno.setLogin(rs.getString("login"));
+                //aluno.setTipo(rs.getByte("tipo"));
+                //aluno.setAtivo(rs.getBoolean("ativo"));
+
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return aluno;
     }
 }

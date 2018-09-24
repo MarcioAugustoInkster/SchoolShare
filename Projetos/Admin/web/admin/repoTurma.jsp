@@ -24,31 +24,29 @@
 
     <div class="post clearfix">
         <div class="box-body">
-            <div class="form-group">
-                <label for="listaEntidades">Selecione um Folder de Instituição</label>
-                <select class="form-control" id="listaEntidades" name="selectFolderEntidades">
-                    <option>[ Escolha uma Instituição ]</option>
-                    <%
-                        FolderDirectory folderinstituicao = new FolderDirectory();
-                        List<String> instituicao = folderinstituicao.procuraRepositorioMaster(request);
-                        
-                        for (String folders : instituicao) {
-                    %>
-                    <option value="<%=folders%>"><%=folders%></option>
-                    <%
-                        }
-                    %>
-                </select>
-            </div>
+            <form action="/repositorioTurma" method="POST">
+                <div class="form-group">
+                    <label for="listaEntidades">Selecione um Folder de Instituição</label>
+                    <select class="form-control" id="listaEntidades" name="selectFolderEntidades">
+                        <option>[ Escolha uma Instituição ]</option>
+                        <%
+                            FolderDirectory folderinstituicao = new FolderDirectory();
+                            List<String> instituicao = folderinstituicao.procuraRepositorioMaster(request);
 
-            <div class="form-group" id="carregaCursos">
-                
-            </div>
+                            for (String folders : instituicao) {
+                        %>
+                        <option value="<%=folders%>"><%=folders%></option>
+                        <%
+                            }
+                        %>
+                    </select>
+                </div>
+
+                <div class="form-group" id="carregaCursos">
+
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="post">
-        
     </div>
 </section>
 

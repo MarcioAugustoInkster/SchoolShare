@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Marcio
-    Created on : 03/09/2018, 08:24:29
-    Author     : Marcio
---%>
 <!-- jQuery 3 -->
 <script src="/tema/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -42,8 +37,10 @@
 <script src="/tema/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/tema/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- JQuery interator for multiple browsers -->
-<script src="/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="/js/jquery.mask.js" type="text/javascript"></script>
+<script src="/js/jquery-3.3.1.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -76,6 +73,12 @@
         {placeholder: '___'});
     });
 </script>
+<<<<<<< HEAD
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
 <script type="text/javascript" src="/js/load-contents.js"></script>
+<!-- Usa Modal para carregar conteúdos á tela -->
+<script type="text/javascript" src="/js/modal-table.js"></script>
+=======
+<script src="/js/forms-action-iterator.js" type="text/javascript"></script>
+>>>>>>> 050ead6904763814c6fbaee8d6692e277a0bf8f7

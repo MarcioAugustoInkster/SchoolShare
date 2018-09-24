@@ -39,11 +39,13 @@
 <section class="content">
     <h4>Pesquise abaixo um Curso ou procure na lista</h4>
 
-    <div class="input-group input-group-sm">
-        <input type="text" class="form-control">
-        <span class="input-group-btn">
-            <button type="button" class="btn btn-primary btn-flat">Pesquisar</button>
-        </span>
+    <div class="form-group">
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-primary btn-flat">Pesquisar</button>
+            </span>
+        </div>
     </div>
 
     <div class="post clearfix">
@@ -82,17 +84,6 @@
         <div class="table-list-brand">
             <label>Foram encontrados <b><%=counter%></b> curso(s) registrado(s)</label>
         </div>
-    </div>
-
-    <div class="post clearfix">
-        <%
-            if (DirFolderAccess.diretorioVazio(path)) {
-                out.println("<div class=\"alert alert-info alert-dismissible\">");
-                out.println("<h4><i class=\"icon fa fa-info\"></i> Repositório vazio</h4>");
-                out.println("Ainda não existem conteúdos para este repositório");
-                out.println("</div>");
-            }
-        %>
     </div>
 </section>
 

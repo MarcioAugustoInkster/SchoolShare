@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Freakazed-PC
- */
+/* 
+    Document   : SessaoAdmin
+    Created on : 21/09/2018, 10:22:36
+    Author     : Marcio Augusto Schlosser
+*/
+
 public class SessaoAdmin {
-    private static final String adminSession = "admin_session";
+    private static final String adminSession = "sessao_usuario";
     private static PrintWriter out;
     
     public static boolean verificaSessao(HttpServletRequest request, HttpServletResponse response) 
@@ -21,6 +23,32 @@ public class SessaoAdmin {
         
         if (sessao == null) {
             response.sendRedirect("/login.jsp");
+        } else {
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean verificaSessaoAluno(HttpServletRequest request, HttpServletResponse response) 
+        throws IOException {
+        
+        String sessao = (String)request.getSession(false).getAttribute(adminSession);
+        
+        if (sessao == null) {
+            response.sendRedirect("/alunoLogin.jsp");
+        } else {
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean verificaSessaoProfessor(HttpServletRequest request, HttpServletResponse response) 
+        throws IOException {
+        
+        String sessao = (String)request.getSession(false).getAttribute(adminSession);
+        
+        if (sessao == null) {
+            response.sendRedirect("/professorLogin.jsp");
         } else {
             return true;
         }

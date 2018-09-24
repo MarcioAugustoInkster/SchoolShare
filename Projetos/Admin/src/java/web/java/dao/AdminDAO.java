@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import web.java.classe.PessoaBean;
 import web.java.conexao.Banco;
-import web.java.mapping.Listas;
 
 /**
  *
@@ -43,51 +42,5 @@ public class AdminDAO {
             Banco.fecharBanco();
         }
         return listaAdmin;
-    }
-    
-    public static String carregaListaAdmin() {
-        List<PessoaBean> admin = listaAdministrador();
-        
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("<table id=\"tabelaAdmin\" class=\"table table-bordered table-hover\">")
-        .append("<thead>")
-        .append("<tr>")
-        .append("<th>Administrador</th>")
-        .append("<th>E-mail</th>")
-        .append("<th>Usuário</th>")
-        .append("<th>Tipo</th>")
-        .append("<th>Ativo</th>")
-        .append("<th>Opções</th>")
-        .append("</tr>")
-        .append("</thead>")
-        .append("<tbody>");
-
-        for (PessoaBean listagem : admin) {
-            String active = "";
-            
-            if (listagem.isAtivo() != false) {
-                active = "Sim";
-            } else {
-                active = "Não";
-            }
-            
-            sb.append("<tr>").append("<td>").append(listagem.getNome()).append(" ")
-            .append("<td>").append(listagem.getEmail()).append("</td>")
-            .append("<td>").append(listagem.getLogin()).append("</td>");
-            
-            String tipo = Listas.tipoUsuario(listagem.getTipo());
-            sb.append("<td>").append(tipo).append("</td>")
-            
-            .append("<td>").append(active).append("</td>")
-            .append("<td><a class=\"btn-custom btn-app-custom\">")
-            .append("<i class=\"fa fa-edit\">").append("</i> Editar</a></td>")
-            .append("</tr>");
-        }
-
-        sb.append("</tbody>")
-        .append("</table>");
-        
-        return sb.toString();
     }
 }

@@ -5,10 +5,6 @@
 --%>
 <%@page import="web.java.admin.SessaoAdmin"%>
 
-<%
-    //if (SessaoAdmin.verificaSessao(request, response)) {
-%>
-
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
@@ -25,8 +21,6 @@
                 </ul>
             </li>
 
-            <!--
-            
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-user-circle"></i> <span>Professores</span>
@@ -55,12 +49,7 @@
                     <li><a href="#"><i class="fa fa-search"></i> Pesquisar</a></li>
                 </ul>
             </li>
-            -->
         </ul>
     </section>
 </aside>
 <div class="content-wrapper">
-
-    <%
-        //}
-    %>

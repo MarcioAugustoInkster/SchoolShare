@@ -1,8 +1,8 @@
-<%@page import="web.java.mapping.Listas"%>
-<%@page import="java.util.List"%>
+<%@page import="web.java.dao.PessoaDAO"%>
+<%@page import="web.java.dao.CursoDAO"%>
+<%@page import="web.java.classe.CursoBean"%>
 <%@page import="web.java.classe.PessoaBean"%>
-<%@page import="web.java.dao.ProfessorDAO"%>
-
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="/master/master.jsp" %>
@@ -30,7 +30,7 @@
                             <label for="campoTurmaProfessor">Adicione um Professor</label>
                             <select class="form-control" id="campoTurmaProfessor" name="turmaProfessor">
                                 <%
-                                    List<PessoaBean> pessoa = new ProfessorDAO().nomeProfessor();
+                                    List<PessoaBean> pessoa = new PessoaDAO().listaNomeProfessor();
 
                                     for (PessoaBean lista : pessoa) {
                                 %>
@@ -48,12 +48,11 @@
                             <label for="campoTurmaCurso">Adicione uma Turma</label>
                             <select class="form-control" id="campoTurmaCurso" name="turmaCurso">
                                 <%
-                                    int count = 1;
-                                    String[] cursos = Listas.listaCursosEntra21();
-
-                                    for (String lista : cursos) {
+                                    List<CursoBean> curso = new CursoDAO().listaCurso();
+                                    
+                                    for (CursoBean lista : curso) {
                                 %>
-                                <option value="<%=count%>"><%=lista%></option>
+                                <option value="<%=lista.getId() %>"><%=lista.getCurso() %></option>
                                 <%}
                                 %>
 
@@ -85,8 +84,28 @@
                         <div class="form-group">
                             <label for="campoTurmaCargaHora">Carga Horária</label>
                             <small>&nbsp;&nbsp;&nbsp;Exemplo: 30 (horas)</small>
-                            <input type="text" class="form-control" id="campoTurmaCargaHora" 
-                                   name="turmaCargaHora">
+                            <select class="form-control" id="campoTurmaCargaHora" name="turmaCargaHora">
+                                <option value="12">12</option>
+                                <option value="20">20</option>
+                                <option value="24">24</option>
+                                <option value="30">30</option>
+                                <option value="36">36</option>
+                                <option value="38">38</option>
+                                <option value="40">40</option>
+                                <option value="42">42</option>
+                                <option value="44">44</option>
+                                <option value="48">48</option>
+                                <option value="52">52</option>
+                                <option value="54">54</option>
+                                <option value="60">60</option>
+                                <option value="66">66</option>
+                                <option value="70">70</option>
+                                <option value="72">72</option>
+                                <option value="76">76</option>
+                                <option value="80">80</option>
+                                <option value="90">90</option>
+                                <option value="100">100</option>
+                            </select>
                         </div>
                     </div>
 

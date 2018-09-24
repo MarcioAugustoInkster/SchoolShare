@@ -91,16 +91,6 @@
                         &nbsp;&nbsp;Ativo</label>
                     </div>
                 </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="checkNivelAluno">Nivel de Acesso</label>
-                        <select id="checkNivelAluno" name="alunoNivelAtivo" class="form-control">
-                            <option value="1">1 - Admin</option>
-                            <option value="2">2 - Professor</option>
-                            <option value="3">3 - Aluno</option>
-                        </select>
-                    </div>
-                </div>
 
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>

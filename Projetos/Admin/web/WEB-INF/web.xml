@@ -68,6 +68,26 @@
         <servlet-name>CriaFolderCurso</servlet-name>
         <servlet-class>web.java.servlets.CriaFolderCurso</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CriaRepoTurma</servlet-name>
+        <servlet-class>web.java.servlets.CriaRepoTurma</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginAluno</servlet-name>
+        <servlet-class>web.java.servlets.LoginAluno</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidaLoginAluno</servlet-name>
+        <servlet-class>web.java.servlets.ValidaLoginAluno</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginProfessor</servlet-name>
+        <servlet-class>web.java.servlets.LoginProfessor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidaLoginProfessor</servlet-name>
+        <servlet-class>web.java.servlets.ValidaLoginProfessor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -135,6 +155,26 @@
     <servlet-mapping>
         <servlet-name>CriaFolderCurso</servlet-name>
         <url-pattern>/CriaFolderCurso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CriaRepoTurma</servlet-name>
+        <url-pattern>/CriaRepoTurma</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginAluno</servlet-name>
+        <url-pattern>/LoginAluno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidaLoginAluno</servlet-name>
+        <url-pattern>/ValidaLoginAluno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginProfessor</servlet-name>
+        <url-pattern>/LoginProfessor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidaLoginProfessor</servlet-name>
+        <url-pattern>/ValidaLoginProfessor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

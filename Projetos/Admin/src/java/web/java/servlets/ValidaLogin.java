@@ -32,8 +32,7 @@ public class ValidaLogin extends HttpServlet {
             } else 
             if (Banco.conecta() != null) {
                 StringBuilder encriptaSenha = new StringBuilder(GeraValor.geraSenhaEncriptado(senha));
-                out.print(senha);
-                out.print(encriptaSenha);
+                
                 if (Banco.authenticaLogin(login, encriptaSenha)) {
                     if (SessaoAdmin.criaSessao(request, login)) {
                         response.sendRedirect("/index.jsp");

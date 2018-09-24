@@ -84,8 +84,8 @@
                             </div>
 
                             <div class="login-footer">
-                                <strong>Entrar como&nbsp;<a href="#">Professor</a></strong>
-                                <strong>&nbsp;|&nbsp;&nbsp;Entrar como&nbsp;<a href="#">Aluno</a></strong>
+                                <strong>Entrar como&nbsp;<a href="/loginProfessor">Professor</a></strong>
+                                <strong>&nbsp;|&nbsp;&nbsp;Entrar como&nbsp;<a href="/loginAluno">Aluno</a></strong>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
 
         <footer class="wrapper-login-footer">
             <div class="wrapper-version">
-                <b>Versão</b> 1.7.6
+                <b>Versão</b> 1.0.5
             </div>
 
             <strong>2018 <a href="#popup-login-msg">SchoolShare</a>.</strong>

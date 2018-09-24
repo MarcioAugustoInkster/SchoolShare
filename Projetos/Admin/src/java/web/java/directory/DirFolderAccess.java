@@ -10,17 +10,27 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author Marcio Augusto Schlosser
+    Document   : DirFolderAccess
+    Created on : 12/07/2018, 09:12:32
+    Author     : Marcio Augusto Schlosser
  */
 public class DirFolderAccess {
+
     public String uploadFullPath(HttpServletRequest request) {
         Path path = Paths.get(request.getServletContext().getRealPath(File.separator));
         path = path.getParent().getParent();
-        
-        return path.toAbsolutePath() + File.separator + "arquivos" + File.separator ;
+
+        return path.toAbsolutePath() + File.separator + "arquivos" + File.separator;
     }
-    
+
     public String caminhoCursos(HttpServletRequest request, String repo) {
+        Path path = Paths.get(request.getServletContext().getRealPath(File.separator));
+        path = path.getParent().getParent();
+
+        return path.toAbsolutePath() + File.separator + "arquivos" + File.separator + repo + File.separator;
+    }
+
+    public String caminhoTurmas(HttpServletRequest request, String repo) {
         Path path = Paths.get(request.getServletContext().getRealPath(File.separator));
         path = path.getParent().getParent();
         
@@ -28,7 +38,7 @@ public class DirFolderAccess {
     }
 
     public static boolean diretorioVazio(final Path dir) throws IOException {
-        try(DirectoryStream<Path> caminho = Files.newDirectoryStream(dir)) {
+        try (DirectoryStream<Path> caminho = Files.newDirectoryStream(dir)) {
             return !caminho.iterator().hasNext();
         }
     }
@@ -47,7 +57,7 @@ public class DirFolderAccess {
                     // A recursão irá ler até o final do diretório e 
                     // trazer a listagem. O loop continuará a verificar
                     // outros diretórios dentro
-                    
+
                     if (myResult == null) {
                         // Continua execuç~so
                         continue;

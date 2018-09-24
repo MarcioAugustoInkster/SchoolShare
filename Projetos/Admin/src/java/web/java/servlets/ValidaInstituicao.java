@@ -2,6 +2,7 @@ package web.java.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,14 +31,26 @@ public class ValidaInstituicao extends HttpServlet {
 
             response.setContentType("text/html;charset=UTF-8");
             
-            String nome = request.getParameter("formInstitutionName"), 
+            String inst = request.getParameter("formInstitutionName"), 
                 endereco = request.getParameter("formInstitutionAddress"), 
                 numero = request.getParameter("formInstitutionNumber"), 
                 bairro = request.getParameter("formInstitutionDistrict"), 
                 cidade = request.getParameter("formInstitutionCity"),
                 estado = request.getParameter("formInstitutionState");
+            
+            byte[] convInstituicao = inst.getBytes(StandardCharsets.ISO_8859_1);
+            inst = new String(convInstituicao, StandardCharsets.UTF_8);
+            
+            byte[] convEndereco = endereco.getBytes(StandardCharsets.ISO_8859_1);
+            endereco = new String(convEndereco, StandardCharsets.UTF_8);
+            
+            byte[] convBairro = bairro.getBytes(StandardCharsets.ISO_8859_1);
+            bairro = new String(convBairro, StandardCharsets.UTF_8);
+            
+            byte[] convCidade = cidade.getBytes(StandardCharsets.ISO_8859_1);
+            cidade = new String(convCidade, StandardCharsets.UTF_8);
 
-            instituicao.setInstituicao(nome);
+            instituicao.setInstituicao(inst);
             instituicao.setEndereco(endereco);
             instituicao.setNumero(numero);
             instituicao.setBairro(bairro);

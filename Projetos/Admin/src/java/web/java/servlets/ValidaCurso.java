@@ -2,6 +2,7 @@ package web.java.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,13 +24,16 @@ public class ValidaCurso extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         
+        response.setContentType("text/html;charset=UTF-8");
+        
         try {
             CursoBean curso = new CursoBean();
 
-            response.setContentType("text/html;charset=UTF-8");
-            
             int idInstituicao = Integer.parseInt(request.getParameter("selectCursoInstituicao"));
             String nomeCurso = request.getParameter("campoCursoNome");
+            
+            byte[] convCurso = nomeCurso.getBytes(StandardCharsets.ISO_8859_1);
+            nomeCurso = new String(convCurso, StandardCharsets.UTF_8);
             
             curso.setIdInstituicao(idInstituicao);
             curso.setCurso(nomeCurso);

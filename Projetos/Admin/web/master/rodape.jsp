@@ -7,7 +7,7 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Versão Beta</b> 1.1.2
+        <b>Versão Beta</b> 1.0.5
     </div>
     <strong>2018 <a href="#">SchoolShare</a>.</strong> Nenhum direito reservado.
 </footer>

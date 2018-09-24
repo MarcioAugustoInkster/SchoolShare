@@ -51,6 +51,19 @@
             </div>
         </div>
     </div>
+    
+    <div class="col-default-guide-sh" onclick="onRepoTeacher();">
+        <div class="content-inside-title">
+            <label>Professor</label>
+        </div>
+        <div class="content-inside-box">
+            <div class="box-body">
+                <span class="info-box-icon bg-red-gradient">
+                    <i class="fa fa-folder-open"></i>
+                </span>
+            </div>
+        </div>
+    </div>
 </section>
 
 <%@include file="/master/rodape.jsp" %>

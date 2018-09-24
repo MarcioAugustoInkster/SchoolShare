@@ -2,33 +2,6 @@
     Created on : 26/08/2018, 18:50:04
     Author     : Freakazed-PC
 */
-/*
-.listaArquivo {
-    margin-top: 16px;
-    padding: 20px;
-    background-color: #f2f3f4;
-    width: auto;
-    border: 2px solid #ccc;
-}
-
-.table-files tr > th, .table-files tr > td {
-    border: 1px solid #ccc;
-    padding: 2px 6px;
-    text-align: center;
-}
-
-.table-files tr > th {
-    text-transform: uppercase;
-}
-
-.table-files tr:nth-child(even) {
-    background-color: #ccd1d1;
-}
-
-.table-files tr > td {
-    cursor: pointer;
-}
-*/
 
 .class-folder-list {
     border-left: 6px solid #ccc;

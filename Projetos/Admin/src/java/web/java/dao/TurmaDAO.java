@@ -20,21 +20,21 @@ public class TurmaDAO {
         Connection coneccao = Banco.conecta();
 
         if (coneccao != null) {
-            String sql = "INSERT INTO turma ";
-            sql += "(professor_id, curso_id, turma, data_inicio, data_final, carga_horaria) ";
-            sql += "VALUES (?, ?, ?, ?, ?, ?)";
-
+            String sqlTurma = "INSERT INTO turma ";
+            sqlTurma += "(pessoa_id, curso_id, turma, data_inicio, data_final, carga_horaria) ";
+            sqlTurma += "VALUES (?, ?, ?, ?, ?, ?)";
+            
             try {
-                PreparedStatement pstmt = coneccao.prepareStatement(sql);
+                PreparedStatement pstmtTurma = coneccao.prepareStatement(sqlTurma);
 
-                pstmt.setInt(1, turma.getProfessorId());
-                pstmt.setInt(2, turma.getCursoId());
-                pstmt.setString(3, turma.getTurma());
-                pstmt.setString(4, turma.getDataInicio());
-                pstmt.setString(5, turma.getDataFinal());
-                pstmt.setShort(6, turma.getCargaHoraria());
+                pstmtTurma.setInt(1, turma.getProfessorId());
+                pstmtTurma.setInt(2, turma.getCursoId());
+                pstmtTurma.setString(3, turma.getTurma());
+                pstmtTurma.setString(4, turma.getDataInicio());
+                pstmtTurma.setString(5, turma.getDataFinal());
+                pstmtTurma.setShort(6, turma.getCargaHoraria());
 
-                pstmt.execute();
+                pstmtTurma.execute();
 
                 return true;
             } catch (Exception ex) {
@@ -50,9 +50,9 @@ public class TurmaDAO {
         List<TurmaBean> listaTurma = new ArrayList<>();
 
         try {
-            String sql = "SELECT p.nome, p.sobrenome, c.curso, t.turma, t.data_inicio, ";
+            String sql = "SELECT p.nome, p.sobrenome, c.curso, t.id, t.turma, t.data_inicio, ";
             sql += "t.data_final, t.carga_horaria FROM turma t INNER JOIN pessoa p ";
-            sql += "ON p.id = t.professor_id INNER JOIN curso c ON c.id = t.curso_id ";
+            sql += "ON p.id = t.pessoa_id INNER JOIN curso c ON c.id = t.curso_id ";
             sql += "ORDER BY t.turma";
 
             Statement stmt = Banco.conecta().createStatement();
@@ -66,6 +66,7 @@ public class TurmaDAO {
                 CursoBean curso = new CursoBean();
                 
                 // Seleciona registros da tabela Turma
+                turma.setId(rs.getInt("t.id"));
                 turma.setTurma(rs.getString("t.turma"));
                 turma.setDataInicio(rs.getString("t.data_inicio"));
                 turma.setDataFinal(rs.getString("t.data_final"));
