@@ -19,7 +19,7 @@
     <table id="lista-nota" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th style="text-align: center">Turma</th>
+                <th class="col-sm-1"style="text-align: center">Turma</th>
                 <th style="text-align: center">Nome</th>
                 <th style="text-align: center">1° bim</th>
                 <th style="text-align: center">2° bim</th>
