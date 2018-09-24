@@ -1,5 +1,5 @@
 
-package web.paginas;
+package web.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ import web.dao.AlunoDAO;
 public class AlunoStore extends HttpServlet{
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
        String nome= req.getParameter("nome");
        String sobrenome= req.getParameter("sobrenome");
