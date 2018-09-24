@@ -1,3 +1,8 @@
+<%-- 
+    Document   : SchoolShare
+    Created on : Um dia qualquer...
+    Author     : Daiana
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="web.java.mapping.ListagemArquivos"%>

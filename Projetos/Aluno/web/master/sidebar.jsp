@@ -1,6 +1,6 @@
-<%-- 
-    Document   : cadastroDaiana
-    Created on : 03/09/2018, 08:24:29
+<<%-- 
+    Document   : SchoolShare
+    Created on : Um dia qualquer...
     Author     : Daiana
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
