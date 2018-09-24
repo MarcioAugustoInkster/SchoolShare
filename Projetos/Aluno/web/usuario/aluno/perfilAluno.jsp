@@ -14,7 +14,7 @@
 
 
 
- <%AlunoBean aluno =new AlunoBean(); %>
+ <%AlunoBean aluno = new AlunoBean(); %>
  
         <title>SchoolShare | Perfil</title>
    
