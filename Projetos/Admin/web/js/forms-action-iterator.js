@@ -15,7 +15,7 @@ function onInstituitionList() {
 }
 
 /**
- *  Funções de controle páginas Instituição
+ *  Funções de controle páginas Curso
  */
 
 function onCourseIndex() {
@@ -44,6 +44,22 @@ function onTeacherRegister() {
 
 function onTeacherList() {
     window.location.href = "/admin/listaProfessor.jsp";
+}
+
+/**
+ *  Funções de controle de páginas Alunos
+ */
+
+function onStudentIndex() {
+    window.location.href = "/admin/alunoIndex.jsp";
+}
+
+function onStudentRegister() {
+    window.location.href = "/admin/cadastroAluno.jsp";
+}
+
+function onStudentList() {
+    window.location.href = "/admin/listaAluno.jsp";
 }
 
 /**

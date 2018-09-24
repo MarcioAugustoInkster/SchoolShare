@@ -73,12 +73,10 @@
         {placeholder: '___'});
     });
 </script>
-<<<<<<< HEAD
+
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
 <script type="text/javascript" src="/js/load-contents.js"></script>
 <!-- Usa Modal para carregar conteúdos á tela -->
 <script type="text/javascript" src="/js/modal-table.js"></script>
-=======
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
->>>>>>> 050ead6904763814c6fbaee8d6692e277a0bf8f7

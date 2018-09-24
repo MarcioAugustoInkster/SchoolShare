@@ -1,0 +1,21 @@
+/* 
+    Created on : 24/09/2018, 19:07:47
+    Author     : Freakazed-PC
+*/
+
+.ink-header-top {
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    padding-top: 0;
+    padding-bottom: 12px;
+    background-color: #f2f2f2;
+}
+.ink-header-top h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1%;
+    margin-left: 30px;
+    font-weight: bold;
+    font-family: Candara;
+}

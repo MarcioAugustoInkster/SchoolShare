@@ -44,14 +44,12 @@
 <!-- Scroll Style for Table components -->
 <link rel="stylesheet" href="/css/scrollable-table.css">
 <!-- Estilos da lista repositórios existentes -->
-<<<<<<< HEAD
 <link rel="stylesheet" href="/css/arquivo.css">
 <!-- Datatables -->
 <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
 <!-- Estilos dinámicos de componentes -->
 <link rel="stylesheet" type="text/css" href="/css/componentes-dinamicos.css">
 <!-- Estilização para calendário de Eventos -->
-
-=======
 <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
->>>>>>> 050ead6904763814c6fbaee8d6692e277a0bf8f7
+<!-- Estilos personalizados para páginas -->
+<link rel="stylesheet" href="/css/general-contents.css">
