@@ -15,7 +15,7 @@
 
 <!-- tabela notas -->
 <%  List<NotaBean> Notas = new NotaDAO().obterNota();%>
-<<<<<<< HEAD
+
 <div class="col-md-10">
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
@@ -33,7 +33,7 @@
                 <th style="text-align: center">3° bim</th>
                 <th style="text-align: center">4° bim</th>
                 <th style="text-align: center">Frequencia</th>
-<<<<<<< HEAD
+
                 <th style="text-align: center">Editar/Excluir</th>
 =======
 >>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
@@ -48,7 +48,7 @@
                 <th><%=notaAlunos.getNota3()%></th>
                 <th><%=notaAlunos.getNota4()%></th>
                 <th><%=notaAlunos.getFrequencia()%></th>
-<<<<<<< HEAD
+
 
                 <th>
                     <a button type="submit" style="margin-left: 27%" id="botao_excluir" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
@@ -62,7 +62,7 @@
         </tbody>
         <tfoot>
             <tr>
-<<<<<<< HEAD
+
 =======
                 <th style="text-align: center">Turma</th>
 >>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
@@ -72,7 +72,7 @@
                 <th style="text-align: center">3° bim</th>
                 <th style="text-align: center">4° bim</th>
                 <th style="text-align: center">Frequencia</th>
-<<<<<<< HEAD
+
                 <th style="text-align: center">Editar/Excluir</th>>
 =======
 >>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
@@ -81,7 +81,7 @@
     </table>
 </div>
 
-<<<<<<< HEAD
+
 =======
 
 >>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d

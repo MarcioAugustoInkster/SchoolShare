@@ -51,8 +51,7 @@
 <link rel="stylesheet" type="text/css" href="/css/componentes-dinamicos.css">
 <!-- Estilização para calendário de Eventos -->
 <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
-<<<<<<< HEAD
 <!-- Estilos personalizados para páginas -->
 <link rel="stylesheet" href="/css/general-contents.css">
-=======
->>>>>>> 7c423b8b27046a857a58411049dfc9519962ef98
+
+
