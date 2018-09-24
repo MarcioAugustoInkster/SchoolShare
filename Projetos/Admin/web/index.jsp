@@ -97,19 +97,11 @@
     </div>
 </div>
 
-<div class="col-default-guide-sh" onclick="onFrequencyIndex();">
-    <div class="content-inside-title">
-        <label>Frequencia</label>
-    </div>
-    <div class="content-inside-box">
-        <div class="box-body">
-            <span class="info-box-icon bg-red-gradient">
-                <i class="fa fa-calculator"></i>
-            </span>
-        </div>
-    </div>
-</div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
 <!--
 
 ANOTHER BOX SELECT CONTENT

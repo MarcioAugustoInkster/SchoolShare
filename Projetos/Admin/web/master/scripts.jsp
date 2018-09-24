@@ -78,3 +78,4 @@
 <!-- Usa Modal para carregar conteúdos á tela -->
 <script type="text/javascript" src="/js/modal-table.js"></script>
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
+<script src="/js/admin/lista-nota.js" type="text/javascript"></script>
