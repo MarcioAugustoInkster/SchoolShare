@@ -1,10 +1,10 @@
+<%@page import="web.java.dao.TurmaDAO"%>
+<%@page import="web.java.classe.TurmaBean"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.classe.NotaBean"%>
 <%@page import="web.java.dao.NotaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/master/master.jsp" %>
-<%@include file="/master/scripts.jsp" %>
-<%@include file="/master/css.jsp" %>
 
 <section class="content-header">
     <h1>Cadastro<small>Notas</small></h1>
@@ -16,35 +16,49 @@
 </section>
 <!-- tabela Frequencia -->
 <div class="row">
-    <div class="col-md-11">
+    <div class="col-md-12">
         <div class="box box-primary ">
-            <div class="box-header with-border">
-                
-            </div>
-            <div class="box-bod">
-                <input type="date" id="data" name="data" required="required">
-                <table class="table table-striped tabela-avaliacao">
-                    <thead>
-                        <tr>
-                            <td class="col-md-2"> Nome</td>
-                            <td class="col-md-1"> Seg </td>
-                            <td class="col-md-1"> Ter </td>
-                            <td class="col-md-1"> Qua </td>
-                            <td class="col-md-1"> Qui </td>
-                            <td class="col-md-1"> Sex </td>
-                        </tr>
+            <div class="box-body">
+                <div class="tabela-componentes-chamada">
+                    <label>Calendario</label>
+                    <input class="date" type="date" id="data" name="dataAvaliacao" required="required">
+                    <label>Turma</label>
+
+                    <select class="col-md-1" id="campoTurmaProfessor" name="turmaProfessor"</select>
+                    <%
+                        List<TurmaBean> pessoa = new TurmaDAO().listaTurma();
+
+                        for (TurmaBean lista : pessoa) {
+                    %>
+                    <option value="<%=lista.getId()%>">
+                        <%=lista.getTurma()%>&nbsp;<%=lista.getTurma()%>
+                    </option>
+                    <%
+                        }
+                    %>
+                    </select>
+
+                    <button type="submit" class="btn btn-primary" style="margin-right: 10%">Carregar</button>
+                </div>
+
+                <table class="table table-striped table-bordered" border-style=solid>
+                    <tr>
+                        <th class="col-md-2"> Nome </th>
+                        <th class="col-md-1"> Turma</th>
+                        <th class="col-md-1"> Data</th>
+                        <th class="col-md-1"> Chamada</th>
+                    </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                            <td><input type="radio" class="" id="seg" name="aulaHoje" value=""></td>
-                            <td><input type="radio" class="" id="ter" name="aulaHoje" value=""></td> 
-                            <td><input type="radio" class="" id="qua" name="aulaHoje" value=""></td> 
-                            <td><input type="radio" class="" id="qui" name="aulaHoje" value=""></td>
-                            <td><input type="radio" class="" id="sex" name="aulaHoje" value=""></td>
+                            <td></td> 
+                            <td></td> 
+                            <td></td>
+                            <td><input type="radio" name="chamada"></td>
+
                         </tr>
 
-                        
+
                         <tr>
                             <td>
                                 <div>Observações</div>
@@ -62,7 +76,7 @@
     </div>
 </div>
 <button type="submit" class="btn btn-primary">Salvar</button>
-    
+
 
 
 </body>
