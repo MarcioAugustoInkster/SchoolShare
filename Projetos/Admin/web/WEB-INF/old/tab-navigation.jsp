@@ -8,21 +8,10 @@
     <div class="tab-content">
         <div class="active tab-pane" id="instituicao">
             <div class="post">
-                <h4>Selecione uma Instituição e crie um repositório</h4>
 
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-info btn-flat">Pesquisar</button>
-                    </span>
-                </div>
             </div>
 
             <div class="post clearfix">
-                <%=InstituicaoDAO.listaInstituicaoRepo()%>
-            </div>
-
-            <div class="post">
 
             </div>
         </div>
@@ -33,56 +22,12 @@
 
                 <div class="input-group input-group-sm">
                     <div class="form-group">
-                        <%
-                            Test test = new Test();
-                            List<String> instituicao = test.findFoldersInDirectory(request);
-                        %>
-                        <select class="form-control">
-                        <%
-                            for (String folders : instituicao) {
-                        %>
-                            <option value="<%=folders%>"><%=folders%></option>
-                        <%
-                            }
-                        %>
-                        </select>
+
                     </div>
                 </div>
             </div>
 
             <div class="post clearfix">
-                <table id="tabelaProfessor" class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Descrição do Curso</th>
-                            <th><i class="fa fa-check"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%
-                            int count = 1;
-                            String[] cursos = Listas.listaCursosEntra21();
-
-                            for (String lista : cursos) {
-                        %>
-                        <tr>
-                            <td><%=count++%></td>
-                            <td><%=lista%></td>
-                            <td>
-                                <span class="input-group-addon">
-                                    <input type="radio" name="check-row-data">
-                                </span>
-                            </td>
-                        </tr>
-                        <%
-                            }
-                        %>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="post">
 
             </div>
         </div>
@@ -95,23 +40,57 @@
             <div class="post clearfix">
 
             </div>
-
-            <div class="post">
-
-            </div>
         </div>
 
         <div class="tab-pane" id="aluno">
-            <div class="post">
-
+            <div class="form-group">
+                <label for="campoMatriculaAluno">Nome do Aluno a ser cadastrado</label>
+                <input type="text" class="form-control studentName" id="campoMatriculaAluno" 
+                       name="campoMatriculaAluno">
             </div>
 
             <div class="post clearfix">
+                <h4>Pesquise uma Turma na lista</h4>
 
-            </div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" id="searchListStudent"
+                               placeholder="Nome de Aluno...">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat">Pesquisar</button>
+                        </span>
+                    </div>
+                </div>
 
-            <div class="post">
+                <div class="form-group">
+                    <table id="studentList" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Turma</th>
+                                <th>Data Inicio</th>
+                                <th>Data Final</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                                List<TurmaBean> turma = new TurmaDAO().listaTurma();
 
+                                for (TurmaBean listagem : turma) {
+                            %>
+                            <tr>
+                                <td><%=listagem.getId()%></td>
+                                <td class="elementToCopy"><%=listagem.getTurma()%></td>
+                                <td><%=listagem.getDataInicio()%></td>
+                                <td><%=listagem.getDataFinal()%></td>
+                                <td><a class="btn-custom btn-app-custom copyAndPaste">
+                                        <i class="fa fa-user-plus"></i> Acicionar</a></td>
+                            </tr>
+                            <% }%>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

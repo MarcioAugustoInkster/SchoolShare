@@ -196,11 +196,33 @@ INSERT INTO `pessoa` VALUES
 (19,'Gabriel','Ribeiro Souza','M','1992-06-09','gabrielsouza@email.com','(47) 4309-4398','gabriel','5DBE7D079067809BB06F7C80DE78ECB9D914F5735265148CD704F85353FC0B5114EBBFC960539CD3F430E7B12EB3FDC261726BB756BAB9658C6DB6A302913DF1',2,1),
 (20,'Rafaela','Souza Dalanna','F','1991-10-14','rafadalanna@email.com','(47) 4398-3984','rafaela','4E2EDDDBCD873DD39F744A5C646D42BD47C961D7A9C97C1FF23E85D0D39EC86BB147C32217EBFAFFDF6968F55917C5385CBA205B0216AE5CAA1965AAEC9A34B2',3,1);
 
-INSERT INTO `schoolshare`.`curso` (`id`, `instituicao_id`, `curso`) VALUES 
-('1', '1', 'Programação C#'),
-('2', '3', 'Programação JAVA'),
-('3', '2', 'Preparação para Certificação ITIL'),
-('4', '1', 'Java Script e JQuery');
+INSERT INTO `curso` VALUES 
+(1,1,'Preparatório para certificação ITIL'),
+(2,2,'Programação C#'),
+(3,2,'Programação JAVA'),
+(4,1,'Java Script e JQuery'),
+(5,1,'Formação Linux'),
+(6,2,'Lógica de Programação'),
+(7,2,'Desenvolvimento de líderes'),
+(8,1,'Preparatório ITIL V3'),
+(9,1,'Facebook e Instagram para Negócios'),
+(10,2,'Teste de Software - Fundamentos e Prática'),
+(11,2,'Língua Portuguesa em Comunicação Empresarial'),
+(12,1,'Curso Técnico Subsequente em Informática para a Internet'),
+(13,1,'Cursos de Informática Básica'),
+(14,2,'Curso: Administração de Cargos e Salários'),
+(15,2,'Curso de Oratória - Blusoft'),
+(16,1,'MATEMÁTICA FINANCEIRA COM APLICAÇÃO NA HP12C E EXEL'),
+(17,1,'ASSISTENTE ADMINISTRATIVO E FINANCEIRO'),
+(18,1,'CONTABILIDADE COMO INSTRUMENTO DE DECISÃO PARA NÃO CONTADORES - 21H'),
+(19,2,'ESTOQUES - 15H'),
+(20,1,'SUBSTITUIÇÃO TRIBUTÁRIA - ICMS - 24h'),
+(21,2,'Gerenciamento de Projetos com MS Project'),
+(22,2,'Formação Web Design e Develop'),
+(23,2,'Curso de eletrônica Layout de Placas'),
+(24,2,'Curso Eletrônica Arduino Básico'),
+(25,1,'PCP - CONCEITOS GERAIS DE PROGRAMAÇÃO E CONTROLE DA PRODUÇÃO - 12H'),
+(26,2,'PRÁTICAS NA APURAÇÃO DE CUSTOS INDUSTRIAIS');
 
 INSERT INTO `schoolshare`.`turma` (`id`, `pessoa_id`, `curso_id`, `turma`, `data_inicio`, `data_final`, `carga_horaria`) VALUES 
 ('1', '2', '3', 'ITIL-01', '01/03/2018', '01/10/2018', '200'),

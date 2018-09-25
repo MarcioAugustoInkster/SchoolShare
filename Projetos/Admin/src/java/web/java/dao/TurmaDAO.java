@@ -50,10 +50,10 @@ public class TurmaDAO {
         List<TurmaBean> listaTurma = new ArrayList<>();
 
         try {
-            String sql = "SELECT p.nome, p.sobrenome, c.curso, t.id, t.turma, t.data_inicio, ";
-            sql += "t.data_final, t.carga_horaria FROM turma t INNER JOIN pessoa p ";
-            sql += "ON p.id = t.pessoa_id INNER JOIN curso c ON c.id = t.curso_id ";
-            sql += "ORDER BY t.turma";
+            String sql = "SELECT p.nome, p.sobrenome, c.curso, t.id, t.turma, ";
+                sql += "t.data_inicio, t.data_final, t.carga_horaria FROM turma t ";
+                sql += "INNER JOIN pessoa p ON t.pessoa_id = p.id INNER JOIN curso c ";
+                sql += "ON t.curso_id = c.id";
 
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
