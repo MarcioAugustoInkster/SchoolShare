@@ -41,39 +41,6 @@
 <script src="/js/jquery-3.3.1.js"></script>
 <script src="/js/jquery.dataTables.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("input[name='professorAnoNascimento']").mask('00/00/0000', 
-        {placeholder: '__/__/____'});
-    });
-    
-    $(document).ready(function() {
-        $("input[name='alunoAnoNascimento']").mask('00/00/0000', 
-        {placeholder: '__/__/____'});
-    });
-    
-    $(document).ready(function() {
-        $("input[name='professorTelefone']").mask('(00) 0000-0000', 
-        {placeholder: '(__) ____-____'});
-    });
-    
-    $(document).ready(function() {
-        $("input[name='turmaDataInicio']").mask('00/00/0000', 
-        {placeholder: '__/__/____'});
-    });
-    
-    $(document).ready(function() {
-        $("input[name='turmaDataFinal']").mask('00/00/0000', 
-        {placeholder: '__/__/____'});
-    });
-    
-    $(document).ready(function() {
-        $("input[name='turmaCargaHora']").mask('000', 
-        {placeholder: '___'});
-    });
-</script>
-
-
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
 <script type="text/javascript" src="/js/load-contents.js"></script>

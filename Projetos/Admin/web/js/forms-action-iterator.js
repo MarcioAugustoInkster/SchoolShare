@@ -130,17 +130,6 @@ function onEnrollmentList() {
     window.location.href = "/admin/listaMatricula.jsp";
 }
 
-/*
- * 
- * @returns Notas de Alunos
- */
-function onNotesIndex() {
-    window.location.href = "/admin/notasIndex.jsp";
-}
-
-function onNotesRegister() {
-    window.location.href = "/admin/notasNovo.jsp";
-}
 
 /**
  *  Funções de controle de páginas Frequencia

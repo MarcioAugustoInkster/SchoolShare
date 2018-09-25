@@ -1,3 +1,5 @@
+<%@page import="web.java.dao.PessoaDAO"%>
+<%@page import="web.java.classe.PessoaBean"%>
 <%@page import="web.java.dao.TurmaDAO"%>
 <%@page import="web.java.classe.TurmaBean"%>
 <%@page import="java.util.List"%>
@@ -19,6 +21,53 @@
             <h3 class="box-title">Lista de Instituições Registradas</h3>
         </div>
         <div class="box-body">
+<<<<<<< HEAD
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchListStudent"
+                       placeholder="Nome de Aluno...">
+            </div>
+
+            <div class="form-group">
+                <form action="/registraMatricula" method="POST">
+                    <div class="form-group">
+                        <select class="form-control" id="selectMatriculaTurma" name="listaMatriculaTurma">
+                            <%
+                                List<TurmaBean> turma = new TurmaDAO().listaTurma();
+
+                                for (TurmaBean listagem : turma) {
+                            %>
+                            <option value="<%=listagem.getId()%>"><%=listagem.getTurma() %></option>                            
+                            <% } %>
+                        </select>
+                    </div>
+
+
+                    <table id="studentList" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome Completo</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                                List<PessoaBean> pessoa = new PessoaDAO().listaAluno();
+
+                                for (PessoaBean listagem : pessoa) {
+                            %>
+                            <tr>
+                                <td><%=listagem.getId()%></td>
+                                <td><%=listagem.getNome() %>&nbsp;<%=listagem.getSobrenome() %></td>
+                                <td><a class="btn-custom btn-app-custom copyAndPaste">
+                                        <i class="fa fa-user-plus"></i> Adicionar</a></td>
+                            </tr>
+                            <% }%>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+=======
             <input type="text" class="form-control" id="searchListStudent"
                    placeholder="Nome de Aluno...">
             <span class="input-group-btn">
@@ -47,11 +96,12 @@
                         <td><%=listagem.getDataInicio()%></td>
                         <td><%=listagem.getDataFinal()%></td>
                         <td><a class="btn-custom btn-app-custom copyAndPaste">
-                                <i class="fa fa-user-plus"></i> Acicionar</a></td>
+                                <i class="fa fa-user-plus"></i> Adicionar</a></td>
                     </tr>
                     <% }%>
                 </tbody>
             </table>
+>>>>>>> e5316023176d6e5758be322ec26b74db5f8435a5
         </div>
     </div>
 </section>
