@@ -131,7 +131,7 @@
         </div>
     </div>
 
-    <div class="col-default-guide-sh" onclick="onNotesIndex();">
+    <div class="col-default-guide-sh" onclick="onNotaIndex();">
         <div class="content-inside-title">
             <label>Avaliação</label>
         </div>

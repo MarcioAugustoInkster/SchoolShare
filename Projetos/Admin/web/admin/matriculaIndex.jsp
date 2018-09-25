@@ -47,7 +47,7 @@
                         <td><%=listagem.getDataInicio()%></td>
                         <td><%=listagem.getDataFinal()%></td>
                         <td><a class="btn-custom btn-app-custom copyAndPaste">
-                                <i class="fa fa-user-plus"></i> Acicionar</a></td>
+                                <i class="fa fa-user-plus"></i> Adicionar</a></td>
                     </tr>
                     <% }%>
                 </tbody>
