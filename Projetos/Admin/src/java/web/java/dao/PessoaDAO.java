@@ -104,8 +104,6 @@ public class PessoaDAO {
                 pessoa.setLogin(rs.getString("login"));
                 pessoa.setTipo(rs.getByte("tipo"));
                 pessoa.setAtivo(rs.getBoolean("ativo"));
-                
-                listaProfessor.add(pessoa);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -155,12 +153,13 @@ public class PessoaDAO {
     public PessoaBean listaUsuarioPorLogin(String login) {
         PessoaBean aluno = null;
         
-        String sql = "SELECT nome, sobrenome, login FROM pessoa WHERE login='" + login + "' AND tipo=3";
+        String sql = "SELECT * FROM pessoa WHERE login='" + login + "' AND tipo=3";
         
         try {
             PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
             
-            pstmt.setString(1, login);
+           pstmt.setString(1, login);
+           
             
             ResultSet rs = pstmt.getResultSet();
             
@@ -177,6 +176,7 @@ public class PessoaDAO {
                 aluno.setLogin(rs.getString("login"));
                 //aluno.setTipo(rs.getByte("tipo"));
                 //aluno.setAtivo(rs.getBoolean("ativo"));
+                pstmt.execute();
 
             }
         } catch (SQLException ex) {
