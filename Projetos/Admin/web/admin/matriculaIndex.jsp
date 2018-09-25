@@ -16,61 +16,42 @@
 <section class="content">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Criar matrícula para Aluno</h3>
+            <h3 class="box-title">Lista de Instituições Registradas</h3>
         </div>
+        <div class="box-body">
+            <input type="text" class="form-control" id="searchListStudent"
+                   placeholder="Nome de Aluno...">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-info btn-flat">Pesquisar</button>
+            </span>
 
-        <div class="col-md-12">
-            <form action="/registroMatricula" method="POST" role="form">
-                <div class="form-group">
-                    <label for="campoMatriculaAluno">Nome do Aluno a ser cadastrado</label>
-                    <input type="text" class="form-control studentName" id="campoMatriculaAluno" 
-                           name="campoMatriculaAluno">
-                </div>
+            <table id="studentList" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Turma</th>
+                        <th>Data Inicio</th>
+                        <th>Data Final</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        List<TurmaBean> turma = new TurmaDAO().listaTurma();
 
-                <div class="post clearfix">
-                    <h4>Pesquise uma Turma na lista</h4>
-
-                    <div class="form-group">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" id="searchListStudent"
-                                   placeholder="Nome de Aluno...">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-info btn-flat">Pesquisar</button>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <table id="studentList" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Código</th>
-                                    <th>Turma</th>
-                                    <th>Data Inicio</th>
-                                    <th>Data Final</th>
-                                    <th>Opções</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%
-                                    List<TurmaBean> turma = new TurmaDAO().listaTurma();
-
-                                    for (TurmaBean listagem : turma) {
-                                %>
-                                <tr>
-                                    <td><%=listagem.getId()%></td>
-                                    <td class="elementToCopy"><%=listagem.getTurma()%></td>
-                                    <td><%=listagem.getDataInicio()%></td>
-                                    <td><%=listagem.getDataFinal()%></td>
-                                    <td><a class="btn-custom btn-app-custom copyAndPaste">
-                                            <i class="fa fa-user-plus"></i> Acicionar</a></td>
-                                </tr>
-                                <% }%>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </form>
+                        for (TurmaBean listagem : turma) {
+                    %>
+                    <tr>
+                        <td><%=listagem.getId()%></td>
+                        <td class="elementToCopy"><%=listagem.getTurma()%></td>
+                        <td><%=listagem.getDataInicio()%></td>
+                        <td><%=listagem.getDataFinal()%></td>
+                        <td><a class="btn-custom btn-app-custom copyAndPaste">
+                                <i class="fa fa-user-plus"></i> Acicionar</a></td>
+                    </tr>
+                    <% }%>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
