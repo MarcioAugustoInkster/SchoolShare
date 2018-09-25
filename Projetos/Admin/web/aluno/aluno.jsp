@@ -179,8 +179,11 @@
                                             <textarea class="textAvaliacao form-control area"></textarea>
                                         </td>
                                     </tr>
-                                </tbody>    
+                                </tbody>
                             </table>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
                         </div>
 
                         <div class="form-group">

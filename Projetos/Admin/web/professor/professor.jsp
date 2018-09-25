@@ -46,7 +46,7 @@
                                         <button type="submit"> Cadastrar novo evento </button>
                                     </form>
                                 </div>
-                                
+
                                 <label>Calendário</label>
                                 <button type="button" name="Calendário" id="datepicker">Calendário</button>
                             </div>
@@ -187,8 +187,12 @@
                                             <textarea class="textAvaliacao form-control area"></textarea>
                                         </td>
                                     </tr>
+
                                 </tbody>    
                             </table>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -236,8 +240,8 @@
                             if (SessaoAdmin.verificaSessaoAluno(request, response)) {
                                 meuPerfil = SessaoAdmin.retornaSessao(request);
                                 out.print(meuPerfil);
-                                PessoaBean aluno = new PessoaDAO().listaUsuarioPorLogin(meuPerfil);
-                                out.print(aluno);
+                                PessoaBean professor = new PessoaDAO().listaUsuarioPorLogin(meuPerfil);
+                                out.print(professor);
                         %>
 
                         <h1><%//=aluno.getNome() %> <%//=aluno.getSobrenome() %></h1>
