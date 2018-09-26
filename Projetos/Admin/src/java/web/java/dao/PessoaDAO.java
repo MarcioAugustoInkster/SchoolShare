@@ -104,6 +104,8 @@ public class PessoaDAO {
                 pessoa.setLogin(rs.getString("login"));
                 pessoa.setTipo(rs.getByte("tipo"));
                 pessoa.setAtivo(rs.getBoolean("ativo"));
+                
+                listaProfessor.add(pessoa);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

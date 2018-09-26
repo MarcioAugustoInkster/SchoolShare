@@ -1,7 +1,8 @@
-<!-- jQuery 3 -->
-<!-- JQuery interator for multiple browsers -->
-<script src="/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!-- JQuery 3 interator for multiple browsers -->
 <script src="/js/jquery/jquery-3.3.1.js"></script>
+<script src="/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery-latest.min.js"></script>
+
 <script src="/tema/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="/tema/bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -39,23 +40,27 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/tema/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/tema/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- Adiciona máscara para inputs com formatos especificos -->
-<script src="/js/jquery/jquery.mask.js" type="text/javascript"></script>
-<!-- Acho que não deu certo -->
-<script src="/js/jquery/jquery.dataTables.min.js"></script>
+<!--
+    folder > JS
+-->
 <!-- Age conforme condição selecionada pelo usuário -->
-<!-- JQuery interator for multiple browsers -->
-<script src="/js/jquery.mask.js" type="text/javascript"></script>
-<script src="/js/jquery-3.3.1.js"></script>
-<script src="/js/jquery.dataTables.min.js"></script>
-
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
-<script type="text/javascript" src="/js/load-contents.js"></script>
+<script src="/js/load-contents.js" type="text/javascript"></script>
 <!-- Usa Modal para carregar conteúdos á tela -->
-<script type="text/javascript" src="/js/modal-table.js"></script>
+<script src="/js/modal-table.js" type="text/javascript"></script>
+<!-- 
+    folder > JS/JQUERY 
+-->
 <!-- Remove Autofill em campos input -->
 <script src="/js/jquery/jquery.disableAutoFill.min.js" type="text/javascript"></script>
+<!-- Acho que não deu certo -->
+<script src="/js/jquery/jquery.dataTables.min.js"></script>
+<!-- Adiciona máscara para inputs com formatos especificos -->
+<script src="/js/jquery/jquery.mask.js" type="text/javascript"></script>
+<!-- 
+    folder > JS/ADMIN 
+-->
 <!-- Scripts para validação de página Notas -->
 <script src="/js/admin/lista-nota.js" type="text/javascript"></script>
 <!-- Responsável por passar parámetros ao Servlet -->

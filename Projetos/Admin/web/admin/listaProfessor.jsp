@@ -54,12 +54,12 @@
                             String genero = "";
 
                             if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                                genero = "fa-mars";
+                                genero = "class='fa fa-mars'";
                             } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                                genero = "fa-venus";
+                                genero = "class='fa fa-venus'";
                             }
                         %>
-                        <td><i class="fa <%=genero%>"></i></td>
+                        <td><i <%=genero%>></i></td>
                         <td><%=listagem.getDataDeNascimento()%></td>
                         <td><%=listagem.getEmail()%></td>
                         <td><%=listagem.getTelefone()%></td>

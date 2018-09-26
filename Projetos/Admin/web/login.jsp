@@ -23,7 +23,8 @@
             };
         </script>
 
-        <%            String message = "", asteriscs = "", valida = "";
+        <%
+            String message = "", asteriscs = "", valida = "";
 
             valida = (String) request.getParameter("valida");
 
