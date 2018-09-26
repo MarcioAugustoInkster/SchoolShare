@@ -16,7 +16,7 @@ public class Banco {
 
     private static final String HOST = "jdbc:mysql://localhost/schoolshare";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "my5ql";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
 

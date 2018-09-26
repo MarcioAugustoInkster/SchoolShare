@@ -20,17 +20,15 @@
         <div class="box-header">
             <h3 class="box-title">Lista de Instituições Registradas</h3>
         </div>
-        
-        <div class="box-body">
-<<<<<<< HEAD
-            <div class="form-group">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno"
-                    placeholder="Pesquise na tabela por...">
-            </div>
 
-            <!--<form method="POST" id="formMatricula" name="registraMatricula">-->
+        <div class="box-body">
+            <form method="POST" id="formMatricula" name="registraMatricula">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno"
+                           placeholder="Pesquise na tabela por...">
+                </div>
+
+
                 <div class="form-group">
                     <label>Lista de Turmas</label>
                     <select class="form-control" id="matriculaTurma" name="matriculaTurma">
@@ -45,69 +43,18 @@
                 </div>
 
                 <div class="form-group">
-=======
-<<<<<<< HEAD
-            <div class="form-group">
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-                <input type="text" class="form-control" id="searchListStudent"
-                       placeholder="Nome de Aluno...">
-            </div>
-
-            <div class="form-group">
-                <form action="/registraMatricula" method="POST">
-                    <div class="form-group">
-                        <select class="form-control" id="selectMatriculaTurma" name="listaMatriculaTurma">
-                            <%
-                                List<TurmaBean> turma = new TurmaDAO().listaTurma();
-
-                                for (TurmaBean listagem : turma) {
-                            %>
-                            <option value="<%=listagem.getId()%>"><%=listagem.getTurma() %></option>                            
-                            <% } %>
-                        </select>
-                    </div>
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
                     <table id="studentList" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Código</th>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <th>Nome de Aluno</th>
                                 <th>Gênero</th>
-                                <th>Ativo</th>
-=======
-                                <th>Nome Completo</th>
                                 <th>Opções</th>
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
-                                <th>Nome Completo</th>
-                                <th>Opções</th>
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
-                                <th>Nome Completo</th>
-                                <th>Opções</th>
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
                             </tr>
                         </thead>
                         <tbody>
                             <%
                                 List<PessoaBean> pessoa = new PessoaDAO().listaAluno();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 String genero = "";
 
                                 for (PessoaBean listagem : pessoa) {
@@ -122,88 +69,16 @@
                             %>
                             <tr>
                                 <td><%=listagem.getId()%></td>
-                                <td class="elementToCopy"><%=nomeCompleto %></td>
+                                <td class="elementToCopy"><%=nomeCompleto%></td>
                                 <td><%=genero%></td>
                                 <td><a class="btn-custom btn-app-custom copyAndPaste" id="matricula" name="matricula">
-                                    <i class="fa fa-user-plus"></i> Adicionar</a></td>
-=======
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-
-                                for (PessoaBean listagem : pessoa) {
-                            %>
-                            <tr>
-                                <td><%=listagem.getId()%></td>
-                                <td><%=listagem.getNome() %>&nbsp;<%=listagem.getSobrenome() %></td>
-                                <td><a class="btn-custom btn-app-custom copyAndPaste">
-                                        <i class="fa fa-user-plus"></i> Adicionar</a></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+                                        <i class="fa fa-check-circle"></i> Confirma</a></td>
                             </tr>
                             <% }%>
                         </tbody>
                     </table>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 </div>
-            <!--</form>-->
-=======
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-                </form>
-            </div>
-=======
-            <input type="text" class="form-control" id="searchListStudent"
-                   placeholder="Nome de Aluno...">
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-info btn-flat">Pesquisar</button>
-            </span>
-
-            <table id="studentList" class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Turma</th>
-                        <th>Data Inicio</th>
-                        <th>Data Final</th>
-                        <th>Opções</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        List<TurmaBean> turma = new TurmaDAO().listaTurma();
-
-                        for (TurmaBean listagem : turma) {
-                    %>
-                    <tr>
-                        <td><%=listagem.getId()%></td>
-                        <td class="elementToCopy"><%=listagem.getTurma()%></td>
-                        <td><%=listagem.getDataInicio()%></td>
-                        <td><%=listagem.getDataFinal()%></td>
-                        <td><a class="btn-custom btn-app-custom copyAndPaste">
-                                <i class="fa fa-user-plus"></i> Adicionar</a></td>
-                    </tr>
-                    <% }%>
-                </tbody>
-            </table>
->>>>>>> e5316023176d6e5758be322ec26b74db5f8435a5
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+            </form>
         </div>
     </div>
 </section>

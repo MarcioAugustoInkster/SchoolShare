@@ -39,25 +39,16 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/tema/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/tema/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<<<<<<< HEAD
 <!-- Adiciona máscara para inputs com formatos especificos -->
 <script src="/js/jquery/jquery.mask.js" type="text/javascript"></script>
 <!-- Acho que não deu certo -->
 <script src="/js/jquery/jquery.dataTables.min.js"></script>
 <!-- Age conforme condição selecionada pelo usuário -->
-=======
 <!-- JQuery interator for multiple browsers -->
 <script src="/js/jquery.mask.js" type="text/javascript"></script>
 <script src="/js/jquery-3.3.1.js"></script>
 <script src="/js/jquery.dataTables.min.js"></script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
-=======
->>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 <script src="/js/forms-action-iterator.js" type="text/javascript"></script>
 <!-- Carrega conteúdos dentro de componentes ao acionar eventos -->
 <script type="text/javascript" src="/js/load-contents.js"></script>
