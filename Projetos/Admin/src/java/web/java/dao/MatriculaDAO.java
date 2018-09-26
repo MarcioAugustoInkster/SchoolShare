@@ -2,7 +2,14 @@ package web.java.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import web.java.classe.MatriculaBean;
+import web.java.classe.PessoaBean;
+import web.java.classe.TurmaBean;
 import web.java.conexao.Banco;
 
 /**
@@ -33,5 +40,46 @@ public class MatriculaDAO {
             return true;
         }
         return false;
+    }
+    
+     public List<MatriculaBean> listaMatricula() {
+        List<MatriculaBean> listagem = new ArrayList<>();
+        
+        try {
+            String sql = "SELECT p.nome, p.sobrenome, t.turma, m.data_matricula ";
+                sql += "FROM matricula m INNER JOIN pessoa p ON p.id = m.pessoa_id ";
+                sql += "INNER JOIN turma t ON t.id = m.turma_id";
+            
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                MatriculaBean matricula = new MatriculaBean();
+                PessoaBean pessoa = new PessoaBean();
+                TurmaBean turma = new TurmaBean();
+                
+                // Seleciona registros da tabela Pessoa
+                pessoa.setNome(rs.getString("p.nome"));
+                pessoa.setSobrenome(rs.getString("p.sobrenome"));
+                
+                // Seleciona registros da tabela Turma
+                turma.setTurma(rs.getString("t.turma"));
+                
+                // Seleciona registros da tabela Matricula
+                matricula.setPessoa(pessoa);
+                matricula.setTurma(turma);
+                matricula.setDataMatricula(rs.getString("m.data_matricula"));
+                
+                listagem.add(matricula);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        
+        return listagem;
     }
 }
