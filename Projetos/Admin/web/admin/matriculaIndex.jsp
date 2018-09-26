@@ -19,6 +19,8 @@
     <div class="box">
         <div class="box-body">
             <form action="/registraMatricula" method="POST" id="formMatricula" name="registraMatricula">
+                <input type="hidden" id="idAluno" name="idAluno">
+                
                 <div class="col-md-5">
                     <div class="form-group">
                         <div class="input-group margin">

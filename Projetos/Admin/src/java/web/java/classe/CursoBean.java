@@ -7,6 +7,15 @@ package web.java.classe;
 public class CursoBean extends InstituicaoBean {
     private int id, idInstituicao;
     private String curso;
+    private byte cargaHoraria;
+
+    public byte getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(byte cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
     
     @Override
     public int getId() {

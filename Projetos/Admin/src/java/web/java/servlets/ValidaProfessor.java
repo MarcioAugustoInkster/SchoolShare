@@ -88,7 +88,7 @@ public class ValidaProfessor extends HttpServlet {
                 pessoa.setSenha(pegaSenha);
 
                 if (PessoaDAO.inserePessoa(pessoa)) {
-                    //response.sendRedirect("/inf/success.jsp");
+                    response.sendRedirect("/inf/success.jsp");
                 }
             } else {
                 out.print("<2>Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");

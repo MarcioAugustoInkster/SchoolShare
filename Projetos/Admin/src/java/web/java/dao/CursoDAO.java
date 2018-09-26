@@ -20,13 +20,14 @@ public class CursoDAO {
         
         if (coneccao != null) {
             String sql = "INSERT INTO curso ";
-                sql += "(instituicao_id, curso) VALUES (?, ?)";
+                sql += "(instituicao_id, curso, carga_horaria) VALUES (?, ?, ?)";
 
             try {
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
 
                 pstmt.setInt(1, curso.getIdInstituicao());
                 pstmt.setString(2, curso.getCurso());
+                pstmt.setByte(3, curso.getCargaHoraria());
                 
                 pstmt.execute();
             } catch (Exception ex) {
@@ -43,10 +44,9 @@ public class CursoDAO {
         List<CursoBean> listaCurso = new ArrayList<>();
         
         try {
-            String sql = "SELECT c.id, c.instituicao_id, c.curso, i.instituicao ";
-                sql += "FROM curso c INNER JOIN instituicao i ";
-                sql += "ON c.instituicao_id = i.id ";
-                sql += "ORDER BY c.curso;";
+            String sql = "SELECT c.id, c.instituicao_id, c.curso, c.carga_horaria, ";
+                sql += "i.instituicao FROM curso c INNER JOIN instituicao i ";
+                sql += "ON c.instituicao_id = i.id ORDER BY c.curso;";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -60,6 +60,7 @@ public class CursoDAO {
                 curso.setId(rs.getInt("c.id"));
                 curso.setIdInstituicao(rs.getInt("c.instituicao_id"));
                 curso.setCurso(rs.getString("c.curso"));
+                curso.setCargaHoraria(rs.getByte("c.carga_horaria"));
                 curso.setInstituicao(rs.getString("i.instituicao"));
                 
                 listaCurso.add(curso);

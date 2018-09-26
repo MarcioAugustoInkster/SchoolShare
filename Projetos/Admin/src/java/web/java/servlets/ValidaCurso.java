@@ -31,12 +31,14 @@ public class ValidaCurso extends HttpServlet {
 
             int idInstituicao = Integer.parseInt(request.getParameter("selectCursoInstituicao"));
             String nomeCurso = request.getParameter("campoCursoNome");
+            byte horas = Byte.parseByte(request.getParameter("selectCursoHora"));
             
             byte[] convCurso = nomeCurso.getBytes(StandardCharsets.ISO_8859_1);
             nomeCurso = new String(convCurso, StandardCharsets.UTF_8);
             
             curso.setIdInstituicao(idInstituicao);
             curso.setCurso(nomeCurso);
+            curso.setCargaHoraria(horas);
             
             if (CursoDAO.insereCurso(curso)) {
                 response.sendRedirect("/inf/success.jsp");
