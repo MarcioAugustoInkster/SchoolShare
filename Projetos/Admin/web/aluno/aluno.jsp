@@ -18,9 +18,7 @@
 
 <section class="content">
     <div class="col-md-12">
-<<<<<<< HEAD
         <a href="/perfil">Perfil</a>
-=======
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
@@ -288,7 +286,6 @@
                 </div>
             </div>
         </div>
->>>>>>> 3971a8dc241d000e058b2d5cad5c4e4f297775fc
     </div>
 </section>
 

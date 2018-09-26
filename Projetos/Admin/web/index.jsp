@@ -138,7 +138,7 @@
         <div class="content-inside-box">
             <div class="box-body">
                 <span class="info-box-icon bg-red-gradient">
-                    <i class="fa fa-sticky-note"></i>
+                    <i class="fa fa-check-square-o"></i>
                 </span>
             </div>
         </div>
