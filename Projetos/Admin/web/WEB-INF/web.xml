@@ -88,6 +88,10 @@
         <servlet-name>ValidaLoginProfessor</servlet-name>
         <servlet-class>web.java.servlets.ValidaLoginProfessor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidaMatricula</servlet-name>
+        <servlet-class>web.java.servlets.ValidaMatricula</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -175,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>ValidaLoginProfessor</servlet-name>
         <url-pattern>/ValidaLoginProfessor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidaMatricula</servlet-name>
+        <url-pattern>/ValidaMatricula</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

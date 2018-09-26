@@ -18,3 +18,9 @@
     font-weight: bold;
     font-family: Candara;
 }
+
+.tabela-componentes-chamada label, 
+.tabela-componentes-chamada input,
+.tabela-componentes-chamada button {
+    display: block;
+}

@@ -37,7 +37,7 @@
                     message += "<b>Por favor, preencha com suas credenciais</b>";
                     message += "</span>";
                 }
-                asteriscs = "<label style=\"color:#ff8080;\">&nbsp;*</label>";
+                asteriscs = "<label style=\"color:#ff3333;\">&nbsp;*</label>";
             } else {
                 message = "";
                 asteriscs = "";

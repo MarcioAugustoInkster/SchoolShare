@@ -1,32 +1,9 @@
-<%-- 
-    Document   : SchollShare
-    Created on : Um dia qualquer...
-    Author     : Daiana
---%>
-
-<%@page import="web.java.mapping.ListagemArquivos"%>
-<%@page import="web.java.classe.PessoaBean"%>
-<%@page import="web.java.dao.PessoaDAO"%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%@include file="/master/master.jsp" %>
-
-<section class="content-header">
-    <h1>Portal do Aluno <small>In√≠cio</small></h1>
-</section>
-
-<section class="content">
-    <div class="col-md-12">
-<<<<<<< HEAD
-        <a href="/perfil">Perfil</a>
-=======
-        <div class="nav-tabs-custom">
+<div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#noticias" data-toggle="tab">Not√≠cias</a></li>
-                <li><a href="#calendario" data-toggle="tab">Calend√°rio</a></li>
+                <li class="active"><a href="#noticias" data-toggle="tab">NotÌcias</a></li>
+                <li><a href="#calendario" data-toggle="tab">Calend·rio</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
-                <li><a href="#avaliacao" data-toggle="tab">Avalia√ß√£o</a></li>
+                <li><a href="#avaliacao" data-toggle="tab">AvaliaÁ„o</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
                 <li><a href="#grade" data-toggle="tab">Grade Escolar</a></li>
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
@@ -43,10 +20,10 @@
                     </div>
                 </div>
 
-                <!-- Tab Calend√°rio -->
+                <!-- Tab Calend·rio -->
                 <div class="tab-pane" id="calendario">
                     <div class="post">
-                        <h4>Selecione uma Institui√ß√£o e crie um Curso</h4>
+                        <h4>Selecione uma InstituiÁ„o e crie um Curso</h4>
 
                         <div class="input-group input-group-sm">
                             <div class="form-group">
@@ -79,17 +56,17 @@
 
                             if (file_name != null) {
                                 out.println("<span class=\"span-file-result-done\">Arquivo \"<b>");
-                                out.println(file_name + "</b>\" foi adicionado ao diret√≥rio!</span>");
+                                out.println(file_name + "</b>\" foi adicionado ao diretÛrio!</span>");
                             } else {
                                 out.println("<span class=\"span-file-result-error\">Arquivo \"<b>");
-                                out.println(file_name + "</b>\" n√£o p√¥de ser baixado no diret√≥rio</span>");
+                                out.println(file_name + "</b>\" n„o pÙde ser baixado no diretÛrio</span>");
                             }
                         %>
 
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Op√ß√µes de Arquivos</h3>
+                                    <h3 class="box-title">OpÁıes de Arquivos</h3>
                                 </div>
                                 <div class="box-body">
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
@@ -104,7 +81,7 @@
 
                         <div class="listaArquivo">
                             <%
-                                
+                                out.print(ListagemArquivos.carregaTabelaArquivo());
                             %>
                         </div>
                     </div>
@@ -114,7 +91,7 @@
                     </div>
                 </div>
 
-                <!-- Tab Avalia√ß√£o -->
+                <!-- Tab AvaliaÁ„o -->
                 <div class="tab-pane" id="avaliacao">
                     <div class="post clearfix">
                         <h4>Pesquise uma Turma na lista</h4>
@@ -153,7 +130,7 @@
 
                                     <tr>
                                         <td>
-                                            <div>Postura did√°tica do instrutor?</div>
+                                            <div>Postura did·tica do instrutor?</div>
                                         </td>
                                         <td><input type="radio" class="" id="radioPosturaMB" name="radioPostura" value=""></td> 
                                         <td><input type="radio" class="" id="radioPosturaBom" name="radioPostura" value=""></td>
@@ -173,7 +150,7 @@
 
                                     <tr>
                                         <td>
-                                            <div>Condi√ß√µes f√≠sicas do ambiente?</div>
+                                            <div>CondiÁıes fÌsicas do ambiente?</div>
                                         </td>
                                         <td><input type="radio" class="" id="radioCondicoesMB" name="radioCondicoes" value=""></td>
                                         <td><input type="radio" class="" id="radioCondicoesBom" name="radioCondicoes" value=""></td>
@@ -183,17 +160,14 @@
 
                                     <tr>
                                         <td>
-                                            <div>Observa√ß√µes</div>
+                                            <div>ObservaÁıes</div>
                                         </td>
                                         <td colspan="4">
                                             <textarea class="textAvaliacao form-control area"></textarea>
                                         </td>
                                     </tr>
-                                </tbody>
+                                </tbody>    
                             </table>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
                         </div>
 
                         <div class="form-group">
@@ -245,37 +219,37 @@
                                 out.print(aluno);
                         %>
 
-                        <h1><%//=aluno.getNome() %> <%//=aluno.getSobrenome() %></h1>
+                        <h1><%=aluno.getNome() %> <%=aluno.getSobrenome() %></h1>
 
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Sexo</th>
-                                    <td><i class="fa fa-mars"> <%//=aluno.getSexo() %></td>
+                                    <td><i class="fa fa-mars"> <%=aluno.getSexo()%></td>
                                 </tr>
                                 <tr>
                                     <th>Data Nascimento</th>
-                                    <td>01/01/1990<%//=aluno.getDataDeNascimento() %></td>
+                                    <td><aluno.getDataDeNascimento></td>
                                 </tr>
                                 <tr>
                                     <th>E-Mail</th>
-                                    <td>pedro@email.com<%//=aluno.getEmail() %></td>
+                                    <td><%=aluno.getEmail()%></td>
                                 </tr>
                                 <tr>
                                     <th>Telefone</th>
-                                    <td>(47) 9999-9999<%//=aluno.getTelefone() %></td>
+                                    <td><%=aluno.getTelefone()%></td>
                                 </tr>
                                 <tr>
                                     <th>Login</th>
-                                    <td>pedrinho<%//=aluno.getLogin() %></td>
+                                    <td><%=aluno.getLogin()%></td>
                                 </tr>
                                 <tr>
                                     <th>Tipo</th>
-                                    <td>Aluno<%//=aluno.getTipo() %></td>
+                                    <td><%=aluno.getTipo() %></td>
                                 </tr>
                                 <tr>
                                     <th>Ativo</th>
-                                    <td>Sim<%//=aluno.isAtivo() %></td>
+                                    <td><%=aluno.isAtivo() %></td>
                                 </tr>
                             </thead>
                         </table>
@@ -288,8 +262,3 @@
                 </div>
             </div>
         </div>
->>>>>>> 3971a8dc241d000e058b2d5cad5c4e4f297775fc
-    </div>
-</section>
-
-<%@include file="/master/rodape.jsp" %>

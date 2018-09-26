@@ -15,18 +15,11 @@
 
 <!-- tabela notas -->
 <%  List<NotaBean> Notas = new NotaDAO().obterNota();%>
-
-<div class="col-md-10">
-    <table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-=======
 <div class="col-md-12">
     <table id="lista-nota" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th class="col-sm-1"style="text-align: center">Turma</th>
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
                 <th style="text-align: center">Nome</th>
                 <th style="text-align: center">1° bim</th>
                 <th style="text-align: center">2° bim</th>
@@ -35,8 +28,6 @@
                 <th style="text-align: center">Frequencia</th>
 
                 <th style="text-align: center">Editar/Excluir</th>
-=======
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
             </tr>
         </thead>
         <tbody>
@@ -54,18 +45,13 @@
                     <a button type="submit" style="margin-left: 27%" id="botao_excluir" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success blue'><i class="fas fa-trash"></i></a>
                     <a button type="reset" id="botao_editar" href='/adicionar?id=<%=notaAlunos.getId()%>' class='btn btn-success red'><i class="far fa-edit"></i></a>
                 </th>
-=======
-                
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
             </tr>
             <% }%>
         </tbody>
         <tfoot>
             <tr>
 
-=======
                 <th style="text-align: center">Turma</th>
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
                 <th style="text-align: center">Nome</th>
                 <th style="text-align: center">1° bim</th>
                 <th style="text-align: center">2° bim</th>
@@ -73,16 +59,12 @@
                 <th style="text-align: center">4° bim</th>
                 <th style="text-align: center">Frequencia</th>
 
-                <th style="text-align: center">Editar/Excluir</th>>
-=======
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
+                <th style="text-align: center">Editar/Excluir</th>
             </tr>
         </tfoot>
     </table>
 </div>
 
 
-=======
 
->>>>>>> a71b27a58b77c5228a6457e8da4c3ad6a965180d
 <%@include file="/master/rodape.jsp" %>

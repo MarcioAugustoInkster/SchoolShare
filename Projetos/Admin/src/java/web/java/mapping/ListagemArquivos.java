@@ -24,21 +24,19 @@ public class ListagemArquivos {
     private static List<String> fileExtension;
     private static List<Long> fileSize;
     private static List<String> fileUploaded;
-    private static List<String> fileUser;
     private static HttpServletRequest request;
-    
+
     public static String carregaDadosArquivo() {
         StringBuilder sb = new StringBuilder();
-        
+
         fileName = new ArrayList<>();
         fileExtension = new ArrayList<>();
         fileSize = new ArrayList<>();
         fileUploaded = new ArrayList<>();
-        fileUser = new ArrayList<>();
 
         try {
             DirFolderAccess dfa = new DirFolderAccess();
-            
+
             File dir = new File(dfa.uploadFullPath(request));
             File[] files = dir.listFiles();
 
