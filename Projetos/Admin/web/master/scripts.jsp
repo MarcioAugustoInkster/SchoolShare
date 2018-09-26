@@ -52,6 +52,9 @@
 <script src="/js/jquery.dataTables.min.js"></script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13

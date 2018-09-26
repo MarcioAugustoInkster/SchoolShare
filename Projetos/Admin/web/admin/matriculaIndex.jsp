@@ -25,6 +25,7 @@
 <<<<<<< HEAD
             <div class="form-group">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno"
                     placeholder="Pesquise na tabela por...">
             </div>
@@ -49,6 +50,8 @@
             <div class="form-group">
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
                 <input type="text" class="form-control" id="searchListStudent"
                        placeholder="Nome de Aluno...">
             </div>
@@ -69,6 +72,9 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
@@ -76,6 +82,7 @@
                         <thead>
                             <tr>
                                 <th>Código</th>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                 <th>Nome de Aluno</th>
@@ -89,11 +96,16 @@
                                 <th>Nome Completo</th>
                                 <th>Opções</th>
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
+                                <th>Nome Completo</th>
+                                <th>Opções</th>
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
                             </tr>
                         </thead>
                         <tbody>
                             <%
                                 List<PessoaBean> pessoa = new PessoaDAO().listaAluno();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                 String genero = "";
@@ -117,6 +129,8 @@
 =======
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 
                                 for (PessoaBean listagem : pessoa) {
                             %>
@@ -126,6 +140,9 @@
                                 <td><a class="btn-custom btn-app-custom copyAndPaste">
                                         <i class="fa fa-user-plus"></i> Adicionar</a></td>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
@@ -135,9 +152,12 @@
                     </table>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 </div>
             <!--</form>-->
 =======
+=======
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
                 </form>
@@ -178,6 +198,9 @@
             </table>
 >>>>>>> e5316023176d6e5758be322ec26b74db5f8435a5
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
+=======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
 =======
 >>>>>>> a6a3c2ab62bb1af6d748a6be831c397528829d13
