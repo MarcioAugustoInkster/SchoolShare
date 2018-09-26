@@ -24,7 +24,7 @@
                     <input class="date" type="date" id="data" name="dataAvaliacao" required="required">
                     <label>Turma</label>
 
-                    <select class="col-md-1" id="campoTurmaProfessor" name="turmaProfessor"</select>
+                    <select class="col-md-1" id="campoTurmaProfessor" name="turmaProfessor">
                     <%
                         List<TurmaBean> pessoa = new TurmaDAO().listaTurma();
 
@@ -41,7 +41,8 @@
                     <button type="submit" class="btn btn-primary" style="margin-right: 10%">Carregar</button>
                 </div>
 
-                <table class="table table-striped table-bordered" border-style=solid>
+                <table class="table table-striped table-bordered">
+                    <thead>
                     <tr>
                         <th class="col-md-2"> Nome </th>
                         <th class="col-md-1"> Turma</th>

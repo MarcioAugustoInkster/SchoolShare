@@ -1,11 +1,9 @@
 $(document).ready(function () {
-    $(".copyAndPaste").click(function () {
+    const $input = $('#matriculaAluno');
 
-        const $selects = $('#matriculaTurma');
-        const $input = $('#matriculaAluno');
-        
-        const $selectOne = $selects.eq(0);
+    $('#listaMatricula tbody').on('click', 'tr', function () {
+        var aluno = $(this).find("td").eq(1).text();
 
-        $input.val(`${$selectOne.find(':selected').text()}`);
+        $input.val(`${aluno}`);
     });
 });

@@ -1,34 +1,3 @@
-
-$(document).ready(function () {
-    $("input[name='professorAnoNascimento']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-$(document).ready(function () {
-    $("input[name='alunoAnoNascimento']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-$(document).ready(function () {
-    $("input[name='professorTelefone']").mask('(00) 0000-0000',
-            {placeholder: '(__) ____-____'});
-});
-
-$(document).ready(function () {
-    $("input[name='turmaDataInicio']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-$(document).ready(function () {
-    $("input[name='turmaDataFinal']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-$(document).ready(function () {
-    $("input[name='turmaCargaHora']").mask('000',
-            {placeholder: '___'});
-});
-
 $(document).ready(function () {
     $("#listaEntidades").on('change', function () {
         var value = $(this).val();
@@ -81,9 +50,5 @@ $(document).ready(function ($) {
             {placeholder: '__/__/____'});
 });
 
-$(document).ready(function ($) {
-    $("input[name='turmaCargaHora']").mask('000',
-            {placeholder: '___'});
-});
 
 

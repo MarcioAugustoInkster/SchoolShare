@@ -18,16 +18,16 @@ public class ValidaMatricula extends HttpServlet {
     private PrintWriter out;
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
         
-        int id = Integer.parseInt(request.getParameter("id"));
+        String aluno = request.getParameter("matriculaAluno");
         String turma = request.getParameter("matriculaTurma");
         
-        retornaMatriculaLista(turma);
+        //retornaMatriculaLista(turma);
         
     }
     
@@ -36,7 +36,7 @@ public class ValidaMatricula extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");

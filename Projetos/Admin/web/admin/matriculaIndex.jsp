@@ -17,33 +17,37 @@
 
 <section class="content">
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Lista de Instituições Registradas</h3>
-        </div>
-
         <div class="box-body">
-            <form method="POST" id="formMatricula" name="registraMatricula">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno"
-                           placeholder="Pesquise na tabela por...">
+            <form action="/registraMatricula" method="POST" id="formMatricula" name="registraMatricula">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <div class="input-group margin">
+                            <input type="text" class="form-control" id="matriculaAluno" name="matriculaAluno"
+                               placeholder="Pesquise na tabela por...">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-block btn-primary">
+                                    Matricular&nbsp;<i class="fa fa-user-plus"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Escolha uma Turma</label>
+                        <select class="form-control" id="matriculaTurma" name="matriculaTurma">
+                            <%
+                                List<TurmaBean> turma = new TurmaDAO().listaTurma();
+
+                                for (TurmaBean listagem : turma) {
+                            %>
+                            <option value="<%=listagem.getId()%>"><%=listagem.getTurma()%></option>
+                            <% }%>
+                        </select>
+                    </div>
                 </div>
 
-
                 <div class="form-group">
-                    <label>Lista de Turmas</label>
-                    <select class="form-control" id="matriculaTurma" name="matriculaTurma">
-                        <%
-                            List<TurmaBean> turma = new TurmaDAO().listaTurma();
-
-                            for (TurmaBean listagem : turma) {
-                        %>
-                        <option value="<%=listagem.getId()%>"><%=listagem.getTurma()%></option>
-                        <% }%>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <table id="studentList" class="table table-bordered table-hover">
+                    <table id="listaMatricula" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Código</th>
