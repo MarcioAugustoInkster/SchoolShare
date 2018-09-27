@@ -182,4 +182,26 @@ public class PessoaDAO {
         }
         return pessoa;
     }
+    
+    public int retornaUsuarioId(String login) {
+        int id = 0;
+        
+        try {
+            String sql = "SELECT id FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=3";
+            
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                id = rs.getInt("id");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return id;
+    }
 }

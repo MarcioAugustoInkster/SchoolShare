@@ -64,5 +64,4 @@ public class NotaBean {
     public void setFrequencia(double frequencia) {
         this.frequencia = frequencia;
     }
-    
 }
