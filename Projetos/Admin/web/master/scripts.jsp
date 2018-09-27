@@ -49,6 +49,8 @@
 <script src="/js/load-contents.js" type="text/javascript"></script>
 <!-- Usa Modal para carregar conteúdos á tela -->
 <script src="/js/modal-table.js" type="text/javascript"></script>
+<!-- Validação de componentes para formulários -->
+<script src="/js/validacao-componentes.js" type="text/javascript"></script>
 <!-- 
     folder > JS/JQUERY 
 -->
