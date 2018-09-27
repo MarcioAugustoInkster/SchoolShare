@@ -49,10 +49,10 @@ public class DataFormatter {
     }
     
     public static String converteStringToDate(String valor) throws ParseException {
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         date = df.parse(valor);
-        DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
         
         return df1.format(date);
     }

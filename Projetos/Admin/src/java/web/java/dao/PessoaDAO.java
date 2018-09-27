@@ -152,27 +152,34 @@ public class PessoaDAO {
         return listaAluno;
     }
     
-    public PessoaBean listaUsuarioPorLogin(String login) {
-        PessoaBean aluno = null;
-        
-        String sql = "SELECT nome FROM pessoa WHERE login='pedro' AND tipo=3";
+    public PessoaBean listaAlunoPorLogin(String login) {
+        PessoaBean pessoa = null;
         
         try {
-            PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
-            pstmt.setString(1, login);
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, email, telefone, login ";
+                sql += "FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=3";
             
-            ResultSet rs = pstmt.getResultSet();
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
             
             while (rs.next()) {
-                aluno = new PessoaBean();
+                pessoa = new PessoaBean();
                 
-                aluno.setNome(rs.getString("nome"));
+                pessoa.setId(rs.getInt("id"));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
+                pessoa.setEmail(rs.getString("email"));
+                pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setLogin(rs.getString("login"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             Banco.fecharBanco();
         }
-        return aluno;
+        return pessoa;
     }
 }

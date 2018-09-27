@@ -46,7 +46,7 @@ public class MatriculaDAO {
         List<MatriculaBean> listagem = new ArrayList<>();
         
         try {
-            String sql = "SELECT p.nome, p.sobrenome, t.turma, m.data_matricula ";
+            String sql = "SELECT p.nome, p.sobrenome, p.sexo, t.turma, m.data_matricula ";
                 sql += "FROM matricula m INNER JOIN pessoa p ON p.id = m.pessoa_id ";
                 sql += "INNER JOIN turma t ON t.id = m.turma_id";
             
@@ -63,6 +63,7 @@ public class MatriculaDAO {
                 // Seleciona registros da tabela Pessoa
                 pessoa.setNome(rs.getString("p.nome"));
                 pessoa.setSobrenome(rs.getString("p.sobrenome"));
+                pessoa.setSexo(rs.getString("p.sexo").charAt(0));
                 
                 // Seleciona registros da tabela Turma
                 turma.setTurma(rs.getString("t.turma"));

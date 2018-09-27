@@ -17,8 +17,7 @@
 </section>
 
 <section class="content">
-    <div class="col-md-12">
-        <a href="/perfil">Perfil</a>
+    <div class="col-md-8">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
@@ -32,7 +31,9 @@
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
                 -->
             </ul>
-            <%@include file="/aluno/tabs/perfil.jsp" %>%>
+            <%@include file="/aluno/tabs/perfil.jsp" %>
+            
+            
         </div>
     </div>
 </section>
