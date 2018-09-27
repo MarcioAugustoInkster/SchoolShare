@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 
-                <li class="dropdown user user-menu">
+                <li class="dropdown user user-menu" title="Encerrar Sessão">
                     <a href="/validaLogin">
                         <i class="fa fa-power-off"></i>
                     </a>

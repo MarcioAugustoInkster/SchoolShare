@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `schoolshare`.`pessoa` (
   `login` VARCHAR(20) NOT NULL,
   `senha` VARCHAR(255) NOT NULL,
   `tipo` TINYINT(1) NOT NULL,
-  `ativo` TINYINT(1) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -241,6 +241,15 @@ INSERT INTO `schoolshare`.`turma` (`id`, `pessoa_id`, `curso_id`, `turma`, `data
 ('3', '13', '11', 'LGPT-01', '01/03/2018', '01/08/2018', '80'),
 ('4', '19', '24', 'ARDU-01', '01/03/2018', '01/08/2018', '90'),
 ('5', '13', '9', 'FBIN-01', '01/03/2018', '01/08/2018', '124');
+
+INSERT INTO `matricula` VALUES 
+(1,20,3,'26/09/2018'),
+(2,11,2,'26/09/2018'),
+(3,10,5,'26/09/2018'),
+(4,16,3,'26/09/2018'),
+(5,12,4,'26/09/2018'),
+(6,9,2,'26/09/2018');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

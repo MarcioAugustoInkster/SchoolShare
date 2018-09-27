@@ -50,7 +50,7 @@ public class ValidaMatricula extends HttpServlet {
                 matricula.setDataMatricula(dataMatricula);
                 
                 if (insere.insereMatricula(matricula)) {
-                    response.sendRedirect("/admin/matriculaIndex.jsp");
+                    response.sendRedirect("/admin/cadastroMatricula.jsp");
                 } else {
                     out.print("<h1 style='color:#8b0000;'>Ocorreu um erro ao registrar. Contacte o Administrador</h1>");
                 }

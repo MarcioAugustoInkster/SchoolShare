@@ -12,54 +12,51 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!-- Tab Perfil -->
-<div class="tab-pane" id="perfil">
-    <div class="post clearfix">
-        <div class="user-profile">
-            <%
-                String meuPerfil = "";
 
-                if (SessaoAdmin.verificaSessaoAluno(request, response)) {
-                    meuPerfil = SessaoAdmin.retornaSessao(request);
+<div class="user-profile">
+    <%
+        String meuPerfil = "";
 
-                    PessoaBean pessoa = new PessoaDAO().listaAlunoPorLogin(meuPerfil);
-                    
-                    String anoNascimento = DataFormatter.converteStringToDate(pessoa.getDataDeNascimento());
-            %>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="box box-primary">
-                        <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="/img/users/no-user-set.jpg" alt="User profile picture">
+        if (SessaoAdmin.verificaSessaoAluno(request, response)) {
+            meuPerfil = SessaoAdmin.retornaSessao(request);
 
-                            <h3 class="profile-username text-center">
-                                <%=pessoa.getNome()%>&nbsp;<%=pessoa.getSobrenome()%>
-                            </h3>
+            PessoaBean pessoa = new PessoaDAO().listaAlunoPorLogin(meuPerfil);
 
-                            <p class="text-muted text-center">Software Engineer</p>
+            String anoNascimento = DataFormatter.converteStringToDate(pessoa.getDataDeNascimento());
+    %>
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle" src="/img/users/no-user-set.jpg" alt="User profile picture">
 
-                            <ul class="list-group list-group-unbordered">
-                                <li class="list-group-item">
-                                    <b>Nascido em</b> <a class="pull-right"><%=anoNascimento %></a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>E-mail</b> <a class="pull-right"><%=pessoa.getEmail()%></a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Telefone</b> <a class="pull-right"><%=pessoa.getTelefone()%></a>
-                                </li>
-                                <li class="list-group-item">
-                                    <b>Usuário</b> <a class="pull-right"><%=pessoa.getLogin()%></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h3 class="profile-username text-center">
+                        <%=pessoa.getNome()%>&nbsp;<%=pessoa.getSobrenome()%>
+                    </h3>
+
+                    <p class="text-muted text-center"></p>
+
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Nascido em</b> <a class="pull-right"><%=anoNascimento%></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>E-mail</b> <a class="pull-right"><%=pessoa.getEmail()%></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Telefone</b> <a class="pull-right"><%=pessoa.getTelefone()%></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Usuário</b> <a class="pull-right"><%=pessoa.getLogin()%></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="form-group">
-
-            </div>
-            <% }%>
         </div>
     </div>
+
+    <div class="form-group">
+
+    </div>
+    <% }%>
 </div>
