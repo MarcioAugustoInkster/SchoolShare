@@ -29,7 +29,8 @@
             <table id="tabelaMatricula" class="table table-bordered table-hover">
                 <tr>
                     <th>#</th>
-                    <th>Pessoa</th>
+                    <th>Nome de Aluno</th>
+                    <th>Gênero</th>
                     <th>Turma</th>
                     <th>Matriculado em</th>
                     <th>Opções</th>
@@ -37,12 +38,20 @@
                 <%
                     int counter = 1;
                     List<MatriculaBean> matricula = new MatriculaDAO().listaMatricula();
-                    
+                    String genero = "";
+                    //matriculado.getPessoa().getSexo()
                     for (MatriculaBean matriculado : matricula) {
+                        if (matriculado.getPessoa().getSexo() == 'M' || matriculado.getPessoa().getSexo() == 'm') {
+                            genero = "<i class=\"fa fa-mars\"></i>";
+                        } else 
+                        if (matriculado.getPessoa().getSexo() == 'F' || matriculado.getPessoa().getSexo() == 'f') {
+                            genero = "<i class=\"fa fa-venus\"></i>";
+                        }
                 %>
                 <tr>
                     <td><%=counter++%></td>
                     <td><%=matriculado.getPessoa().getNome() %>&nbsp;<%=matriculado.getPessoa().getSobrenome()%></td>
+                    <td><%=genero %></td>
                     <td><%=matriculado.getTurma().getTurma() %></td>
                     <td><%=matriculado.getDataMatricula() %></td>
                     <td><a class="btn-custom btn-app-custom">

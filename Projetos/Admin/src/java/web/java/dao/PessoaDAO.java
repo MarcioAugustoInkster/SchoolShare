@@ -152,40 +152,34 @@ public class PessoaDAO {
         return listaAluno;
     }
     
-    public PessoaBean listaUsuarioPorLogin(String login) {
-        PessoaBean aluno = null;
-        
-        String sql = "SELECT * FROM pessoa WHERE login='" + login + "' AND tipo=3";
+    public PessoaBean listaAlunoPorLogin(String login) {
+        PessoaBean pessoa = null;
         
         try {
-            PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, email, telefone, login ";
+                sql += "FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=3";
             
-           pstmt.setString(1, login);
-           
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
             
-            ResultSet rs = pstmt.getResultSet();
+            ResultSet rs = stmt.getResultSet();
             
             while (rs.next()) {
-                aluno = new PessoaBean();
+                pessoa = new PessoaBean();
                 
-                //aluno.setId(rs.getInt("id"));
-                aluno.setNome(rs.getString("nome"));
-                aluno.setSobrenome(rs.getString("sobrenome"));
-                //aluno.setSexo(rs.getString("sexo").charAt(0));
-                //aluno.setDataDeNascimento(rs.getString("data_nascimento"));
-                //aluno.setEmail(rs.getString("email"));
-                //aluno.setTelefone(rs.getString("telefone"));
-                aluno.setLogin(rs.getString("login"));
-                //aluno.setTipo(rs.getByte("tipo"));
-                //aluno.setAtivo(rs.getBoolean("ativo"));
-                pstmt.execute();
-
+                pessoa.setId(rs.getInt("id"));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
+                pessoa.setEmail(rs.getString("email"));
+                pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setLogin(rs.getString("login"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             Banco.fecharBanco();
         }
-        return aluno;
+        return pessoa;
     }
 }

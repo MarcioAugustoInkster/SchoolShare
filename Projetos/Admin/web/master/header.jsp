@@ -25,20 +25,12 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span>Bem vindo <b><%= iniciaSessao %></b>!</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="/admin" class="btn btn-default btn-flat">Gerenciar Admin</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="/validaLogin" class="btn btn-default btn-flat">Encerrar Sessão</a>
-                            </div>
-                        </li>
-                    </ul>
                 </li>
                 
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <li class="dropdown user user-menu">
+                    <a href="/validaLogin">
+                        <i class="fa fa-power-off"></i>
+                    </a>
                 </li>
             </ul>
         </div>

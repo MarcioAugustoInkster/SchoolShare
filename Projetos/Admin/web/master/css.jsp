@@ -53,5 +53,6 @@
 <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
 <!-- Estilos personalizados para páginas -->
 <link rel="stylesheet" href="/css/general-contents.css">
-
+<!-- Tabs de formulário Index de Usuário -->
+<link rel="stylesheet" href="/css/tabs-container-layout.css">
 
