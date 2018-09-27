@@ -10,8 +10,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<%@include file="/master/master.jsp" %>
+
 <section class="content-header">
-    <h1>Portal do Aluno <small>Início</small></h1>
+    <h1>Portal do Professor <small>Início</small></h1>
 </section>
 
 <section class="content">
@@ -23,18 +25,13 @@
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
-                <li><a href="#grade" data-toggle="tab">Grade Escolar</a></li>
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
             </ul>
             <div class="tab-content">
                 <!-- Tab Noticias -->
                 <div class="active tab-pane" id="noticias">
-                    <div class="post">
-
-                    </div>
-
                     <div class="post clearfix">
-
+                        <%@include file="/professor/tabs/noticias.jsp" %>
                     </div>
                 </div>
 
@@ -52,7 +49,7 @@
                 <!-- Tab Arquivos -->
                 <div class="tab-pane" id="arquivos">
                     <div class="post">
-                        <%@include file="/aluno/tabs/arquivos.jsp" %>
+                        <%@include file="/professor/tabs/arquivos.jsp" %>
                     </div>
 
                     <div class="post clearfix">
@@ -63,7 +60,7 @@
                 <!-- Tab Avaliação -->
                 <div class="tab-pane" id="avaliacao">
                     <div class="post clearfix">
-                        <%@include file="/aluno/tabs/avaliacao.jsp" %>
+                        <%@include file="/professor/tabs/avaliacao.jsp" %>
                     </div>
                 </div>
 
@@ -71,22 +68,7 @@
                 <div class="tab-pane" id="notas">
                     <div class="post clearfix">
                         <div class="form-group">
-
-                        </div>
-
-                        <div class="form-group">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab Grade Escolar -->
-                <div class="tab-pane" id="grade">
-                    <div class="post clearfix">
-                        <h4>Pesquise uma Turma na lista</h4>
-
-                        <div class="form-group">
-
+                            <%@include file="/professor/tabs/notas.jsp" %>
                         </div>
 
                         <div class="form-group">
@@ -98,7 +80,7 @@
                 <!-- Tab Perfil -->
                 <div class="tab-pane" id="perfil">
                     <div class="post clearfix">
-                        <%@include file="/aluno/tabs/perfil.jsp" %>
+                        <%@include file="/professor/tabs/perfil.jsp" %>
                     </div>
                 </div>
             </div>

@@ -17,10 +17,10 @@
     <%
         String meuPerfil = "";
 
-        if (SessaoAdmin.verificaSessaoAluno(request, response)) {
+        if (SessaoAdmin.verificaSessaoProfessor(request, response)) {
             meuPerfil = SessaoAdmin.retornaSessao(request);
 
-            PessoaBean pessoa = new PessoaDAO().listaAlunoPorLogin(meuPerfil);
+            PessoaBean pessoa = new PessoaDAO().listaProfessorPorLogin(meuPerfil);
 
             String anoNascimento = DataFormatter.converteStringToDate(pessoa.getDataDeNascimento());
     %>

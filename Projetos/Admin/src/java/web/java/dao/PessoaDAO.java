@@ -183,6 +183,37 @@ public class PessoaDAO {
         return pessoa;
     }
     
+    public PessoaBean listaProfessorPorLogin(String login) {
+        PessoaBean pessoa = null;
+        
+        try {
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, email, telefone, login ";
+                sql += "FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=2";
+            
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+            
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                pessoa = new PessoaBean();
+                
+                pessoa.setId(rs.getInt("id"));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
+                pessoa.setEmail(rs.getString("email"));
+                pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setLogin(rs.getString("login"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return pessoa;
+    }
+    
     public int retornaUsuarioId(String login) {
         int id = 0;
         

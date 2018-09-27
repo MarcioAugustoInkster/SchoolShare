@@ -69,7 +69,7 @@
                 <div class="tab-pane" id="notas">
                     <div class="post clearfix">
                         <div class="form-group">
-
+                            <%@include file="/aluno/tabs/notas.jsp" %>
                         </div>
 
                         <div class="form-group">
