@@ -65,3 +65,4 @@
 <script src="/js/admin/lista-nota.js" type="text/javascript"></script>
 <!-- Responsável por passar parámetros ao Servlet -->
 <script src="/js/admin/insert-components-servlet.js" type="text/javascript"></script>
+<script src="/js/admin/chamada-Radio.js" ></script>

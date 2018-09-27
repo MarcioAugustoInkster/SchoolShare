@@ -132,22 +132,6 @@ function onEnrollmentList() {
 
 
 /**
- *  Funções de controle de páginas Frequencia
- */
-
-function onFrequencyIndex() {
-    window.location.href = "/admin/frequenciaIndex.jsp";
-}
-
-function onFrequencyRegister() {
-    window.location.href = "/admin/cadastroFrequencia.jsp";
-}
-
-function onFrequencyList() {
-    window.location.href = "/admin/listaFrequencia.jsp";
-}
-
-/**
  *  Funções de controle para Repositório de Arquivos
  */
 

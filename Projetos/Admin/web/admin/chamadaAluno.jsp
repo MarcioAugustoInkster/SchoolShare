@@ -7,10 +7,10 @@
 <%@include file="/master/master.jsp" %>
 
 <section class="content-header">
-    <h1>Cadastro<small>Notas</small></h1>
+    <h1>Cadastro<small>Chamada</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="/admin/notaIndex.jsp"><i class="fa fa-home"></i> Notas</a></li>
+        <li><a href="/admin/notaIndex.jsp"><i class="fa fa-home"></i> Chamada Aluno</a></li>
         <li class="active">Registrar</li>
     </ol>
 </section>
@@ -21,7 +21,7 @@
             <div class="box-body">
                 <div class="tabela-componentes-chamada">
                     <label>Calendario</label>
-                    <input class="date" type="date" id="data" name="dataAvaliacao" required="required">
+                    <input class="date" type="date" id="data" name="date" required="required">
                     <label>Turma</label>
 
                     <select class="col-md-1" id="campoTurmaProfessor" name="turmaProfessor">
@@ -38,9 +38,10 @@
                     %>
                     </select>
 
-                    <button type="submit" class="btn btn-primary" style="margin-right: 10%">Carregar</button>
                 </div>
-
+                    <div class=text-right>
+                    <button type="submit" class="btn btn-primary" style=" margin-left: 10px">Carregar</button>
+                    </div>
                 <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
@@ -51,16 +52,21 @@
                     </tr>
                     </thead>
                     <tbody>
+                        <%
+                        for (TurmaBean lista : pessoa){
+                        %>
                         <tr>
-                            <td></td> 
-                            <td></td> 
-                            <td></td>
-                            <td><input type="radio" name="chamada"></td>
-
+                            <td><%=lista.getNome()%></td> 
+                            <td><%=lista.getTurma()%></td> 
+                            <td><%=lista.getData()%></td>
+                            <td><input type="radio" <%=lista.getChamada()%>></td>
+                            <span id="resultado"></span>
+                            <input type="hidden" id="hidden_teste" name="hidden_teste" />
                         </tr>
-
-
-                        <tr>
+                            <tr>
+                            <%
+                        }
+                    %>
                             <td>
                                 <div>Observações</div>
                             </td>

@@ -92,6 +92,10 @@
         <servlet-name>ValidaMatricula</servlet-name>
         <servlet-class>web.java.servlets.ValidaMatricula</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidaChamada</servlet-name>
+        <servlet-class>web.java.servlets.ValidaChamada</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>ValidaMatricula</servlet-name>
         <url-pattern>/ValidaMatricula</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidaChamada</servlet-name>
+        <url-pattern>/ValidaChamada</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
