@@ -11,6 +11,7 @@
   - Instituição
   - Matricula
   - Curso
+  - Perfil (Dados ativos do Usuário)
 3. Validação
   - Login (Campo vazio, autenticação de conta)
   - Acesso Tipo/Nivel de Usuário (Restrição)
