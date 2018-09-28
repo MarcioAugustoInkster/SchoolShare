@@ -67,12 +67,12 @@
 
                     <div class="form-group">
                         <label for="campoSenhaAluno">Senha</label>
-                        <input type="text" class="form-control" id="campoSenhaAluno" name="alunoSenha">
+                        <input type="password" class="form-control" id="campoSenhaAluno" name="alunoSenha">
                     </div>
 
                     <div class="form-group">
                         <label for="campoSenhaRepetirAluno">Confirmar Senha</label>
-                        <input type="text" class="form-control" id="campoSenhaRepetirAluno" name="alunoSenhaRepetir">
+                        <input type="password" class="form-control" id="campoSenhaRepetirAluno" name="alunoSenhaRepetir">
                     </div>
 
                     <div class="form-group">
