@@ -13,13 +13,22 @@ import java.sql.Statement;
  * @author Marcio : criado método validaLogin()
  */
 public class Banco {
-
+    /* Descomentar para conecção para localhost:8080 */
+    
+    private static final String HOST = "jdbc:mysql://localhost/schoolshare";
+    private static final String USER = "root";
+    private static final String PASSWORD = "my5ql";
+    
+    
+    /* Descomentar para conecção para web Amazon */
+    /*
     private static final String HOST = "jdbc:mysql://localhost/schoolshare";
     private static final String USER = "root";
     private static final String PASSWORD = "";
+    */
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
-
+    
     public static Connection conecta() {
         try {
             Class.forName(DRIVER);
