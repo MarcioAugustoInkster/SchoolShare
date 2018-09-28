@@ -1,0 +1,24 @@
+1. Cadastro
+  - Aluno
+  - Professor
+  - Instituição
+  - Curso
+  - Turma
+  - Matricula
+2. Consulta
+  - Aluno
+  - Turma
+  - Instituição
+  - Matricula
+  - Curso
+3. Validação
+  - Login (Campo vazio, autenticação de conta)
+  - Acesso Tipo/Nivel de Usuário (Restrição)
+  - Sessão
+4. Repositório
+  - Cria folder Instituição
+  - Cria folder Curso
+  - Cria folder Turma
+5. Filtos
+  - Campo matrícula filtra os dados da tabela Turma
+  - 
