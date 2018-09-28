@@ -62,12 +62,12 @@
                         </div>
                         <div class="form-group">
                             <label for="campoSenhaProfessor">Senha</label>
-                            <input type="text" class="form-control" id="campoSenhaProfessor" 
+                            <input type="password" class="form-control" id="campoSenhaProfessor" 
                                    name="professorSenha">
                         </div>
                         <div class="form-group">
                             <label for="campoSenhaRepetirProfessor">Confirmar Senha</label>
-                            <input type="text" class="form-control" id="campoSenhaRepetirProfessor" 
+                            <input type="password" class="form-control" id="campoSenhaRepetirProfessor" 
                                    name="professorSenhaRepetir">
                         </div>
                         <div class="form-group">
