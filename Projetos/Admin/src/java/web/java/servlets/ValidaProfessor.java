@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import web.java.classe.PessoaBean;
 import web.java.dao.PessoaDAO;
+import web.java.dao.ProfessorDAO;
 import web.java.mapping.DataFormatter;
 import web.java.mapping.GeraValor;
 
@@ -40,23 +41,19 @@ public class ValidaProfessor extends HttpServlet {
         
         try {
             PessoaBean pessoa = new PessoaBean();
-
+            DataFormatter df = new DataFormatter();
+            
             String nome = request.getParameter("professorNome"), 
-                sobrenome = request.getParameter("professorSobrenome"), 
-                genero = request.getParameter("professorGenero"), 
-                anoNascimento = DataFormatter.converteStringToDate(
-                    request.getParameter("professorAnoNascimento")),
+                anoNascimento = df.dataParaEN(request.getParameter("professorAnoNascimento")),
                 email = request.getParameter("professorEmail"), 
                 telefone = request.getParameter("professorTelefone"), 
                 login = request.getParameter("professorLogin"), 
-                senha = request.getParameter("professorSenha"),
-                ativo = request.getParameter("professorCheckAtivo");
+                senha = request.getParameter("professorSenha");
+            
+            byte genero = Byte.parseByte(request.getParameter("professorGenero"));
             
             byte[] convNome = nome.getBytes(StandardCharsets.ISO_8859_1);
             nome = new String(convNome, StandardCharsets.UTF_8);
-            
-            byte[] convSobrenome = sobrenome.getBytes(StandardCharsets.ISO_8859_1);
-            sobrenome = new String(convSobrenome, StandardCharsets.UTF_8);
             
             byte[] convLogin = login.getBytes(StandardCharsets.ISO_8859_1);
             login = new String(convLogin, StandardCharsets.UTF_8);
@@ -68,27 +65,24 @@ public class ValidaProfessor extends HttpServlet {
             repetirSenha = GeraValor.geraSenhaEncriptado(
                 request.getParameter("professorSenhaRepetir")).toString();
             
-            boolean defineAtivo = true;
-            
-            if (ativo == null) {
-                defineAtivo = false;
-            }
-            
-            pessoa.setNome(nome);
-            pessoa.setSobrenome(sobrenome);
-            pessoa.setSexo(genero.charAt(0));
+            pessoa.setNomeCompleto(nome);
+            pessoa.setGenero(genero);
             pessoa.setDataDeNascimento(anoNascimento);
             pessoa.setEmail(email);
             pessoa.setTelefone(telefone);
             pessoa.setLogin(login);
-            pessoa.setTipo(2);
-            pessoa.setAtivo(defineAtivo);
+            pessoa.setAtivo(true);
+            pessoa.setAcesso(2);
             
             if (pegaSenha.equals(repetirSenha)) {
                 pessoa.setSenha(pegaSenha);
-
-                if (PessoaDAO.inserePessoa(pessoa)) {
-                    response.sendRedirect("/inf/success.jsp");
+            
+                int ultimoId = PessoaDAO.inserePessoa(pessoa);
+                
+                if (ultimoId != 0) {
+                    if (ProfessorDAO.insereProfessor(ultimoId)) {
+                        response.sendRedirect("/inf/success.jsp");
+                    }
                 }
             } else {
                 out.print("<2>Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");

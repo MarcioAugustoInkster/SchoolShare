@@ -30,6 +30,7 @@
                         <th>#</th>
                         <th>Instituição</th>
                         <th>Endereço</th>
+                        <th>CEP</th>
                         <th>Bairro</th>
                         <th>Cidade - Estado</th>
                         <th><i class="fa fa-upload"></i></th>
@@ -44,7 +45,8 @@
                     <tr>
                         <td><%=counter++%></td>
                         <td><%=listagem.getInstituicao()%></td>
-                        <td><%=listagem.getEndereco()%></td>
+                        <td><%=listagem.getEndereco()%>&nbsp;-&nbsp;<%=listagem.getNumero()%></td>
+                        <td><%=listagem.getCep()%></td>
                         <td><%=listagem.getBairro()%></td>
                         <td><%=listagem.getCidade()%> - <%=listagem.getEstado()%></td>
                         <td><a class="btn-custom btn-app-custom">

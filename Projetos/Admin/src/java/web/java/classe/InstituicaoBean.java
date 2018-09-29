@@ -6,7 +6,7 @@ package web.java.classe;
  */
 public class InstituicaoBean {
     private int id;
-    private String instituicao, endereco, numero, bairro, cidade, estado;
+    private String instituicao, endereco, numero, cep, bairro, cidade, estado;
 
     public int getId() {
         return id;
@@ -38,6 +38,14 @@ public class InstituicaoBean {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+    
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getBairro() {

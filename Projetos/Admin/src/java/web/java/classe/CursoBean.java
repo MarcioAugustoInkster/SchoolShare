@@ -6,7 +6,23 @@ package web.java.classe;
  */
 public class CursoBean extends InstituicaoBean {
     private int id, idInstituicao;
-    private String curso;
+    private String curso, dataInicio, dataFinal;
+
+    public String getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public String getDataFinal() {
+        return dataFinal;
+    }
+
+    public void setDataFinal(String dataFinal) {
+        this.dataFinal = dataFinal;
+    }
     private byte cargaHoraria;
 
     public byte getCargaHoraria() {

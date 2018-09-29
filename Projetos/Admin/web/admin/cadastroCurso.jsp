@@ -47,6 +47,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="campoDataInicioCurso">Data Inicio</label>
+                            <input type="text" class="form-control field-date" id="campoDataInicioCurso" name="cursoDataInicio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="campoDataFinalCurso">Data Final</label>
+                            <input type="text" class="form-control field-date" id="campoDataFinalCurso" name="cursoDataFinal">
+                        </div>
+
+                        <div class="form-group">
                             <label for="cursoHoras">Carga Horária</label>
                             <small>&nbsp;&nbsp;&nbsp;Exemplo: 30 (horas)</small>
                             <select class="form-control" id="cursoHoras" name="selectCursoHora">

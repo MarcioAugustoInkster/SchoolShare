@@ -21,17 +21,18 @@ public class InstituicaoDAO {
         if (coneccao != null) {
             try {
                 String sql = "INSERT INTO instituicao (";
-                    sql += "instituicao, endereco, numero, bairro, cidade, estado";
-                    sql += ") VALUES (?, ?, ?, ?, ?, ?)";
+                    sql += "instituicao, endereco, numero,cep, bairro, cidade, estado";
+                    sql += ") VALUES (?, ?, ?, ?, ?, ?, ?)";
                 
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
                 
                 pstmt.setString(1, instituicao.getInstituicao());
                 pstmt.setString(2, instituicao.getEndereco());
                 pstmt.setString(3, instituicao.getNumero());
-                pstmt.setString(4, instituicao.getBairro());
-                pstmt.setString(5, instituicao.getCidade());
-                pstmt.setString(6, instituicao.getEstado());
+                pstmt.setString(4, instituicao.getCep());
+                pstmt.setString(5, instituicao.getBairro());
+                pstmt.setString(6, instituicao.getCidade());
+                pstmt.setString(7, instituicao.getEstado());
                 
                 pstmt.execute();
             } catch (SQLException ex) {
@@ -75,7 +76,7 @@ public class InstituicaoDAO {
         List<InstituicaoBean> listaInstituicao = new ArrayList<>();
         
         try {
-            String sql = "SELECT id, instituicao, endereco, numero, bairro, cidade, estado FROM instituicao";
+            String sql = "SELECT id, instituicao, endereco, numero, cep, bairro, cidade, estado FROM instituicao";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -89,6 +90,7 @@ public class InstituicaoDAO {
                 instituicao.setInstituicao(rs.getString("instituicao"));
                 instituicao.setEndereco(rs.getString("endereco"));
                 instituicao.setNumero(rs.getString("numero"));
+                instituicao.setCep(rs.getString("cep"));
                 instituicao.setBairro(rs.getString("bairro"));
                 instituicao.setCidade(rs.getString("cidade"));
                 instituicao.setEstado(rs.getString("estado"));

@@ -1,36 +1,16 @@
 package web.java.classe;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 /**
  *
  * @author Daiana & Marcio
  */
 
-// @Entity          = Hibernate entenderá que essa entidade será do Banco de Daods
-// @Id              = Identificador da Entidade do Banco de Dados
-// @GeneratedValue  = Gera um valor para criar a Tebela no Banco através do ID gerado
-
-@Entity
-public class PessoaBean implements Serializable {
-    @Id
-    @GeneratedValue
+public class PessoaBean {
     private int id;
-    private String nome, email, sobrenome, login, senha, telefone, dataDeNascimento;
-    private char sexo;
-    private int tipo;
+    private String nomeCompleto, email, login, senha, telefone, dataDeNascimento;
+    private byte genero;
+    private int acesso;
     private boolean ativo;
-
-    public String getDataDeNascimento() {
-        return dataDeNascimento;
-    }
-
-    public void setDataDeNascimento(String dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento;
-    }
 
     public int getId() {
         return id;
@@ -40,20 +20,12 @@ public class PessoaBean implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    
-    public String getSobrenome() {
-        return sobrenome;
-    }
-    
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
     public String getEmail() {
@@ -80,14 +52,6 @@ public class PessoaBean implements Serializable {
         this.senha = senha;
     }
 
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-    
     public String getTelefone() {
         return telefone;
     }
@@ -95,13 +59,29 @@ public class PessoaBean implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    public int getTipo() {
-        return tipo;
+
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
     }
-    
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
+
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public byte getGenero() {
+        return genero;
+    }
+
+    public void setGenero(byte genero) {
+        this.genero = genero;
+    }
+
+    public int getAcesso() {
+        return acesso;
+    }
+
+    public void setAcesso(int acesso) {
+        this.acesso = acesso;
     }
 
     public boolean isAtivo() {

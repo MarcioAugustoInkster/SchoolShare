@@ -19,15 +19,18 @@ public class CursoDAO {
         Connection coneccao = Banco.conecta();
         
         if (coneccao != null) {
-            String sql = "INSERT INTO curso ";
-                sql += "(instituicao_id, curso, carga_horaria) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO cursos ";
+                sql += "(instituicao_id, curso, data_inicio, data_final, carga_horaria) ";
+                    sql += "VALUES (?, ?, ?, ?, ?)";
 
             try {
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
 
                 pstmt.setInt(1, curso.getIdInstituicao());
                 pstmt.setString(2, curso.getCurso());
-                pstmt.setByte(3, curso.getCargaHoraria());
+                pstmt.setString(3, curso.getDataInicio());
+                pstmt.setString(4, curso.getDataFinal());
+                pstmt.setByte(5, curso.getCargaHoraria());
                 
                 pstmt.execute();
             } catch (Exception ex) {
@@ -44,9 +47,9 @@ public class CursoDAO {
         List<CursoBean> listaCurso = new ArrayList<>();
         
         try {
-            String sql = "SELECT c.id, c.instituicao_id, c.curso, c.carga_horaria, ";
-                sql += "i.instituicao FROM curso c INNER JOIN instituicao i ";
-                sql += "ON c.instituicao_id = i.id ORDER BY c.curso;";
+            String sql = "SELECT c.id, c.instituicao_id, c.curso, c.data_inicio, ";
+                sql += "c.data_final, c.carga_horaria, i.instituicao FROM cursos c ";
+                sql += "INNER JOIN instituicao i ON c.instituicao_id = i.id ORDER BY c.curso;";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -60,6 +63,8 @@ public class CursoDAO {
                 curso.setId(rs.getInt("c.id"));
                 curso.setIdInstituicao(rs.getInt("c.instituicao_id"));
                 curso.setCurso(rs.getString("c.curso"));
+                curso.setDataInicio(rs.getString("c.data_inicio"));
+                curso.setDataFinal(rs.getString("c.data_final"));
                 curso.setCargaHoraria(rs.getByte("c.carga_horaria"));
                 curso.setInstituicao(rs.getString("i.instituicao"));
                 

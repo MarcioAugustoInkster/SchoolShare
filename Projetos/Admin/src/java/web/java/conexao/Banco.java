@@ -22,7 +22,7 @@ public class Banco {
     
     /* Descomentar para conecção para web Amazon */
     /*
-    private static final String HOST = "jdbc:mysql://localhost/schoolshare";
+    private static final String HOST = "jdbc:mysql://";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     */
@@ -77,7 +77,7 @@ public class Banco {
     }
 
     public static boolean authenticaLogin(String login, StringBuilder senha) {
-        String sql = "SELECT login, senha FROM pessoa WHERE login=? AND senha=? AND ativo=1 AND tipo=1";
+        String sql = "SELECT login, senha FROM pessoas WHERE login=? AND senha=? AND ativo=TRUE AND acesso=1";
 
         try {
             PreparedStatement pstmt = conexao.prepareStatement(sql);

@@ -27,22 +27,17 @@
                                    name="professorNome">
                         </div>
                         <div class="form-group">
-                            <label for="campoProfessorSobrenome">Sobrenome</label>
-                            <input type="text" class="form-control" id="campoProfessorSobrenome" 
-                                   name="professorSobrenome">
-                        </div>
-                        <div class="form-group">
                             <label for="radioProfessorMasc">
                                 <input type="radio" class="" id="radioProfessorMasc" 
-                                       name="professorGenero" value="M" checked>&nbsp;&nbsp;Masculino</label>
+                                       name="professorGenero" value="1" checked>&nbsp;&nbsp;Masculino</label>
                             <label for="radioProfessorFem">&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" class="" id="radioProfessorFem" 
-                                       name="professorGenero" value="F">&nbsp;&nbsp;Feminino</label>
+                                    name="professorGenero" value="2">&nbsp;&nbsp;Feminino</label>
                         </div>
 
                         <div class="form-group">
                             <label for="campoAnoProfessor">Data de Nascimento</label>
-                            <input type="text" class="form-control" id="campoAnoProfessor" 
+                            <input type="text" class="form-control field-date" id="campoAnoProfessor" 
                                    name="professorAnoNascimento">
                         </div>
                         <div class="form-group">
@@ -52,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label for="campoTelefoneProfessor">Telefone</label>
-                            <input type="text" class="form-control" id="campoTelefoneProfessor" 
+                            <input type="text" class="form-control field-phone" id="campoTelefoneProfessor" 
                                    name="professorTelefone">
                         </div>
                         <div class="form-group">
@@ -69,10 +64,6 @@
                             <label for="campoSenhaRepetirProfessor">Confirmar Senha</label>
                             <input type="password" class="form-control" id="campoSenhaRepetirProfessor" 
                                    name="professorSenhaRepetir">
-                        </div>
-                        <div class="form-group">
-                            <label for="checkAtivoProfessor"><input type="checkbox"
-                                                                    id="checkAtivoProfessor" name="professorCheckAtivo" >&nbsp;&nbsp;Ativo</label>
                         </div>
 
                         <div class="box-footer">

@@ -21,34 +21,12 @@ $(document).ready(function () {
 });
 
 $(document).ready(function ($) {
-    $("input[name='professorAnoNascimento']").mask('00/00/0000',
+    $(".field-date").mask('00/00/0000',
             {placeholder: '__/__/____'});
 });
 
 $(document).ready(function ($) {
-    $("input[name='alunoAnoNascimento']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
+    $(".field-phone").mask('(00) 00000-0000',
+            {placeholder: '(__) _____-____'});
 });
-
-$(document).ready(function ($) {
-    $("input[name='professorTelefone']").mask('(00) 0000-0000',
-            {placeholder: '(__) ____-____'});
-});
-
-$(document).ready(function ($) {
-    $("input[name='alunoTelefone']").mask('(00) 0000-0000',
-            {placeholder: '(__) ____-____'});
-});
-
-$(document).ready(function ($) {
-    $("input[name='turmaDataInicio']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-$(document).ready(function ($) {
-    $("input[name='turmaDataFinal']").mask('00/00/0000',
-            {placeholder: '__/__/____'});
-});
-
-
 

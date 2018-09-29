@@ -1,6 +1,7 @@
+<%@page import="web.java.mapping.DataFormatter"%>
+<%@page import="web.java.dao.ProfessorDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.classe.PessoaBean"%>
-<%@page import="web.java.dao.PessoaDAO"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -26,7 +27,6 @@
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
-                        <th>Gênero</th>
                         <th>Data Nascimento</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
@@ -37,7 +37,8 @@
                 </thead>
                 <tbody>
                     <%
-                        List<PessoaBean> professor = new PessoaDAO().listaProfessor();
+                        List<PessoaBean> professor = new ProfessorDAO().listaProfessor();
+                        DataFormatter df = new DataFormatter();
 
                         for (PessoaBean listagem : professor) {
                             String active = "";
@@ -47,25 +48,17 @@
                             } else {
                                 active = "Não";
                             }
+                            
+                            String dataPadrao = df.dataParaBR(listagem.getDataDeNascimento());
                     %>
                     <tr>
-                        <td><%=listagem.getNome()%>&nbsp;<%=listagem.getSobrenome()%></td>
-                        <%
-                            String genero = "";
-
-                            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                                genero = "class='fa fa-mars'";
-                            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                                genero = "class='fa fa-venus'";
-                            }
-                        %>
-                        <td><i <%=genero%>></i></td>
-                        <td><%=listagem.getDataDeNascimento()%></td>
+                        <td><%=listagem.getNomeCompleto()%></td>
+                        <td><%=dataPadrao%></td>
                         <td><%=listagem.getEmail()%></td>
                         <td><%=listagem.getTelefone()%></td>
                         <td><%=listagem.getLogin()%></td>
                         <td><%=active%></td>
-                        <td><a class="btn-custom btn-app-custom"><i class="fa fa-edit"></i> Edit</a></td>
+                        <td><a class="btn-custom btn-app-custom"><i class="fa fa-edit"></i> Editar</a></td>
                     </tr>
                     <% }%>
                 </tbody>

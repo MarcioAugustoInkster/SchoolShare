@@ -17,8 +17,8 @@ public class AdminDAO {
         List<PessoaBean> listaAdmin = new ArrayList<>();
         
         try {
-            String sql = "SELECT nome, email, login, tipo, ativo FROM pessoa WHERE tipo=1 ";
-                sql += "AND ativo=1 GROUP BY nome";
+            String sql = "SELECT nome_completo, email, login, ativo, acesso FROM pessoas ";
+                sql += "WHERE acesso=1 AND ativo=TRUE";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -28,10 +28,10 @@ public class AdminDAO {
             while (rs.next()) {
                 PessoaBean admin = new PessoaBean();
                 
-                admin.setNome(rs.getString("nome"));
-                admin.setEmail(rs.getString("email"));
+                admin.setNome(rs.getString("nome_completo"));
                 admin.setLogin(rs.getString("login"));
-                admin.setTipo(rs.getByte("tipo"));
+                admin.setEmail(rs.getString("email"));
+                admin.setAcesso(rs.getByte("acesso"));
                 admin.setAtivo(rs.getBoolean("ativo"));
                 
                 listaAdmin.add(admin);

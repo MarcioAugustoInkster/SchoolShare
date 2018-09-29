@@ -12,7 +12,7 @@ import org.apache.commons.io.FilenameUtils;
  * @author Marcio Augusto Schlosser
  */
 public class DataFormatter {
-    public static String fileDateTimeToString(File file) {
+    public String fileDateTimeToString(File file) {
         Date dateModified = new Date(file.lastModified());
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         
@@ -21,7 +21,7 @@ public class DataFormatter {
         return getFormattedDate;
     }
     
-    public static String fileDateToString(File file) {
+    public String fileDateToString(File file) {
         Date dateModified = new Date(file.lastModified());
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -36,19 +36,28 @@ public class DataFormatter {
         return extension;
     }
     
-    public static Long sizeToKiloByte(File file) {
+    public Long sizeToKiloByte(File file) {
         float fileSize = file.length() / 1024;
         long size = Math.round(fileSize);
         
         return size;
     }
     
-    public static char converteStringToChar(String valor) {
+    public char converteStringToChar(String valor) {
         char pegaValor = valor.charAt(0);
         return pegaValor;
     }
     
-    public static String converteStringToDate(String valor) throws ParseException {
+    public String dataParaEN(String valor) throws ParseException {
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        date = df.parse(valor);
+        DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd");
+        
+        return df1.format(date);
+    }
+    
+    public String dataParaBR(String valor) throws ParseException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         date = df.parse(valor);
@@ -57,13 +66,13 @@ public class DataFormatter {
         return df1.format(date);
     }
     
-    public static Byte converteStringToByte(String valor) {
+    public Byte converteStringToByte(String valor) {
         Byte tipoByte = Byte.valueOf(valor);
         
         return tipoByte;
     }
     
-    public static boolean converteStringToBoolean(String valor) {
+    public boolean converteStringToBoolean(String valor) {
         Boolean ativo = Boolean.valueOf(valor);
         
         return ativo;

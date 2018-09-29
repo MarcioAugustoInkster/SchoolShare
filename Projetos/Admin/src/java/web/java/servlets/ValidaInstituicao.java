@@ -34,6 +34,7 @@ public class ValidaInstituicao extends HttpServlet {
             String inst = request.getParameter("formInstitutionName"), 
                 endereco = request.getParameter("formInstitutionAddress"), 
                 numero = request.getParameter("formInstitutionNumber"), 
+                cep = request.getParameter("formInstitutioncep"),
                 bairro = request.getParameter("formInstitutionDistrict"), 
                 cidade = request.getParameter("formInstitutionCity"),
                 estado = request.getParameter("formInstitutionState");
@@ -53,6 +54,7 @@ public class ValidaInstituicao extends HttpServlet {
             instituicao.setInstituicao(inst);
             instituicao.setEndereco(endereco);
             instituicao.setNumero(numero);
+            instituicao.setCep(cep);
             instituicao.setBairro(bairro);
             instituicao.setCidade(cidade);
             instituicao.setEstado(estado);

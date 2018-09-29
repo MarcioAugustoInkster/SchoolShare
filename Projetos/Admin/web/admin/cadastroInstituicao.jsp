@@ -37,6 +37,11 @@
                                    name="formInstitutionNumber" placeholder="Ex: 12345 ou B-02">
                         </div>
                         <div class="form-group">
+                            <label for="formInstitutioncep">CEP</label>
+                            <input type="text" class="form-control" id="formInstitutioncep" 
+                                   name="formInstitutioncep" placeholder="Ex: 12345-678">
+                        </div>
+                        <div class="form-group">
                             <label for="formInstitutionDistrict">Bairro</label>
                             <input type="text" class="form-control" id="formInstitutionDistrict" 
                                    name="formInstitutionDistrict" placeholder="Ex: Bairro Coronel Fritz III">
