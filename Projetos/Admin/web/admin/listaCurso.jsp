@@ -26,8 +26,8 @@
             <table id="tabelaCurso" class="table table-bordered table-hover">
                 <tr>
                     <th>#</th>
+                    <th>Cursos</th>
                     <th>Instituição</th>
-                    <th>Curso</th>
                     <th>Opções</th>
                 </tr>
                 <%
@@ -37,8 +37,8 @@
                 %>
                 <tr>
                     <td><%=counter++%></td>
-                    <td><%=cursos.getInstituicao()%></td>
                     <td><%=cursos.getCurso() %></td>
+                    <td><%=cursos.getInstituicao()%></td>
                     <td><a class="btn-custom btn-app-custom">
                         <i class="fa fa-edit"></i> Editar</a>
                     </td>

@@ -12,7 +12,7 @@
 <%@include file="/master/master.jsp" %>
 
 <section class="content-header">
-    <h1>Lista de Cursos <small>Tabela</small></h1>
+    <h1>Matriculados <small>Tabela</small></h1>
     <ol class="breadcrumb">
         <li><a href="/index.jsp"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="/admin/matriculaIndex.jsp"><i class="fa fa-archive"></i> Matricula</a></li>
@@ -27,40 +27,26 @@
         </div>
         <div class="box-body">
             <table id="tabelaMatricula" class="table table-bordered table-hover">
-                <tr>
-                    <th>#</th>
-                    <th>Nome de Aluno</th>
-                    <th>Gênero</th>
-                    <th>Turma</th>
+            	<tr>
+                    <th>ID</th>
+                    <th>Matricula</th>
                     <th>Matriculado em</th>
                     <th>Opções</th>
                 </tr>
                 <%
-                    int counter = 1;
                     List<MatriculaBean> matricula = new MatriculaDAO().listaMatricula();
-                    String genero = "";
-                    //matriculado.getPessoa().getSexo()
+
                     for (MatriculaBean matriculado : matricula) {
-                        if (matriculado.getPessoa().getSexo() == 'M' || matriculado.getPessoa().getSexo() == 'm') {
-                            genero = "<i class=\"fa fa-mars\"></i>";
-                        } else 
-                        if (matriculado.getPessoa().getSexo() == 'F' || matriculado.getPessoa().getSexo() == 'f') {
-                            genero = "<i class=\"fa fa-venus\"></i>";
-                        }
-                %>
+                    %>
                 <tr>
-                    <td><%=counter++%></td>
-                    <td><%=matriculado.getPessoa().getNome() %>&nbsp;<%=matriculado.getPessoa().getSobrenome()%></td>
-                    <td><%=genero %></td>
-                    <td><%=matriculado.getTurma().getTurma() %></td>
-                    <td><%=matriculado.getDataMatricula() %></td>
+                    <td><%=matriculado.getId()%></td>
+                    <td><%=matriculado.getMatricula()%></td>
+                    <td><%=matriculado.getDataMatricula()%></td>
                     <td><a class="btn-custom btn-app-custom">
-                        <i class="fa fa-edit"></i> Editar</a>
+			<i class="fa fa-edit"></i> Editar</a>
                     </td>
                 </tr>
-                <%
-                    }
-                %>
+                <% } %>
             </table>
         </div>
     </div>

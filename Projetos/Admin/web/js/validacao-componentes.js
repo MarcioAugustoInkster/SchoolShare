@@ -32,22 +32,30 @@ $(document).ready(function () {
     $("#campoAnoProfessor").datepicker({
         dateFormat: "d M y"
     });
+    
+    $("#campoDataInicioCurso").datepicker({
+        dateFormat: "d M y"
+    });
+    
+    $("#campoDataFinalCurso").datepicker({
+        dateFormat: "d M y"
+    });
 
     $(StartDate).keydown(function (e) {
         // Allow: backspace, delete, tab
         if ($.inArray(e.keyCode, [46, 8, 9]) !== -1 ||
-                // Allow: Ctrl+A, Command+A
-                        (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-                        // Allow: home, end, left, right, down, up
-                                (e.keyCode >= 35 && e.keyCode <= 40)) {
-                    // let it happen, don't do anything
-                    return;
-                }
-                // Ensure that it is a number and stop the keypress
-                if ((e.shiftKey || (e.keyCode > 1 || e.keyCode < 200))) {
-                    e.preventDefault();
-                }
-            });
+            // Allow: Ctrl+A, Command+A
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode > 1 || e.keyCode < 200))) {
+            e.preventDefault();
+        }
+    });
 });
 
 $(document).ready(function () {

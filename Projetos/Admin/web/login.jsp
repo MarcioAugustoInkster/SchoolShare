@@ -48,60 +48,58 @@
     <body>
         <div class="global-login-wrapper">
             <div class="login-status">
-                <form action="/validaLogin" method="POST" class="form-login" id="login-authenticate">
-                    <div class="form-control-login">
-                        <header class="wrapper-login-top">
-                            <nav class="nav-login-logo">
-                                <label>Bem vindo ao </label><b>School</b>&nbsp;Share
-                            </nav>
-                            <b>Portal Administrador</b>
-                        </header>
+                <div class="col-md-16">
+                    <form action="/validaLogin" method="POST" class="form-login" id="login-authenticate">
+                        <div class="form-control-login">
+                            <header class="wrapper-login-top">
+                                <nav class="nav-login-logo">
+                                    <label>Bem-vindo ao </label><b>School</b>&nbsp;Share
+                                </nav>
+                                <b>Portal Administrador</b>
+                            </header>
 
-                        <div class="wrapper-login-center">
-                            <%=message%>
+                            <div class="wrapper-login-center">
+                                <%=message%>
 
-                            <div class="center-components">
-                                <label for="campoCredLogin">Usuário<%=asteriscs%></label>
-                                <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login"
-                                    value="Schoolshare">
-                            </div>
-
-                            <div class="center-components">
-                                <label for="campoCredSenha">Senha<%=asteriscs%></label>
-                                <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password"
-                                    value="master">
-                            </div>
-
-                            <div class="center-components">
-                                <div class="form-checkbox-control">
-                                    <label><input type="checkbox">Lembrar minha Senha</label>
+                                <div class="center-components">
+                                    <label for="campoCredLogin">Usuário<%=asteriscs%></label>
+                                    <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login"
+                                           value="Schoolshare">
                                 </div>
-                                <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
-                            </div>
 
-                            <div class="center-components">
-                                <div class="form-checkbox-control">
-                                    <a href="#">Esqueci minha senha</a>
+                                <div class="center-components">
+                                    <label for="campoCredSenha">Senha<%=asteriscs%></label>
+                                    <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password"
+                                           value="master">
                                 </div>
-                            </div>
 
-                            <div class="login-footer">
-                                <strong>Entrar como&nbsp;<a href="/loginProfessor">Professor</a></strong>
-                                <strong>&nbsp;|&nbsp;&nbsp;Entrar como&nbsp;<a href="/loginAluno">Aluno</a></strong>
+                                <div class="center-components">
+                                    <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
+                                </div>
+
+                                <div class="center-components">
+                                    <div class="form-checkbox-control">
+                                        <a href="#">Esqueci minha senha</a>
+                                    </div>
+                                </div>
+
+                                <div class="login-footer">
+                                    <strong>Entrar como&nbsp;<a href="/loginProfessor">Professor</a></strong>
+                                    <strong>&nbsp;|&nbsp;&nbsp;Entrar como&nbsp;<a href="/loginAluno">Aluno</a></strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
 
         <footer class="wrapper-login-footer">
             <div class="wrapper-version">
-                <b>Versão</b> 1.0.5
+                <b>Versão Beta</b> 1.0.0
             </div>
 
-            <strong>2018 <a href="#popup-login-msg">SchoolShare</a>.</strong>
-            &nbsp;Nenhum direito reservado.
+            <b>2018 SchoolShare.</b>&nbsp;<strong>Conheça nosso <a href="#popup-login-msg">Github</a></strong>
 
             <div id="popup-login-msg" class="overlay">
                 <div class="popup">

@@ -21,15 +21,17 @@ public class MatriculaDAO {
         Connection coneccao = Banco.conecta();
 
         if (coneccao != null) {
-            String sql = "INSERT INTO matricula ";
-                sql += "(pessoa_id, turma_id, data_matricula) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO matriculas ";
+                sql += "(alunos_id, turmas_id, matricula, data_matricula, data_inativo) VALUES (?, ?, ?, ?, ?)";
 
             try {
                 PreparedStatement pstmt = coneccao.prepareStatement(sql);
 
                 pstmt.setInt(1, matricula.getPessoaId());
                 pstmt.setInt(2, matricula.getTurmaId());
-                pstmt.setString(3, matricula.getDataMatricula());
+                pstmt.setString(3, matricula.getMatricula());
+                pstmt.setString(4, matricula.getDataMatricula());
+                pstmt.setString(5, matricula.getDataInativo());
 
                 pstmt.execute();
             } catch (Exception ex) {
@@ -46,9 +48,8 @@ public class MatriculaDAO {
         List<MatriculaBean> listagem = new ArrayList<>();
         
         try {
-            String sql = "SELECT p.nome, p.sobrenome, p.sexo, t.turma, m.data_matricula ";
-                sql += "FROM matricula m INNER JOIN pessoa p ON p.id = m.pessoa_id ";
-                sql += "INNER JOIN turma t ON t.id = m.turma_id";
+            String sql = "SELECT m.id, m.matricula, m.data_matricula ";
+                sql += "FROM matriculas m ";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -61,16 +62,16 @@ public class MatriculaDAO {
                 TurmaBean turma = new TurmaBean();
                 
                 // Seleciona registros da tabela Pessoa
-                pessoa.setNome(rs.getString("p.nome"));
-                pessoa.setSobrenome(rs.getString("p.sobrenome"));
-                pessoa.setSexo(rs.getString("p.sexo").charAt(0));
+                //pessoa.setNomeCompleto(rs.getString("p.nome_completo"));
                 
                 // Seleciona registros da tabela Turma
-                turma.setTurma(rs.getString("t.turma"));
+                //turma.setTurma(rs.getString("t.turma"));
                 
                 // Seleciona registros da tabela Matricula
-                matricula.setPessoa(pessoa);
-                matricula.setTurma(turma);
+                matricula.setId(rs.getInt("m.id"));
+                //matricula.setPessoa(pessoa);
+                //matricula.setTurma(turma);
+                matricula.setMatricula(rs.getString("m.matricula"));
                 matricula.setDataMatricula(rs.getString("m.data_matricula"));
                 
                 listagem.add(matricula);

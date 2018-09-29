@@ -6,7 +6,7 @@ package web.java.classe;
  */
 public class MatriculaBean {
     private int id, pessoaId, turmaId;
-    private String dataMatricula;
+    private String matricula, dataMatricula, dataInativo;
     private PessoaBean pessoa;
     private TurmaBean turma;
 
@@ -34,12 +34,28 @@ public class MatriculaBean {
         this.turmaId = turmaId;
     }
 
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
     public String getDataMatricula() {
         return dataMatricula;
     }
 
     public void setDataMatricula(String dataMatricula) {
         this.dataMatricula = dataMatricula;
+    }
+
+    public String getDataInativo() {
+        return dataInativo;
+    }
+
+    public void setDataInativo(String dataInativo) {
+        this.dataInativo = dataInativo;
     }
 
     public PessoaBean getPessoa() {

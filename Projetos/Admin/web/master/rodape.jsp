@@ -9,7 +9,7 @@
     <div class="pull-right hidden-xs">
         <b>Versão Beta</b> 1.0.0
     </div>
-    <strong>2018 <a href="#">SchoolShare</a>.</strong> Nenhum direito reservado.
+    <strong>2018 Equipe<a href="#"> SchoolShare</a>.</strong>
 </footer>
 
 <!-- /.control-sidebar -->

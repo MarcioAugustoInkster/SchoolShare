@@ -4,6 +4,7 @@
     Author     : Marcio Augusto Schlosser
 --%>
 
+<%@page import="web.java.dao.AlunoDAO"%>
 <%@page import="web.java.dao.PessoaDAO"%>
 <%@page import="web.java.classe.PessoaBean"%>
 <%@page import="web.java.dao.TurmaDAO"%>
@@ -63,28 +64,19 @@
                             <tr>
                                 <th>Código</th>
                                 <th>Nome de Aluno</th>
-                                <th>Gênero</th>
                                 <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <%
-                                List<PessoaBean> pessoa = new PessoaDAO().listaAluno();
+                                List<PessoaBean> pessoa = new AlunoDAO().listaAluno();
                                 String genero = "";
 
                                 for (PessoaBean listagem : pessoa) {
-                                    if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                                        genero = "<i class='fa fa-mars'></i>";
-                                    } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                                        genero = "<i class='fa fa-venus'></i>";
-                                    } else {
-                                        genero = "?";
-                                    }
-                                    String nomeCompleto = listagem.getNome() + " " + listagem.getSobrenome();
                             %>
                             <tr>
                                 <td><%=listagem.getId()%></td>
-                                <td class="elementToCopy"><%=nomeCompleto%></td>
+                                <td class="elementToCopy"><%=listagem.getNomeCompleto()%></td>
                                 <td><%=genero%></td>
                                 <td><a class="btn-custom btn-app-custom copyAndPaste" id="matricula" name="matricula">
                                         <i class="fa fa-check-circle"></i> Confirma</a></td>
