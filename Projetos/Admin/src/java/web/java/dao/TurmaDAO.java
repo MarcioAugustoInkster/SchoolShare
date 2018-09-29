@@ -20,21 +20,19 @@ public class TurmaDAO {
         Connection coneccao = Banco.conecta();
 
         if (coneccao != null) {
-            String sqlTurma = "INSERT INTO turma ";
-            sqlTurma += "(pessoa_id, curso_id, turma, data_inicio, data_final, carga_horaria) ";
-            sqlTurma += "VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO turmas ";
+                sql += "(cursos_id, professores_id, turma, data_inicio, data_final, carga_horaria) ";
+                sql += "VALUES (?, ?, ?, ?, ?, ?)";
             
             try {
-                PreparedStatement pstmtTurma = coneccao.prepareStatement(sqlTurma);
+                PreparedStatement pstmt = coneccao.prepareStatement(sql);
 
-                pstmtTurma.setInt(1, turma.getProfessorId());
-                pstmtTurma.setInt(2, turma.getCursoId());
-                pstmtTurma.setString(3, turma.getTurma());
-                pstmtTurma.setString(4, turma.getDataInicio());
-                pstmtTurma.setString(5, turma.getDataFinal());
-                pstmtTurma.setShort(6, turma.getCargaHoraria());
-
-                pstmtTurma.execute();
+                pstmt.setInt(1, turma.getCursoId());
+                pstmt.setInt(2, turma.getProfessorId());
+                pstmt.setString(3, turma.getTurma());
+                pstmt.setString(4, turma.getDataInicio());
+                pstmt.setString(5, turma.getDataFinal());
+                pstmt.setShort(6, turma.getCargaHoraria());
 
                 return true;
             } catch (Exception ex) {
@@ -50,10 +48,10 @@ public class TurmaDAO {
         List<TurmaBean> listaTurma = new ArrayList<>();
 
         try {
-            String sql = "SELECT p.nome, p.sobrenome, c.curso, t.id, t.turma, ";
-                sql += "t.data_inicio, t.data_final, t.carga_horaria FROM turma t ";
-                sql += "INNER JOIN pessoa p ON t.pessoa_id = p.id INNER JOIN curso c ";
-                sql += "ON t.curso_id = c.id";
+            String sql = "SELECT t.id, c.curso, p.nome_completo, t.turma, t.data_inicio, ";
+                sql += "t.data_final, t.carga_horaria FROM turmas t ";
+                sql += "INNER JOIN cursos c ON c.id = t.cursos_id ";
+                sql += "INNER JOIN pessoas p ON p.id = t.professores_id";
 
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -72,8 +70,7 @@ public class TurmaDAO {
                 turma.setDataFinal(rs.getString("t.data_final"));
                 turma.setCargaHoraria(rs.getShort("t.carga_horaria"));
                 
-                professor.setNome(rs.getString("p.nome"));
-                professor.setSobrenome(rs.getString("p.sobrenome"));
+                professor.setNomeCompleto(rs.getString("p.nome_completo"));
                 
                 curso.setCurso(rs.getString("c.curso"));
                 

@@ -44,7 +44,7 @@ public class ProfessorDAO {
             String sql = "SELECT pe.id, pe.nome_completo, pe.genero, pe.data_nascimento, ";
                 sql += "pe.email, pe.telefone, pe.login, pe.ativo, pe.acesso FROM ";
                 sql += "professores pf INNER JOIN pessoas pe ON ";
-                sql += "pe.id = pf.pessoas_id GROUP BY nome_completo";
+                sql += "pe.id = pf.pessoas_id WHERE ativo=TRUE ORDER BY nome_completo";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -54,6 +54,7 @@ public class ProfessorDAO {
             while (rs.next()) {
                 PessoaBean pessoa = new PessoaBean();
                 
+                pessoa.setId(rs.getInt("id"));
                 pessoa.setNomeCompleto(rs.getString("nome_completo"));
                 pessoa.setGenero(rs.getByte("genero"));
                 pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
@@ -77,8 +78,8 @@ public class ProfessorDAO {
         PessoaBean pessoa = null;
         
         try {
-            String sql = "SELECT id, nome, sobrenome, data_nascimento, email, telefone, login ";
-                sql += "FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=2";
+            String sql = "SELECT id, nome_completo, data_nascimento, email, telefone, login ";
+                sql += "FROM professores WHERE login='" + login + "' AND ativo=TRUE AND acesso=2";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -89,8 +90,7 @@ public class ProfessorDAO {
                 pessoa = new PessoaBean();
                 
                 pessoa.setId(rs.getInt("id"));
-                pessoa.setNome(rs.getString("nome"));
-                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setNomeCompleto(rs.getString("nome_completo"));
                 pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));

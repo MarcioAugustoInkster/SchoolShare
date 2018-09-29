@@ -27,63 +27,67 @@
 
                 <form action="/registroAluno" method="POST" role="form">
                     <div class="form-group">
-                        <label for="campoAlunoNome">Nome do Aluno</label>
+                        <label for="campoAlunoNome">Nome Completo
+                        <span class="campo-obrigatorio">*</span></label>
                         <input type="text" class="form-control" id="campoAlunoNome" name="alunoNome">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="campoAlunoSobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="campoAlunoSobrenome" name="alunoSobrenome">
+                        <span id="erroNomeAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="radioAlunoMasc">
-                            <input type="radio" class="" id="radioAlunoMasc" name="alunoGenero" value="M" checked>
-                            &nbsp;&nbsp;Masculino</label>
+                            <input type="radio" class="" id="radioAlunoMasc" name="alunoGenero" value="1" checked>
+                            &nbsp;&nbsp;Masculino
+                        </label>
                         <label for="radioAlunoFem">&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" class="" id="radioAlunoFem" name="alunoGenero" value="F">
+                            <input type="radio" class="" id="radioAlunoFem" name="alunoGenero" value="2">
                             &nbsp;&nbsp;Feminino</label>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoAnoAluno">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="campoAnoAluno" name="alunoAnoNascimento">
+                        <label for="campoAnoAluno">Data de Nascimento
+                        <span class="campo-obrigatorio">*</span></label>
+                        <input type="text" class="form-control field-date" id="campoAnoAluno" name="alunoAnoNascimento">
+                        <span id="erroDataAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoEmailAluno">E-mail</label>
+                        <label for="campoEmailAluno">E-mail
+                        <span class="campo-obrigatorio">*</span></label>
                         <input type="text" class="form-control" id="campoEmailAluno" name="alunoEmail">
+                        <span id="erroEmailAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoTelefoneAluno">Telefone</label>
-                        <input type="text" class="form-control" id="campoTelefoneAluno" name="alunoTelefone">
+                        <label for="campoTelefoneAluno">Telefone
+                        <span class="campo-obrigatorio">*</span></label>
+                        <input type="text" class="form-control field-phone" id="campoTelefoneAluno" name="alunoTelefone">
+                        <span id="erroPhoneAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoLoginAluno">Login de Acesso</label>
+                        <label for="campoLoginAluno">Login de Acesso (Mínimo 5 digitos)
+                        <span class="campo-obrigatorio">*</span></label>
                         <input type="text" class="form-control" id="campoLoginAluno" name="alunoLogin">
+                        <span id="erroLoginAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoSenhaAluno">Senha</label>
+                        <label for="campoSenhaAluno">Senha (Mínimo 6 digitos)
+                        <span class="campo-obrigatorio">*</span></label>
                         <input type="password" class="form-control" id="campoSenhaAluno" name="alunoSenha">
+                        <span id="erroSenhaAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="campoSenhaRepetirAluno">Confirmar Senha</label>
+                        <label for="campoSenhaRepetirAluno">Confirmar Senha (Mínimo 6 digitos)
+                        <span class="campo-obrigatorio">*</span></label>
                         <input type="password" class="form-control" id="campoSenhaRepetirAluno" name="alunoSenhaRepetir">
+                        <span id="erroRepeteAluno" class="alerta-validacao col-md-12 col-lg-12"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="checkAtivoAluno">
-                            <input type="checkbox" id="checkAtivoAluno" name="alunoCheckAtivo" >
-                            &nbsp;&nbsp;Ativo</label>
-                    </div>
-
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        <button type="reset" class="btn btn-primary">Limpar Campos</button>
+                        <button type="submit" class="btn btn-primary" id="submitAluno">Cadastrar</button>
+                        <button type="reset" class="btn btn-primary" id="resetAluno">Limpar Campos</button>
                     </div>
                 </form>
             </div>

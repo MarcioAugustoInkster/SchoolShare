@@ -13,7 +13,6 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
         <%@include file="/master/css.jsp" %>
-        <%@include file="/master/scripts.jsp" %>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">

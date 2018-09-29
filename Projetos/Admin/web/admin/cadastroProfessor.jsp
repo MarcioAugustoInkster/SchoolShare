@@ -22,53 +22,71 @@
                 <div class="box-body">
                     <form action="/registroProfessor" method="POST" role="form">
                         <div class="form-group">
-                            <label for="campoProfessorNome">Nome do Professor</label>
+                            <label for="campoProfessorNome">Nome do Professor
+                                <span class="campo-obrigatorio">*</span></label>
                             <input type="text" class="form-control" id="campoProfessorNome" 
                                    name="professorNome">
+                            <span id="erroNomeProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
                             <label for="radioProfessorMasc">
                                 <input type="radio" class="" id="radioProfessorMasc" 
-                                       name="professorGenero" value="1" checked>&nbsp;&nbsp;Masculino</label>
+                                       name="professorGenero" value="1" checked>&nbsp;&nbsp;Masculino
+                                <span class="campo-obrigatorio">*</span></label>
                             <label for="radioProfessorFem">&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="radio" class="" id="radioProfessorFem" 
-                                    name="professorGenero" value="2">&nbsp;&nbsp;Feminino</label>
+                                       name="professorGenero" value="2">&nbsp;&nbsp;Feminino</label>
                         </div>
-
                         <div class="form-group">
-                            <label for="campoAnoProfessor">Data de Nascimento</label>
+                            <label for="campoAnoProfessor">Data de Nascimento
+                                <span class="campo-obrigatorio">*</span></label>
                             <input type="text" class="form-control field-date" id="campoAnoProfessor" 
                                    name="professorAnoNascimento">
+                            <span id="erroDataProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
-                            <label for="campoEmailProfessor">E-mail</label>
+                            <label for="campoEmailProfessor">E-mail
+                                <span class="campo-obrigatorio">*</span></label>
                             <input type="text" class="form-control" id="campoEmailProfessor" 
                                    name="professorEmail">
+                            <span id="erroEmailProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
-                            <label for="campoTelefoneProfessor">Telefone</label>
+                            <label for="campoTelefoneProfessor">Telefone
+                            <span class="campo-obrigatorio">*</span></label>
                             <input type="text" class="form-control field-phone" id="campoTelefoneProfessor" 
                                    name="professorTelefone">
+                            <span id="erroPhoneProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
-                            <label for="campoLoginProfessor">Login de Acesso</label>
+                            <label for="campoLoginProfessor">Login de Acesso (Mínimo 5 caracteres)
+                            <span class="campo-obrigatorio">*</span></label>
                             <input type="text" class="form-control" id="campoLoginProfessor" 
                                    name="professorLogin">
+                            <span id="erroLoginProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
-                            <label for="campoSenhaProfessor">Senha</label>
+                            <label for="campoSenhaProfessor">Senha (Mínimo 6 digitos)
+                            <span class="campo-obrigatorio">*</span></label>
                             <input type="password" class="form-control" id="campoSenhaProfessor" 
                                    name="professorSenha">
+                            <span id="erroSenhaProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
                         <div class="form-group">
-                            <label for="campoSenhaRepetirProfessor">Confirmar Senha</label>
+                            <label for="campoSenhaRepetirProfessor">Confirmar Senha
+                            <span class="campo-obrigatorio">*</span></label>
                             <input type="password" class="form-control" id="campoSenhaRepetirProfessor" 
                                    name="professorSenhaRepetir">
+                            <span id="erroRepeatProfessor" class="alerta-validacao col-md-12 col-lg-12"></span>
                         </div>
-
+                        
+                        <div class="form-group">
+                            <span class="campo-obrigatorio">*</span>&nbsp;<label>Campo Obrigatório</label>
+                        </div>
+                        
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
-                            <button type="reset" class="btn btn-primary">Limpar Campos</button>
+                            <button type="submit" class="btn btn-primary" id="submitProfessor">Cadastrar</button>
+                            <button type="reset" class="btn btn-primary" id="resetProfessor">Limpar Campos</button>
                         </div>
                     </form>
                 </div>

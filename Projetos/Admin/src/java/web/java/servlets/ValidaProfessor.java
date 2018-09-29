@@ -65,18 +65,17 @@ public class ValidaProfessor extends HttpServlet {
             repetirSenha = GeraValor.geraSenhaEncriptado(
                 request.getParameter("professorSenhaRepetir")).toString();
             
-            pessoa.setNomeCompleto(nome);
-            pessoa.setGenero(genero);
-            pessoa.setDataDeNascimento(anoNascimento);
-            pessoa.setEmail(email);
-            pessoa.setTelefone(telefone);
-            pessoa.setLogin(login);
-            pessoa.setAtivo(true);
-            pessoa.setAcesso(2);
-            
             if (pegaSenha.equals(repetirSenha)) {
+                pessoa.setNomeCompleto(nome);
+                pessoa.setGenero(genero);
+                pessoa.setDataDeNascimento(anoNascimento);
+                pessoa.setEmail(email);
+                pessoa.setTelefone(telefone);
+                pessoa.setLogin(login);
                 pessoa.setSenha(pegaSenha);
-            
+                pessoa.setAtivo(true);
+                pessoa.setAcesso(2);
+                
                 int ultimoId = PessoaDAO.inserePessoa(pessoa);
                 
                 if (ultimoId != 0) {

@@ -28,7 +28,7 @@ public class AdminDAO {
             while (rs.next()) {
                 PessoaBean admin = new PessoaBean();
                 
-                admin.setNome(rs.getString("nome_completo"));
+                admin.setNomeCompleto(rs.getString("nome_completo"));
                 admin.setLogin(rs.getString("login"));
                 admin.setEmail(rs.getString("email"));
                 admin.setAcesso(rs.getByte("acesso"));

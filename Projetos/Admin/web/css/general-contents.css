@@ -9,6 +9,7 @@
     padding-top: 0;
     padding-bottom: 12px;
     background-color: #f2f2f2;
+    margin-top: 8px;
 }
 .ink-header-top h2 {
     text-align: center;
@@ -18,9 +19,26 @@
     font-weight: bold;
     font-family: Candara;
 }
+.col-default-guide-sh {
+    border: 1px solid #8b0000;
+}
 
 .tabela-componentes-chamada label, 
 .tabela-componentes-chamada input,
 .tabela-componentes-chamada button {
     display: block;
+}
+.campo-obrigatorio {
+    margin-left: 6px;
+    color: rgb(210, 70, 60);
+    font-weight: bold;
+}
+span.alerta-validacao {
+    border: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: rgb(210, 70, 60);
+    font-weight: bold;
+    margin-left: 0;
+    padding: 0;
 }

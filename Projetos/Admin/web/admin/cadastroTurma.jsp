@@ -1,4 +1,4 @@
-<%@page import="web.java.dao.PessoaDAO"%>
+<%@page import="web.java.dao.ProfessorDAO"%>
 <%@page import="web.java.dao.CursoDAO"%>
 <%@page import="web.java.classe.CursoBean"%>
 <%@page import="web.java.classe.PessoaBean"%>
@@ -29,12 +29,12 @@
                         <label for="campoTurmaProfessor">Adicione um Professor</label>
                         <select class="form-control" id="campoTurmaProfessor" name="turmaProfessor">
                             <%
-                                List<PessoaBean> pessoa = new PessoaDAO().listaNomeProfessor();
+                                List<PessoaBean> professor = new ProfessorDAO().listaProfessor();
 
-                                for (PessoaBean lista : pessoa) {
+                                for (PessoaBean lista : professor) {
                             %>
                             <option value="<%=lista.getId()%>">
-                                <%=lista.getNome()%>&nbsp;<%=lista.getSobrenome()%>
+                                <%=lista.getNomeCompleto()%>
                             </option>
                             <%
                                 }
@@ -65,13 +65,13 @@
 
                     <div class="form-group">
                         <label for="campoTurmaDataInicio">Data Inicial</label>
-                        <input type="text" class="form-control" id="campoTurmaDataInicio" 
+                        <input type="text" class="form-control field-date" id="campoTurmaDataInicio" 
                                name="turmaDataInicio">
                     </div>
 
                     <div class="form-group">
                         <label for="campoTurmaDataFinal">Data Final</label>
-                        <input type="text" class="form-control" id="campoTurmaDataFinal" 
+                        <input type="text" class="form-control field-date" id="campoTurmaDataFinal" 
                                name="turmaDataFinal">
                     </div>
 

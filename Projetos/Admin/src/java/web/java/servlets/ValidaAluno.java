@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import web.java.classe.PessoaBean;
+import web.java.dao.AlunoDAO;
 import web.java.dao.PessoaDAO;
 import web.java.mapping.DataFormatter;
 import web.java.mapping.GeraValor;
@@ -23,75 +24,64 @@ public class ValidaAluno extends HttpServlet {
     private static PrintWriter out;
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        
-       response.setContentType("text/html;charset=UTF-8"); 
-        
-        
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
         
+        DataFormatter df = new DataFormatter();
+        
         try {
             PessoaBean pessoa = new PessoaBean();
 
-            String nome = request.getParameter("alunoNome"), 
-                sobrenome = request.getParameter("alunoSobrenome"), 
-                genero = request.getParameter("alunoGenero"), 
-                anoNascimento = DataFormatter.converteStringToDate(
-                    request.getParameter("alunoAnoNascimento")),
-                email = request.getParameter("alunoEmail"), 
-                telefone = request.getParameter("alunoTelefone"), 
+            String nome = request.getParameter("alunoNome"),
+                anoNascimento = request.getParameter("alunoAnoNascimento"),
+                email = request.getParameter("alunoEmail"),
+                telefone = request.getParameter("alunoTelefone"),
                 login = request.getParameter("alunoLogin"),
                 senha = request.getParameter("alunoSenha"),
-                ativo = request.getParameter("alunoCheckAtivo");
+                repeteSenha = request.getParameter("alunoSenhaRepetir");
             
             byte[] convNome = nome.getBytes(StandardCharsets.ISO_8859_1);
             nome = new String(convNome, StandardCharsets.UTF_8);
             
-            byte[] convSobrenome = sobrenome.getBytes(StandardCharsets.ISO_8859_1);
-            sobrenome = new String(convSobrenome, StandardCharsets.UTF_8);
+            byte[] convEmail = email.getBytes(StandardCharsets.ISO_8859_1);
+            email = new String(convEmail, StandardCharsets.UTF_8);
             
             byte[] convLogin = login.getBytes(StandardCharsets.ISO_8859_1);
             login = new String(convLogin, StandardCharsets.UTF_8);
             
             byte[] convSenha = senha.getBytes(StandardCharsets.ISO_8859_1);
             senha = new String(convSenha, StandardCharsets.UTF_8);
-            out.print(anoNascimento);
-            String guardaSenha = GeraValor.geraSenhaEncriptado(senha).toString(),
-            repetirSenha = GeraValor.geraSenhaEncriptado(
-                request.getParameter("alunoSenhaRepetir")).toString();
             
-            boolean defineAtivo = true;
+            String guardaSenha = GeraValor.geraSenhaEncriptado(senha).toString();
             
-            if (ativo == null) {
-                defineAtivo = false;
-            }
+            byte[] convRepeteSenha = repeteSenha.getBytes(StandardCharsets.ISO_8859_1);
+            repeteSenha = new String(convRepeteSenha, StandardCharsets.UTF_8);
             
-            pessoa.setNome(nome);
-            pessoa.setSobrenome(sobrenome);
-            pessoa.setSexo(genero.charAt(0));
-            pessoa.setDataDeNascimento(anoNascimento);
-            pessoa.setEmail(email);
-            pessoa.setTelefone(telefone);
-            pessoa.setLogin(login);
-            pessoa.setTipo(3);
-            pessoa.setAtivo(defineAtivo);
+            byte genero = Byte.parseByte(request.getParameter("alunoGenero"));
             
-            if (guardaSenha.equals(repetirSenha)) {
+            String dataAluno = df.dataParaEN(anoNascimento);
+            
+            if (senha.equals(repeteSenha)) {
+                pessoa.setNomeCompleto(nome);
+                pessoa.setGenero(genero);
+                pessoa.setDataDeNascimento(dataAluno);
+                pessoa.setEmail(email);
+                pessoa.setTelefone(telefone);
+                pessoa.setLogin(login);
                 pessoa.setSenha(guardaSenha);
+                pessoa.setAtivo(true);
+                pessoa.setAcesso(3);
 
-                if (PessoaDAO.inserePessoa(pessoa)) {
-                    response.sendRedirect("/inf/success.jsp");
+                int ultimoId = PessoaDAO.inserePessoa(pessoa);
+                
+                if (ultimoId != 0) {
+                    if (AlunoDAO.insereAluno(ultimoId)) {
+                        response.sendRedirect("/inf/success.jsp");
+                    }
                 }
-            } else {
-                out.print("<2>Cadastro falhou! Tente novamente ou contacte o Administrador</h2>");
             }
         } catch (Exception ex) {
             ex.printStackTrace();

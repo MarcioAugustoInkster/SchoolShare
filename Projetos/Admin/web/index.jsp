@@ -7,7 +7,7 @@
 </section>
 
 <!-- Container para Cadastro de Entidades -->
-<div class="col-md-12">
+<div class="col-md-4">
     <div class="ink-header-top">
         <h2>Entidades e Módulos</h2>
     </div>
@@ -54,7 +54,7 @@
 </div>
 
 <!-- Container para Cadastro de Usuários -->
-<div class="col-md-12">
+<div class="col-md-4">
     <div class="ink-header-top">
         <h2>Usuários e Integrantes</h2>
     </div>
@@ -100,7 +100,7 @@
 </div>
 
 <!-- Container para Cadastro de Integração Escolar -->
-<div class="col-md-12">
+<div class="col-md-4">
     <div class="ink-header-top">
         <h2>Integração Escolar</h2>
     </div>

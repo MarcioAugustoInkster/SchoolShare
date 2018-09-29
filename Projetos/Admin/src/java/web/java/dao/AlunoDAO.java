@@ -1,5 +1,7 @@
 package web.java.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,13 +15,37 @@ import web.java.conexao.Banco;
  * @author Marcio Augusto Schlosser
  */
 public class AlunoDAO {
+    public static boolean insereAluno(int id) {
+        Connection coneccao = Banco.conecta();
+        
+        if (coneccao != null) {
+            String sqlPessoa = "INSERT INTO alunos (pessoas_id) VALUES (?)";
+                
+            try {
+                PreparedStatement pstmt = coneccao.prepareStatement(sqlPessoa, PreparedStatement.RETURN_GENERATED_KEYS);
+
+                pstmt.setInt(1, id);
+                pstmt.execute();
+                
+                return true;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            } finally {
+                Banco.fecharBanco();
+            }
+        }
+        return false;
+    }
+    
     public List<PessoaBean> listaAluno() {
         List<PessoaBean> listaAluno = new ArrayList<>();
         
         try {
-            String sql = "SELECT id, nome, sobrenome, sexo, data_nascimento, email, telefone, ";
-                sql += "login, tipo, ativo FROM pessoa ";
-                sql += "WHERE tipo=3 AND ativo=1 GROUP BY nome";
+            String sql = "SELECT pe.id, pe.nome_completo, pe.genero, pe.data_nascimento, ";
+                sql += "pe.email, pe.telefone, pe.login, pe.ativo, pe.acesso FROM ";
+                sql += "alunos al INNER JOIN pessoas pe ON ";
+                sql += "pe.id = al.pessoas_id WHERE ativo=TRUE ";
+                sql += "GROUP BY nome_completo";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -30,15 +56,14 @@ public class AlunoDAO {
                 PessoaBean pessoa = new PessoaBean();
                 
                 pessoa.setId(rs.getInt("id"));
-                pessoa.setNome(rs.getString("nome"));
-                pessoa.setSobrenome(rs.getString("sobrenome"));
-                pessoa.setSexo(rs.getString("sexo").charAt(0));
+                pessoa.setNomeCompleto(rs.getString("nome_completo"));
+                pessoa.setGenero(rs.getByte("genero"));
                 pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoa.setLogin(rs.getString("login"));
-                pessoa.setTipo(rs.getByte("tipo"));
                 pessoa.setAtivo(rs.getBoolean("ativo"));
+                pessoa.setAcesso(rs.getByte("acesso"));
                 
                 listaAluno.add(pessoa);
             }
@@ -54,8 +79,12 @@ public class AlunoDAO {
         PessoaBean pessoa = null;
         
         try {
-            String sql = "SELECT id, nome, sobrenome, data_nascimento, email, telefone, login ";
-                sql += "FROM pessoa WHERE login='" + login + "' AND ativo=1 AND tipo=3";
+            String sql = "SELECT p.id, p.nome_completo, p.data_nascimento, p.email, ";
+                sql += "p.telefone, p.login ";
+                sql += "FROM pessoas p ";
+                sql += "INNER JOIN alunos a ";
+                sql += "ON p.id = a.pessoas_id ";
+                sql += "WHERE login='joao' AND ativo=TRUE AND acesso=3";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
@@ -66,8 +95,7 @@ public class AlunoDAO {
                 pessoa = new PessoaBean();
                 
                 pessoa.setId(rs.getInt("id"));
-                pessoa.setNome(rs.getString("nome"));
-                pessoa.setSobrenome(rs.getString("sobrenome"));
+                pessoa.setNomeCompleto(rs.getString("nome_completo"));
                 pessoa.setDataDeNascimento(rs.getString("data_nascimento"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setTelefone(rs.getString("telefone"));

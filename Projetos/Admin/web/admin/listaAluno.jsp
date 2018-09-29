@@ -1,6 +1,7 @@
+<%@page import="web.java.dao.AlunoDAO"%>
 <%@page import="web.java.classe.PessoaBean"%>
 <%@page import="java.util.List"%>
-<%@page import="web.java.dao.PessoaDAO"%>
+<%@page import="web.java.dao.AlunoDAO"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -25,7 +26,6 @@
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
-                        <th>Gênero</th>
                         <th>Data Nascimento</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     <%
-                        List<PessoaBean> aluno = new PessoaDAO().listaAluno();
+                        List<PessoaBean> aluno = new AlunoDAO().listaAluno();
                         for (PessoaBean listagem : aluno) {
                             String active = "";
 
@@ -47,17 +47,7 @@
                             }
                     %>
                     <tr>
-                        <td><%=listagem.getNome()%>&nbsp;<%=listagem.getSobrenome()%></td>
-                        <%
-                            String genero = "";
-
-                            if (listagem.getSexo() == 'M' || listagem.getSexo() == 'm') {
-                                genero = "fa-mars";
-                            } else if (listagem.getSexo() == 'F' || listagem.getSexo() == 'f') {
-                                genero = "fa-venus";
-                            }
-                        %>
-                        <td><i class="fa <%=genero%>"></i></td>
+                        <td><%=listagem.getNomeCompleto()%></td>
                         <td><%=listagem.getDataDeNascimento()%></td>
                         <td><%=listagem.getEmail()%></td>
                         <td><%=listagem.getTelefone()%></td>
@@ -65,7 +55,7 @@
                         <td><%=active%></td>
                         <td><a class="btn-custom btn-app-custom"><i class="fa fa-edit"></i> Edit</a></td>
                     </tr>
-                    <% }%>
+                    <% } %>
                 </tbody>
             </table>
         </div>

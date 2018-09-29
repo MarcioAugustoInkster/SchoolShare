@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import web.java.classe.TurmaBean;
 import web.java.dao.TurmaDAO;
+import web.java.mapping.DataFormatter;
 
 /**
  *
@@ -26,14 +27,16 @@ public class ValidaTurma extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
         
+        DataFormatter df = new DataFormatter();
+        
         try {
             TurmaBean turma = new TurmaBean();
 
             int nomeProfessor = Integer.parseInt(request.getParameter("turmaProfessor")),
                 nomeCurso = Integer.parseInt(request.getParameter("turmaCurso"));
             String nomeTurma = request.getParameter("turmaNome"),
-                dataInicio = request.getParameter("turmaDataInicio"),
-                dataFinal = request.getParameter("turmaDataFinal");
+                dataInicio = df.dataParaEN(request.getParameter("turmaDataInicio")),
+                dataFinal = df.dataParaEN(request.getParameter("turmaDataFinal"));
             short cargaHorario = Short.parseShort(request.getParameter("turmaCargaHora"));
             
             turma.setProfessorId(nomeProfessor);
