@@ -1,7 +1,7 @@
 <%-- 
     Document   : SchoolShare
     Created on : Um dia qualquer...
-    Author     : Daiana & Marcio
+    Author     : Daiana & Marcio 
 --%>
 
 <%@page import="web.java.mapping.ListagemArquivos"%>
@@ -21,7 +21,6 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
-                <li><a href="#calendario" data-toggle="tab">Calendário</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
@@ -35,16 +34,6 @@
                     </div>
                 </div>
 
-                <!-- Tab Calendário -->
-                <div class="tab-pane" id="calendario">
-                    <div class="post">
-                        
-                    </div>
-
-                    <div class="post clearfix">
-
-                    </div>
-                </div>
 
                 <!-- Tab Arquivos -->
                 <div class="tab-pane" id="arquivos">

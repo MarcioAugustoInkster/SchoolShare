@@ -21,11 +21,9 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
-                <li><a href="#calendario" data-toggle="tab">Calendário</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
-                <li><a href="#grade" data-toggle="tab">Grade Escolar</a></li>
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
             </ul>
             <div class="tab-content">
@@ -33,17 +31,6 @@
                 <div class="active tab-pane" id="noticias">
                     <div class="post clearfix">
                         <%@include file="/aluno/tabs/noticias.jsp" %>
-                    </div>
-                </div>
-
-                <!-- Tab Calendário -->
-                <div class="tab-pane" id="calendario">
-                    <div class="post">
-
-                    </div>
-
-                    <div class="post clearfix">
-
                     </div>
                 </div>
 
@@ -70,21 +57,6 @@
                     <div class="post clearfix">
                         <div class="form-group">
                             <%@include file="/aluno/tabs/notas.jsp" %>
-                        </div>
-
-                        <div class="form-group">
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab Grade Escolar -->
-                <div class="tab-pane" id="grade">
-                    <div class="post clearfix">
-                        <h4>Pesquise uma Turma na lista</h4>
-
-                        <div class="form-group">
-
                         </div>
 
                         <div class="form-group">
