@@ -42,7 +42,8 @@ public class ValidaChamada extends HttpServlet {
             
             turma.setProfessorId(nomeAluno);
             turma.setTurma(nomeTurma);
-            turma.setData(data);
+            turma.setDataInicio(data);
+            turma.setDataFinal(data);
             turma.setCargaHoraria(chamadaAluno);
             
             if (TurmaDAO.insereTurma(turma)) {

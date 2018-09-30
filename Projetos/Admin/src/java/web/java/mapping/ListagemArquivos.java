@@ -39,13 +39,14 @@ public class ListagemArquivos {
 
             File dir = new File(dfa.uploadFullPath(request));
             File[] files = dir.listFiles();
+            DataFormatter df = new DataFormatter();
 
             if (files.length == 0) {
                 sb.append("The directory is empty");
             } else {
                 for (File list : files) {
                     String ext = DataFormatter.getExtensionFile(list);
-                    String getFormattedDate = DataFormatter.fileDateTimeToString(list);
+                    String getFormattedDate = df.fileDateTimeToString(list);
                     //long fileToKB = DataFormatter.sizeToKiloByte(list);
 
                     fileName.add(list.getName());

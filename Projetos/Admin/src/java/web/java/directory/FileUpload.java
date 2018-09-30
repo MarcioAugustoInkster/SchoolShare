@@ -31,7 +31,7 @@ public class FileUpload extends HttpServlet {
     private String UPLOAD_DIRECTORY;
 
     protected void getGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
 
     }
 
