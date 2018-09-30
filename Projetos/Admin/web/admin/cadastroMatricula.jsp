@@ -77,7 +77,6 @@
                             <tr>
                                 <td><%=listagem.getId()%></td>
                                 <td class="elementToCopy"><%=listagem.getNomeCompleto()%></td>
-                                <td><%=genero%></td>
                                 <td><a class="btn-custom btn-app-custom copyAndPaste" id="matricula" name="matricula">
                                         <i class="fa fa-check-circle"></i> Confirma</a></td>
                             </tr>

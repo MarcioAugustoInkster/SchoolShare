@@ -62,15 +62,12 @@
                             </div>
 
                             <div class="center-components">
-                                <div class="form-checkbox-control">
-                                    <label><input type="checkbox">Lembrar minha Senha</label>
-                                </div>
                                 <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
                             </div>
 
                             <div class="center-components">
                                 <div class="form-checkbox-control">
-                                    <a href="#">Esqueci minha senha</a>
+                                    <a href="/portalUsuario">Esqueci minha senha</a>
                                 </div>
                             </div>
 

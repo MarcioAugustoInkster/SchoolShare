@@ -38,7 +38,7 @@
                 <!-- Tab Calendário -->
                 <div class="tab-pane" id="calendario">
                     <div class="post">
-                        <%@include file="/admin/calendar.jsp" %>
+                        
                     </div>
 
                     <div class="post clearfix">

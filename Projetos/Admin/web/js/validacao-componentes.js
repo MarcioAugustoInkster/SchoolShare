@@ -33,6 +33,10 @@ $(document).ready(function () {
         dateFormat: "d M y"
     });
     
+    $("#campoAnoAluno").datepicker({
+        dateFormat: "d M y"
+    });
+    
     $("#campoDataInicioCurso").datepicker({
         dateFormat: "d M y"
     });

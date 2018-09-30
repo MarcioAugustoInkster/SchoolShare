@@ -118,19 +118,6 @@
         </div>
     </div>
 
-    <div class="col-default-guide-sh" onclick="onNotaIndex();">
-        <div class="content-inside-title">
-            <label>Avaliação</label>
-        </div>
-        <div class="content-inside-box">
-            <div class="box-body">
-                <span class="info-box-icon bg-red-gradient">
-                    <i class="fa fa-check-square-o"></i>
-                </span>
-            </div>
-        </div>
-    </div>
-
     <div class="col-default-guide-sh">
         <div class="content-inside-title">
             <label>Calendário</label>

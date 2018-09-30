@@ -55,6 +55,7 @@ public class Banco {
 
         if (conexao != null) {
             try {
+                // Não será necessário no momento limpara tabelas
                 Statement st = conexao.createStatement();
                 st.addBatch("SET FOREIGN_KEY_CHECKS = 0;");
                 st.addBatch("TRUNCATE TABLE instituicao;");
@@ -98,7 +99,7 @@ public class Banco {
     }
     
     public static boolean authenticaLoginAluno(String login, StringBuilder senha) {
-        String sql = "SELECT login, senha FROM pessoa WHERE login=? AND senha=? AND ativo=1 AND tipo=3";
+        String sql = "SELECT login, senha FROM pessoas WHERE login=? AND senha=? AND ativo=TRUE AND acesso=3 OR acesso=1";
 
         try {
             PreparedStatement pstmt = conexao.prepareStatement(sql);
@@ -119,7 +120,7 @@ public class Banco {
     }
     
     public static boolean authenticaLoginProfessor(String login, StringBuilder senha) {
-        String sql = "SELECT login, senha FROM pessoa WHERE login=? AND senha=? AND ativo=1 AND tipo=2";
+        String sql = "SELECT login, senha FROM pessoas WHERE login=? AND senha=? AND ativo=TRUE AND acesso=2 OR acesso=1";
 
         try {
             PreparedStatement pstmt = conexao.prepareStatement(sql);

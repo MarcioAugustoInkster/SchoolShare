@@ -4,6 +4,7 @@
     Author     : Freakazed-PC
 --%>
 
+<%@page import="web.java.dao.ProfessorDAO"%>
 <%@page import="web.java.mapping.DataFormatter"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.dao.PessoaDAO"%>
@@ -20,9 +21,10 @@
         if (SessaoAdmin.verificaSessaoProfessor(request, response)) {
             meuPerfil = SessaoAdmin.retornaSessao(request);
 
-            PessoaBean pessoa = new PessoaDAO().listaProfessorPorLogin(meuPerfil);
-
-            String anoNascimento = DataFormatter.converteStringToDate(pessoa.getDataDeNascimento());
+            PessoaBean professor = new ProfessorDAO().listaProfessorPorLogin(meuPerfil);
+            DataFormatter df = new DataFormatter();
+            
+            String anoNascimento = df.dataParaBR(professor.getDataDeNascimento());
     %>
     <div class="col-md-6">
         <div class="form-group">
@@ -31,7 +33,7 @@
                     <img class="profile-user-img img-responsive img-circle" src="/img/users/no-user-set.jpg" alt="User profile picture">
 
                     <h3 class="profile-username text-center">
-                        <%=pessoa.getNome()%>&nbsp;<%=pessoa.getSobrenome()%>
+                        <%=professor.getNome()%>&nbsp;<%=pessoa.getSobrenome()%>
                     </h3>
 
                     <p class="text-muted text-center"></p>

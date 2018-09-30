@@ -36,6 +36,14 @@ body {
     background-size: 100%;
     background-position: center;
 }
+.form-control-support {
+    width: 380px;
+    margin: 0 auto;
+    padding: 6px 0;
+    background-color: transparent;
+    background-size: 100%;
+    background-position: center;
+}
 .wrapper-title-form {
     border: none;
     margin-bottom: 6px;
@@ -70,6 +78,19 @@ body {
     margin-bottom: 12px;
     padding: 10px 6px 0 6px;
     background-color: transparent;
+}
+.wrapper-login-center h4 {
+    color: #f2f2f2;
+    text-align: left;
+}
+.wrapper-login-center h3 {
+    color: #f2f2f2;
+    text-align: center;
+}
+.wrapper-login-center h2 {
+    color: #fff;
+    text-align: center;
+    background-color: #ff6666;
 }
 .center-components, .wrapper-login-footer {
     width: 100%;
@@ -147,6 +168,23 @@ body {
     color: #f2f2f2;
 }
 .wrapper-login-footer > strong > a {
+    color: #88ff4d;
+}
+.wrapper-suporte-footer {
+    margin-top: 0;
+    border-top: 2px solid #ccc;
+    background-color: transparent;
+    color: #f2f2f2;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    padding: 0 0 20% 0;
+}
+.wrapper-suporte-footer > strong {
+    color: #f2f2f2;
+}
+.wrapper-suporte-footer > strong > a {
     color: #88ff4d;
 }
 .wrapper-version {

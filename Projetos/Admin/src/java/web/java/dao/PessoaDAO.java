@@ -11,17 +11,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import web.java.classe.PessoaBean;
 import web.java.conexao.Banco;
+import web.java.mapping.GeraValor;
 
 public class PessoaDAO {
+
     public static int inserePessoa(PessoaBean pessoa) {
         Connection coneccao = Banco.conecta();
         int ultimoId = 0;
-        
+
         if (coneccao != null) {
             String sqlPessoa = "INSERT INTO pessoas ";
-                sqlPessoa += "(nome_completo, genero, data_nascimento, email, telefone, login, senha, ativo, acesso) ";
-                sqlPessoa += "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                
+            sqlPessoa += "(nome_completo, genero, data_nascimento, email, telefone, login, senha, ativo, acesso) ";
+            sqlPessoa += "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             try {
                 PreparedStatement pstmt = coneccao.prepareStatement(sqlPessoa, Statement.RETURN_GENERATED_KEYS);
 
@@ -34,11 +36,11 @@ public class PessoaDAO {
                 pstmt.setString(7, pessoa.getSenha());
                 pstmt.setBoolean(8, pessoa.isAtivo());
                 pstmt.setInt(9, pessoa.getAcesso());
-                
+
                 pstmt.executeUpdate();
-                
+
                 ResultSet rs = pstmt.getGeneratedKeys();
-                
+
                 if (rs.next()) {
                     ultimoId = rs.getInt(1);
                 }
@@ -50,18 +52,18 @@ public class PessoaDAO {
         }
         return ultimoId;
     }
-    
+
     public int retornaUsuarioId(String login) {
         int id = 0;
-        
+
         try {
             String sql = "SELECT id FROM pessoas WHERE login='" + login + "' AND ativo=TRUE AND acesso=3";
-            
+
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
-            
+
             ResultSet rs = stmt.getResultSet();
-            
+
             while (rs.next()) {
                 id = rs.getInt("id");
             }
@@ -72,27 +74,27 @@ public class PessoaDAO {
         }
         return id;
     }
-    
+
     public static int retornaUltimoId() {
         Connection coneccao = Banco.conecta();
         Statement stmt = null;
         int retornaInteiro = 0;
-        
+
         if (coneccao != null) {
             String sql = "SELECT id FROM pessoas";
-                
+
             try {
                 stmt = coneccao.createStatement();
                 stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
-                
+
                 ResultSet rs = stmt.getGeneratedKeys();
-                
+
                 if (rs.next()) {
                     retornaInteiro = rs.getInt(1);
                 }
                 rs.close();
                 stmt.close();
-                
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             } finally {
@@ -100,33 +102,80 @@ public class PessoaDAO {
             }
         }
         return retornaInteiro;
-        
-        
-        
-        
-        
-        /*
+    }
+
+    public boolean alteraSenhaUsuario(PessoaBean pessoa) {
         Connection coneccao = Banco.conecta();
-        int ultimoId = 0;
+        
+        String sql = "UPDATE pessoas SET senha = ? WHERE id = ?";
+        
+        int pegaId = 0;
         
         try {
-            String sql = "SELECT id FROM pessoas WHERE ativo=TRUE AND acesso=3";
+            if (pessoa.getEmail() != null) {
+                pegaId = buscaPessoaIdPorEmail(pessoa.getEmail());
+            } else if (pessoa.getLogin() != null) {
+                pegaId = buscaPessoaIdPorLogin(pessoa.getLogin());
+            }
             
-            Statement stmt = coneccao.createStatement();
-            stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+            String novaSenha = GeraValor.geraSenhaEncriptado(pessoa.getSenha()).toString();
             
+            PreparedStatement ps = coneccao.prepareStatement(sql);
+            ps.setString(1, novaSenha);
+            ps.setInt(2, pegaId);
+            
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        return false;
+    }
+    
+    private int buscaPessoaIdPorEmail(String email) {
+        int id = 0;
+
+        try {
+            String sql = "SELECT id FROM pessoas WHERE email='" + email + "' AND ativo=TRUE";
+
+            Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);
-            
+
             ResultSet rs = stmt.getResultSet();
-            
+
             while (rs.next()) {
-                ultimoId = rs.getInt("id");
+                id = rs.getInt("id");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             Banco.fecharBanco();
         }
-        return ultimoId;*/
+        
+        return id;
+    }
+    
+    private int buscaPessoaIdPorLogin(String login) {
+        int id = 0;
+
+        try {
+            String sql = "SELECT id FROM pessoas WHERE login='" + login + "' AND ativo=TRUE";
+
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
+
+            ResultSet rs = stmt.getResultSet();
+
+            while (rs.next()) {
+                id = rs.getInt("id");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            Banco.fecharBanco();
+        }
+        
+        return id;
     }
 }

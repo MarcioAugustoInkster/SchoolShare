@@ -9,12 +9,12 @@
 <div class="form-group">
     <div class="col-md-8">
         <!-- DIRECT CHAT -->
-        <div class="box box-warning direct-chat direct-chat-warning">
+        <div class="box box-primary direct-chat direct-chat-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Mensagens Recentes</h3>
 
                 <div class="box-tools pull-right">
-                    <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">3</span>
+                    <span data-toggle="tooltip" title="" class="badge bg-blue-active" data-original-title="3 New Messages">3</span>
                 </div>
             </div>
             <div class="box-body">
@@ -74,17 +74,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="box-footer">
-                <form action="#" method="post">
-                    <div class="input-group">
-                        <input type="text" name="message" placeholder="Digite uma mensagem..." class="form-control">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-warning btn-flat">Enviar</button>
-                        </span>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

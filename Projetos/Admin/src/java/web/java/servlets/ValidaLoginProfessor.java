@@ -22,15 +22,6 @@ public class ValidaLoginProfessor extends HttpServlet {
     private PrintWriter out;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        response.setContentType("text/html;charset=UTF-8");
-        out = response.getWriter();
-
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 

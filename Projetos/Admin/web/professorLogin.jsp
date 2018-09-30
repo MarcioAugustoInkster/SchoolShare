@@ -42,7 +42,7 @@
                     <div class="form-control-login">
                         <header class="wrapper-login-top">
                             <nav class="nav-login-logo">
-                                <label>Bem vindo ao </label><b>School</b>&nbsp;Share
+                                <label>Bem-vindo ao </label><b>School</b>&nbsp;Share
                             </nav>
                             <b>Portal do Professor</b>
                         </header>
@@ -62,15 +62,12 @@
                             </div>
 
                             <div class="center-components">
-                                <div class="form-checkbox-control">
-                                    <label><input type="checkbox">Lembrar minha Senha</label>
-                                </div>
                                 <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
                             </div>
 
                             <div class="center-components">
                                 <div class="form-checkbox-control">
-                                    <a href="#">Esqueci minha senha</a>
+                                    <a href="/portalUsuario">Esqueci minha senha</a>
                                 </div>
                             </div>
 
@@ -86,11 +83,10 @@
 
         <footer class="wrapper-login-footer">
             <div class="wrapper-version">
-                <b>Versão</b> 1.0.5
+                <b>Versão</b> 1.0.0
             </div>
 
-            <strong>2018 <a href="#popup-login-msg">SchoolShare</a>.</strong>
-            &nbsp;Nenhum direito reservado.
+            <b>2018 SchoolShare.</b>&nbsp;<strong>Conheça nosso <a href="#popup-login-msg">Github</a></strong>
 
             <div id="popup-login-msg" class="overlay">
                 <div class="popup">

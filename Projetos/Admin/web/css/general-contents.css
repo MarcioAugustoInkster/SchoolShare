@@ -42,3 +42,16 @@ span.alerta-validacao {
     margin-left: 0;
     padding: 0;
 }
+/* rgb(210, 70, 60); */
+span.alerta-suporte-validacao {
+    display: inline-block;
+    width: 100%;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #f2f2f2;
+    background-color: rgb(210, 70, 60);
+    font-weight: bold;
+}

@@ -22,6 +22,11 @@
             <h3 class="box-title">Lista de Alunos Registrados</h3>
         </div>
         <div class="box-body">
+            <div class="form-group">
+                <input type="text" class="form-control" id="consultaListaAluno" name="consultaListaAluno"
+                    placeholder="Pesquise na tabela por...">
+            </div>
+            
             <table id="tabelaAluno" class="table table-bordered table-hover">
                 <thead>
                     <tr>

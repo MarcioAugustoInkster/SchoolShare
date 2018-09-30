@@ -63,24 +63,16 @@
 
                                 <div class="center-components">
                                     <label for="campoCredLogin">Usuário<%=asteriscs%></label>
-                                    <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login"
-                                           value="Schoolshare">
+                                    <input type="text" class="form-control" id="campoCredLogin" name="fl-cred-login">
                                 </div>
 
                                 <div class="center-components">
                                     <label for="campoCredSenha">Senha<%=asteriscs%></label>
-                                    <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password"
-                                           value="master">
+                                    <input type="password" class="form-control" id="campoCredSenha" name="fl-cred-password">
                                 </div>
 
                                 <div class="center-components">
                                     <button name="submitButtonLogin" id="goSubmitLogin">Conectar</button>
-                                </div>
-
-                                <div class="center-components">
-                                    <div class="form-checkbox-control">
-                                        <a href="#">Esqueci minha senha</a>
-                                    </div>
                                 </div>
 
                                 <div class="login-footer">

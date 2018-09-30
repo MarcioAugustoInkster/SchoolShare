@@ -100,6 +100,14 @@
         <servlet-name>salvaAvaliacao</servlet-name>
         <servlet-class>web.java.servlets.salvaAvaliacao</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PortalUsuario</servlet-name>
+        <servlet-class>web.java.servlets.PortalUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecuperaSenha</servlet-name>
+        <servlet-class>web.java.servlets.RecuperaSenha</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
         <url-pattern>/validaLogin</url-pattern>
@@ -199,6 +207,14 @@
     <servlet-mapping>
         <servlet-name>salvaAvaliacao</servlet-name>
         <url-pattern>/salvaAvaliacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PortalUsuario</servlet-name>
+        <url-pattern>/PortalUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecuperaSenha</servlet-name>
+        <url-pattern>/RecuperaSenha</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

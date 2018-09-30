@@ -19,10 +19,6 @@ import web.java.conexao.Banco;
  */
 public class NotaDAO {
 
-    public static boolean obterNota(NotaBean notaAluno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     public List<NotaBean> obterNota(){
         
         List<NotaBean> Alunos = new ArrayList();
