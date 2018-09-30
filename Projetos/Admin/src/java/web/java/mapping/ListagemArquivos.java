@@ -39,6 +39,7 @@ public class ListagemArquivos {
 
             File dir = new File(dfa.uploadFullPath(request));
             File[] files = dir.listFiles();
+            DataFormatter df = new DataFormatter();
 
             if (files.length == 0) {
                 sb.append("The directory is empty");
