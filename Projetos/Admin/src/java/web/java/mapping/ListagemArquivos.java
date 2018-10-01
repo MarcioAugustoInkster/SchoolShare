@@ -45,7 +45,6 @@ public class ListagemArquivos {
                 sb.append("The directory is empty");
             } else {
                 for (File list : files) {
-                    DataFormatter df = new DataFormatter();
                     String ext = DataFormatter.getExtensionFile(list);
                     String getFormattedDate = df.fileDateTimeToString(list);
                     //long fileToKB = DataFormatter.sizeToKiloByte(list);

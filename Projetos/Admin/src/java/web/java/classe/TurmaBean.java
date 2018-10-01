@@ -1,5 +1,7 @@
 package web.java.classe;
 
+import java.util.Date;
+
 /**
  *
  * @author Marcio Augusto Schlosser
@@ -7,32 +9,11 @@ package web.java.classe;
 public class TurmaBean {
 
     private int id, cursoId, professorId;
-    private String turma, dataInicio, dataFinal, data;
-
-    public String getData() {
-
-    public void setData(String data) {
-        this.data = data;
-    }
+    private String turma, dataInicio, dataFinal;
+    private Date data;
     private short cargaHoraria;
     private CursoBean curso;
     private ProfessorBean professor;
-
-    public CursoBean getCurso() {
-        return curso;
-    }
-
-    public void setCurso(CursoBean curso) {
-        this.curso = curso;
-    }
-
-    public ProfessorBean getProfessor() {
-        return professor;
-    }
-
-    public void setProfessor(ProfessorBean professor) {
-        this.professor = professor;
-    }
 
     public int getId() {
         return id;
@@ -82,11 +63,35 @@ public class TurmaBean {
         this.dataFinal = dataFinal;
     }
 
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
     public short getCargaHoraria() {
         return cargaHoraria;
     }
 
     public void setCargaHoraria(short cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
+    }
+
+    public CursoBean getCurso() {
+        return curso;
+    }
+
+    public void setCurso(CursoBean curso) {
+        this.curso = curso;
+    }
+
+    public ProfessorBean getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(ProfessorBean professor) {
+        this.professor = professor;
     }
 }
