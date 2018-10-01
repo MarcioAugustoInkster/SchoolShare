@@ -33,7 +33,7 @@
                         <th>CEP</th>
                         <th>Bairro</th>
                         <th>Cidade - Estado</th>
-                        <th><i class="fa fa-upload"></i></th>
+                        <th><i class="fa fa-gear"></i></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,9 +49,9 @@
                         <td><%=listagem.getCep()%></td>
                         <td><%=listagem.getBairro()%></td>
                         <td><%=listagem.getCidade()%> - <%=listagem.getEstado()%></td>
-                        <td><a class="btn-custom btn-app-custom">
-                            <i class="fa fa-upload" onclick="onCreateFolder(<%=listagem.getId()%>);">
-                            </i> Criar</a>
+                        <td><a class="btn-custom btn-app-custom" href="/admin/editaInstituicao.jsp?id=<%=listagem.getId()%>">
+                            <i class="fa fa-edit">
+                            </i> Editar</a>
                         </td>
                     </tr>
                     <% } %>

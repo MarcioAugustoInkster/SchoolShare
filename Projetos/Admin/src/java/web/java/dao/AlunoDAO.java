@@ -84,7 +84,7 @@ public class AlunoDAO {
                 sql += "FROM pessoas p ";
                 sql += "INNER JOIN alunos a ";
                 sql += "ON p.id = a.pessoas_id ";
-                sql += "WHERE login='joao' AND ativo=TRUE AND acesso=3";
+                sql += "WHERE login='" + login + "' AND ativo=TRUE AND acesso=3";
             
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);

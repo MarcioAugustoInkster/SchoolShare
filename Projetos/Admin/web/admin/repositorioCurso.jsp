@@ -1,9 +1,11 @@
 <%-- 
-    Document   : repoTurma
-    Created on : 01/10/2018, 00:46:16
+    Document   : repositorioCurso
+    Created on : 01/10/2018, 01:46:37
     Author     : Freakazed-PC
 --%>
 
+<%@page import="web.java.dao.CursoDAO"%>
+<%@page import="web.java.classe.CursoBean"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.directory.FolderDirectory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,26 +23,27 @@
 
 <section class="content">
     <div class="post">
-        <h4>Escolha um folder de Instituição</h4>
+        <h4>Escolha um folder de Curso</h4>
     </div>
 
     <div class="post clearfix">
-        <form action="/instituicaoview" method="POST">
+        <form action="/cursoview" method="POST">
             <div class="form-group">
-                <label>Escolha uma Instituição</label>
-                <select class="form-control" name="folderInstList" id="folderInstList">
-                    <%
-                        FolderDirectory folder = new FolderDirectory();
-                        List<String> instituicao = folder.procuraRepositorioMaster(request);
-                        int counter = 0;
-
-                        for (String folders : instituicao) {
-                            counter = counter + 1;
-                    %>
-                    <option value="<%=folders%>"><%=folders%></option>
-                    <%
+                <%
+                    List<CursoBean> curso = new CursoDAO().listaCurso();
+                %>
+                
+                <label>Escolha um Curso</label>
+                <select class="form-control" id="listaCursoParaRepositorio" name="listaCursoParaRepositorio">
+                <%
+                    if (FolderDirectory.caminhoAtual != null) {
+                        for (CursoBean cursos : curso) {
+                %> 
+                <option value="<%=cursos.getCurso() %>"><%=cursos.getCurso() %></option>
+                <%
                         }
-                    %>
+                    }
+                %>
                 </select>
             </div>
 

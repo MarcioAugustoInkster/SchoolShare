@@ -66,7 +66,7 @@ public class FileUpload extends HttpServlet {
                 return;
             }
 
-             while (it.hasNext()) {
+            while (it.hasNext()) {
                 FileItem fileItem = it.next();
 
                 boolean isFormField = fileItem.isFormField();

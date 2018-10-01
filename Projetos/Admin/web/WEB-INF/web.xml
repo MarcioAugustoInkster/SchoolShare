@@ -58,7 +58,7 @@
     </servlet>
     <servlet>
         <servlet-name>RepoCreator</servlet-name>
-        <servlet-class>web.java.servlets.RepoCreator</servlet-class>
+        <servlet-class>web.java.servlets.CriaInstituicao</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ValidaAluno</servlet-name>
@@ -107,6 +107,22 @@
     <servlet>
         <servlet-name>RecuperaSenha</servlet-name>
         <servlet-class>web.java.servlets.RecuperaSenha</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>alteraInstituicao</servlet-name>
+        <servlet-class>web.java.servlets.alteraInstituicao</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlteraInstituicao</servlet-name>
+        <servlet-class>web.java.servlets.AlteraInstituicao</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InstituicaoView</servlet-name>
+        <servlet-class>web.java.servlets.InstituicaoView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CursoView</servlet-name>
+        <servlet-class>web.java.servlets.CursoView</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ValidaLogin</servlet-name>
@@ -215,6 +231,18 @@
     <servlet-mapping>
         <servlet-name>RecuperaSenha</servlet-name>
         <url-pattern>/RecuperaSenha</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlteraInstituicao</servlet-name>
+        <url-pattern>/AlteraInstituicao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InstituicaoView</servlet-name>
+        <url-pattern>/InstituicaoView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CursoView</servlet-name>
+        <url-pattern>/CursoView</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

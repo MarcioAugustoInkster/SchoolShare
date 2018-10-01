@@ -30,3 +30,13 @@ $(document).ready(function ($) {
             {placeholder: '(__) _____-____'});
 });
 
+$(document).ready(function () {
+    $('#listFolders').on('click', function () {
+        $.ajax(
+            {
+            url:'/instituicaoview',
+            type:'POST',
+            cache: false
+        });
+    });
+});

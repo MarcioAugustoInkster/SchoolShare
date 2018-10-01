@@ -126,6 +126,7 @@
         
         <div class="box-footer">
             <button type="submit" class="btn btn-primary" id="enviaavaliacao">Enviar</button>
+            <input type="reset" class="btn btn-primary" id="limpaavaliacao" value="Limpar">
         </div>
     </form>
 </div>

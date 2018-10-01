@@ -20,12 +20,16 @@
     <div class="col-md-12">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
+<<<<<<< HEAD
+                <li class="active"><a href="#noticias" data-toggle="tab">Avisos</a></li>
+                <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
+                <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
+=======
                 <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
-                <li><a href="#calendario" data-toggle="tab">Calendário</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
-                <li><a href="#grade" data-toggle="tab">Grade Escolar</a></li>
+>>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
             </ul>
             <div class="tab-content">
@@ -33,17 +37,6 @@
                 <div class="active tab-pane" id="noticias">
                     <div class="post clearfix">
                         <%@include file="/aluno/tabs/noticias.jsp" %>
-                    </div>
-                </div>
-
-                <!-- Tab Calendário -->
-                <div class="tab-pane" id="calendario">
-                    <div class="post">
-
-                    </div>
-
-                    <div class="post clearfix">
-
                     </div>
                 </div>
 
@@ -65,6 +58,8 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
+=======
                 <!-- Tab Provas -->
                 <div class="tab-pane" id="notas">
                     <div class="post clearfix">
@@ -78,21 +73,7 @@
                     </div>
                 </div>
 
-                <!-- Tab Grade Escolar -->
-                <div class="tab-pane" id="grade">
-                    <div class="post clearfix">
-                        <h4>Pesquise uma Turma na lista</h4>
-
-                        <div class="form-group">
-
-                        </div>
-
-                        <div class="form-group">
-
-                        </div>
-                    </div>
-                </div>
-
+>>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
                 <!-- Tab Perfil -->
                 <div class="tab-pane" id="perfil">
                     <div class="post clearfix">

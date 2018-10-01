@@ -118,6 +118,7 @@
         </div>
     </div>
 
+    <!--
     <div class="col-default-guide-sh">
         <div class="content-inside-title">
             <label>Calendário</label>
@@ -130,6 +131,7 @@
             </div>
         </div>
     </div>
+    -->
 </div>
 
 <%@include file="/master/rodape.jsp" %>

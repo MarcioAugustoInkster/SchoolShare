@@ -29,7 +29,7 @@
                             <select class="form-control" id="cursoInstituicao" 
                                     name="selectCursoInstituicao">
                                 <%
-                                    List<InstituicaoBean> instituicao = new InstituicaoDAO().nomeInstituicao();
+                                    List<InstituicaoBean> instituicao = new InstituicaoDAO().listaInstituicao();
 
                                     for (InstituicaoBean lista : instituicao) {
                                 %>

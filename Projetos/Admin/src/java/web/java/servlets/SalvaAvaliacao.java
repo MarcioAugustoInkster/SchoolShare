@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import web.java.admin.SessaoAdmin;
 import web.java.classe.AvaliacaoBean;
-import web.java.classe.PessoaBean;
 import web.java.dao.AvaliacaoDAO;
-import web.java.dao.PessoaDAO;
 
 /**
  *
@@ -58,6 +56,17 @@ public class SalvaAvaliacao extends HttpServlet {
         avaliacao.setConteudo(conteudo);
         avaliacao.setOrganizacao(organizacao);
         avaliacao.setDescricao(descricao);
+        
+        out.print(avaliacao.getDesempenho());
+        out.print(avaliacao.getCarregamento());
+        out.print(avaliacao.getVisual());
+        out.print(avaliacao.getDesign());
+        out.print(avaliacao.getProblema());
+        out.print(avaliacao.getUso());
+        out.print(avaliacao.getConteudo());
+        out.print(avaliacao.getOrganizacao());
+        out.print(avaliacao.getDescricao());
+        out.print(usuario);
         
         try {
             AvaliacaoDAO armazena = new AvaliacaoDAO();

@@ -20,7 +20,7 @@
         if (SessaoAdmin.verificaSessaoAluno(request, response)) {
             meuPerfil = SessaoAdmin.retornaSessao(request);
             DataFormatter df = new DataFormatter();
-            
+
             PessoaBean aluno = new AlunoDAO().listaAlunoPorLogin(meuPerfil);
 
             String anoNascimento = df.dataParaBR(aluno.getDataDeNascimento());
@@ -51,6 +51,16 @@
                             <b>Usuário</b> <a class="pull-right"><%=aluno.getLogin()%></a>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    
                 </div>
             </div>
         </div>

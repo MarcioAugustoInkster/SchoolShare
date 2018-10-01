@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
  * @author Marcio Augusto Schlosser
  */
 public class FolderDirectory {
+    public static String caminhoAtual;
+    public static String caminhoInstituicao;
 
     public List<String> procuraRepositorioMaster(HttpServletRequest request) {
         DirFolderAccess dir = new DirFolderAccess();
@@ -28,19 +30,7 @@ public class FolderDirectory {
         return defineDiretorioFolder(UPLOAD_DIRECTORY);
     }
 
-    public List<String> procuraRepositorioTurma(HttpServletRequest request, String folder) {
-        File file = new File("D:\\Entra21\\Projects\\SchoolShare\\Projetos\\Admin\\arquivos\\MKInst01\\Preparação para Certificação ITIL\\");
-        String[] names = file.list();
-        List<String> turma = new ArrayList<>();
-        for (String name : names) {
-            if (new File(file + name).isDirectory()) {
-                turma.add(name);
-            }
-        }
-        return turma;
-    }
-
-    public static List<String> defineDiretorioFolder(String diretorio) {
+    public List<String> defineDiretorioFolder(String diretorio) {
         File directory = new File(diretorio);
 
         FileFilter directoryFileFilter = new FileFilter() {

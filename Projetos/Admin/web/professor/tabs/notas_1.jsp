@@ -23,6 +23,7 @@
                 <th style="text-align: center">4° bim</th>
                 <th style="text-align: center">Frequencia</th>
 
+                <th style="text-align: center">Editar/Excluir</th>
             </tr>
         </thead>
         <tbody>

@@ -1,6 +1,9 @@
+<%@page import="web.java.dao.CursoDAO"%>
+<%@page import="web.java.classe.CursoBean"%>
 <%@page import="web.java.directory.FolderDirectory"%>
 <%@page import="java.util.List"%>
 <%@page import="web.java.dao.InstituicaoDAO"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@include file="/master/master.jsp" %>
@@ -20,37 +23,53 @@
     </div>
 
     <div class="post clearfix">
-        <%
-            FolderDirectory folder = new FolderDirectory();
-            List<String> instituicao = folder.procuraRepositorioMaster(request);
-            int counter = 0;
+        <form action="/criarRepoCurso" method="POST">
+            <div class="form-group">
+                <label>Selecione um folder de Instituição</label>
+                <select class="form-control" name="folderInstList" id="folderInstList">
+                    <%
+                        FolderDirectory folder = new FolderDirectory();
+                        List<String> instituicao = folder.procuraRepositorioMaster(request);
+                        int counter = 0;
 
-            for (String folders : instituicao) {
-                counter = counter + 1;
-        %>
-        <div class="col-default-guide-sh" id="testrepo" onclick="getRepoInstitution('<%=folders%>')">
-            <div class="content-inside-title">
-                <label><%=folders%></label>
+                        for (String folders : instituicao) {
+                            counter = counter + 1;
+                    %>
+                    <option value="<%=folders%>"><%=folders%></option>
+                    <%
+                        }
+                    %>
+                </select>
             </div>
-            <div class="content-inside-box">
-                <div class="box-body">
-                    <span class="info-box-icon bg-red-gradient">
-                        <i class="fa fa-archive"></i>
-                    </span>
-                </div>
+
+            <div class="form-group">
+                <label>Selecione um Curso</label>
+                <%
+                    List<CursoBean> curso = new CursoDAO().listaCurso();
+                %>
+                <select class="form-control" id="folderCursoList" name="folderCursoList">
+                    <%
+                        for (CursoBean cursos : curso) {
+                    %>
+                    <option value="<%=cursos.getCurso()%>"><%=cursos.getCurso()%></option>
+                    <%
+                        }
+                    %>
+                </select>
             </div>
-        </div>
-        <%
-            }
-        %>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Criar Reposiório</button>
+            </div>
+        </form>
     </div>
 
     <div class="post">
         <% if (counter == 0) { %>
         <label>Não existe ainda folders disponíveis</label>
-        <% } else { %>
+        <% } else {%>
         <label>Existem&nbsp;<%=counter%>&nbsp;folders disponíveis</label>
-        <% } %>
+        <% }%>
     </div>
 </section>
 

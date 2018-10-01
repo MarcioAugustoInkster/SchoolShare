@@ -68,15 +68,14 @@ public class CursoDAOTest {
     }
 
     /**
-     * Test of pegaCursoId method, of class CursoDAO.
+     * Test of listaCursos method, of class CursoDAO.
      */
     @Test
-    public void testPegaCursoId() {
-        System.out.println("pegaCursoId");
-        int id = 0;
+    public void testListaCursos() {
+        System.out.println("listaCursos");
         CursoDAO instance = new CursoDAO();
         CursoBean expResult = null;
-        CursoBean result = instance.pegaCursoId(id);
+        CursoBean result = instance.listaCursos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

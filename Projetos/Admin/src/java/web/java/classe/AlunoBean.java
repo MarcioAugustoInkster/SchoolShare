@@ -16,6 +16,33 @@ public class AlunoBean{
     private byte tipo;
     private byte frequencia;
     private float nota;
+    private MatriculaBean matricula;
+    private TurmaBean turma;
+    private CursoBean curso;
+
+    public MatriculaBean getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(MatriculaBean matricula) {
+        this.matricula = matricula;
+    }
+
+    public TurmaBean getTurma() {
+        return turma;
+    }
+
+    public void setTurma(TurmaBean turma) {
+        this.turma = turma;
+    }
+
+    public CursoBean getCurso() {
+        return curso;
+    }
+
+    public void setCurso(CursoBean curso) {
+        this.curso = curso;
+    }
 
     public String getEscola() {
         return escola;

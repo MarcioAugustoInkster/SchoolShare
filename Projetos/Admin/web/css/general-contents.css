@@ -21,6 +21,14 @@
 }
 .col-default-guide-sh {
     border: 1px solid #8b0000;
+    width: auto;
+}
+.content-folder-box {
+    border: none;
+    border-radius: 6px;
+    padding: 0 0 8px 0;
+    display: block;
+    margin: 0 auto;
 }
 
 .tabela-componentes-chamada label, 
@@ -54,4 +62,10 @@ span.alerta-suporte-validacao {
     color: #f2f2f2;
     background-color: rgb(210, 70, 60);
     font-weight: bold;
+}
+.box-folder-list {
+    border: 1px solid #000;
+    padding: 4px 4px 0 4px;
+    line-height: 20px;
+    text-decoration: none;
 }

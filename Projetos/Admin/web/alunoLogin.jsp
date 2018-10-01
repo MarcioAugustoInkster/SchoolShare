@@ -83,7 +83,7 @@
 
         <footer class="wrapper-login-footer">
             <div class="wrapper-version">
-                <b>Versão</b> 1.0.5
+                <b>Versão</b> 1.0.0
             </div>
 
             <strong>2018 <a href="#popup-login-msg">SchoolShare</a>.</strong>

@@ -176,7 +176,7 @@ function onRepoStudent() {
  */
 
 function onCreateFolder(id) {
-    window.location.href = "/repocheck?req=" + id;
+    window.location.href = "/repoinstituicao?id=" + id;
 }
 
 function onCreateCourseFolder(inst, id) {

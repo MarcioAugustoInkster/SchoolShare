@@ -79,27 +79,32 @@ public class CursoDAO {
         return listaCurso;
     }
     
-    public CursoBean pegaCursoId(int id) {
-        String sql = "SELECT curso FROM curso WHERE id = ?";
+    public CursoBean listaCursos() {
+        CursoBean curso = null;
         
         try {
-            PreparedStatement pstmt = Banco.conecta().prepareStatement(sql);
-            pstmt.setInt(1, id);
-            pstmt.execute();
+            String sql = "SELECT * FROM cursos";
             
-            ResultSet rs = pstmt.getResultSet();
+            Statement stmt = Banco.conecta().createStatement();
+            stmt.execute(sql);
             
-            if (rs.next()) {
-                CursoBean curso = new CursoBean();
-                curso.setCurso(rs.getString("curso"));
+            ResultSet rs = stmt.getResultSet();
+            
+            while (rs.next()) {
+                curso = new CursoBean();
                 
-                return curso;
+                curso.setId(rs.getInt("id"));
+                curso.setIdInstituicao(rs.getInt("instituicao_id"));
+                curso.setCurso(rs.getString("curso"));
+                curso.setDataInicio(rs.getString("data_inicio"));
+                curso.setDataFinal(rs.getString("data_final"));
+                curso.setCargaHoraria(rs.getByte("carga_horaria"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             Banco.fecharBanco();
         }
-        return null;
+        return curso;
     }
 }

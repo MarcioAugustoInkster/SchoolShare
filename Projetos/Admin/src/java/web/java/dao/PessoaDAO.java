@@ -57,7 +57,7 @@ public class PessoaDAO {
         int id = 0;
 
         try {
-            String sql = "SELECT id FROM pessoas WHERE login='" + login + "' AND ativo=TRUE AND acesso=3";
+            String sql = "SELECT id FROM pessoas WHERE login='" + login + "' AND ativo=TRUE";
 
             Statement stmt = Banco.conecta().createStatement();
             stmt.execute(sql);

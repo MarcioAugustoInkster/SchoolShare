@@ -54,20 +54,6 @@ public class InstituicaoDAOTest {
     }
 
     /**
-     * Test of nomeInstituicao method, of class InstituicaoDAO.
-     */
-    @Test
-    public void testNomeInstituicao() {
-        System.out.println("nomeInstituicao");
-        InstituicaoDAO instance = new InstituicaoDAO();
-        List<InstituicaoBean> expResult = null;
-        List<InstituicaoBean> result = instance.nomeInstituicao();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of listaInstituicao method, of class InstituicaoDAO.
      */
     @Test
@@ -76,6 +62,36 @@ public class InstituicaoDAOTest {
         InstituicaoDAO instance = new InstituicaoDAO();
         List<InstituicaoBean> expResult = null;
         List<InstituicaoBean> result = instance.listaInstituicao();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of listaInstituicaoPorId method, of class InstituicaoDAO.
+     */
+    @Test
+    public void testListaInstituicaoPorId() {
+        System.out.println("listaInstituicaoPorId");
+        int id = 0;
+        InstituicaoDAO instance = new InstituicaoDAO();
+        List<InstituicaoBean> expResult = null;
+        List<InstituicaoBean> result = instance.listaInstituicaoPorId(id);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of alteraInstituicao method, of class InstituicaoDAO.
+     */
+    @Test
+    public void testAlteraInstituicao() {
+        System.out.println("alteraInstituicao");
+        InstituicaoBean instituicao = null;
+        InstituicaoDAO instance = new InstituicaoDAO();
+        boolean expResult = false;
+        boolean result = instance.alteraInstituicao(instituicao);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

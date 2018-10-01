@@ -7,7 +7,13 @@ package web.java.classe;
 public class TurmaBean {
 
     private int id, cursoId, professorId;
-    private String turma, dataInicio, dataFinal;
+    private String turma, dataInicio, dataFinal, data;
+
+    public String getData() {
+
+    public void setData(String data) {
+        this.data = data;
+    }
     private short cargaHoraria;
     private CursoBean curso;
     private ProfessorBean professor;

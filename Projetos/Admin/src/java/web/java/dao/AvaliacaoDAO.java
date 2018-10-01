@@ -19,7 +19,7 @@ public class AvaliacaoDAO {
         if (pessoaId != 0) {
             if (coneccao != null) {
                 String sql = "INSERT INTO avaliacao ";
-                    sql += "(pessoa_id, p_desempenho, p_carregamento, p_visual, ";
+                    sql += "(pessoas_id, p_desempenho, p_carregamento, p_visual, ";
                     sql += "p_design, p_problema, p_uso, p_conteudo, p_organizacao, ";
                     sql += "descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
