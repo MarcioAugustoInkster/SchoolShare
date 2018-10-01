@@ -3,7 +3,7 @@
 <%@include file="/master/master.jsp" %>
 
 <section class="content-header">
-    <h1>Parece que deu tudo certo!</h1>
+    <h1>Deu tudo certo!</h1>
 </section>
 
 <div class="box-body">
