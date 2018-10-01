@@ -1,10 +1,11 @@
 <%-- 
     Document   : SchollShare
     Created on : Um dia qualquer...
-
+<<<<<<< HEAD
     Author     : Daiana
+=======
     Author     : Daiana & Marcio 
-
+>>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
 --%>
 
 <%@page import="web.java.mapping.ListagemArquivos"%>
@@ -23,21 +24,34 @@
     <div class="col-md-12">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#pnoticias" data-toggle="tab">Avisos</a></li>
+<<<<<<< HEAD
+                <li class="active"><a href="#pnoticias" data-toggle="tab">Notícias</a></li>
+                <li><a href="#parquivos" data-toggle="tab">Arquivos</a></li>
+                <li><a href="#pavaliacao" data-toggle="tab">Avaliação</a></li>
+                <li><a href="#pnotas" data-toggle="tab">Provas</a></li>
+                <li><a href="#pperfil" data-toggle="tab">Meu Perfil</a></li>
+=======
+                <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
-
+>>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
             </ul>
             <div class="tab-content">
                 <!-- Tab Noticias -->
                 <div class="active tab-pane" id="pnoticias">
                     <div class="post clearfix">
-
+<<<<<<< HEAD
                         <%@include file="/aluno/tabs/noticias.jsp" %>
                     </div>
                 </div>
+=======
+                        <%@include file="/professor/tabs/noticias.jsp" %>
+                    </div>
+                </div>
+
+>>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
 
                 <!-- Tab Arquivos -->
                 <div class="tab-pane" id="parquivos">
@@ -65,6 +79,7 @@
                         </div>
 
                         <div class="form-group">
+
                         </div>
                     </div>
                 </div>

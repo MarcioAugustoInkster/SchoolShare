@@ -14,19 +14,18 @@ import java.sql.Statement;
  */
 public class Banco {
     /* Descomentar para conecção para localhost:8080 */
-    /*
+    
     private static final String HOST = "jdbc:mysql://localhost/schoolshare";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-    */
     
     
     /* Descomentar para conecção para web Amazon */
-    
-    private static final String HOST = "jdbc:mysql://aa1vmxc96tk5onz.chmr0fechdpw.us-east-2.rds.amazonaws.com:3306/ebdb";
-    private static final String USER = "administrador";
-    private static final String PASSWORD = "Tes123te";
-    
+    /*
+    private static final String HOST = "jdbc:mysql://";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
+    */
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static Connection conexao = null;
     
