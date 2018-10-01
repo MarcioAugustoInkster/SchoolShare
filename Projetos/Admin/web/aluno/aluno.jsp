@@ -20,16 +20,15 @@
     <div class="col-md-12">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-<<<<<<< HEAD
+
                 <li class="active"><a href="#noticias" data-toggle="tab">Avisos</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
-=======
                 <li class="active"><a href="#noticias" data-toggle="tab">Notícias</a></li>
                 <li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
                 <li><a href="#avaliacao" data-toggle="tab">Avaliação</a></li>
                 <li><a href="#notas" data-toggle="tab">Provas</a></li>
->>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
+
                 <li><a href="#perfil" data-toggle="tab">Meu Perfil</a></li>
             </ul>
             <div class="tab-content">
@@ -58,8 +57,6 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
-=======
                 <!-- Tab Provas -->
                 <div class="tab-pane" id="notas">
                     <div class="post clearfix">
@@ -73,7 +70,7 @@
                     </div>
                 </div>
 
->>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
+
                 <!-- Tab Perfil -->
                 <div class="tab-pane" id="perfil">
                     <div class="post clearfix">
