@@ -32,11 +32,7 @@
                     <img class="profile-user-img img-responsive img-circle" src="/img/users/no-user-set.jpg" alt="User profile picture">
 
                     <h3 class="profile-username text-center">
-<<<<<<< HEAD
                         <%=aluno.getNomeCompleto()%>
-=======
-                        <%=professor.getNomeCompleto()%>
->>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
                     </h3>
 
                     <p class="text-muted text-center"></p>
@@ -46,7 +42,7 @@
                             <b>Nascido em</b> <a class="pull-right"><%=anoNascimento%></a>
                         </li>
                         <li class="list-group-item">
-<<<<<<< HEAD
+
                             <b>E-mail</b> <a class="pull-right"><%=aluno.getEmail()%></a>
                         </li>
                         <li class="list-group-item">
@@ -54,15 +50,6 @@
                         </li>
                         <li class="list-group-item">
                             <b>Usuário</b> <a class="pull-right"><%=aluno.getLogin()%></a>
-=======
-                            <b>E-mail</b> <a class="pull-right"><%=professor.getEmail()%></a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Telefone</b> <a class="pull-right"><%=professor.getTelefone()%></a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Usuário</b> <a class="pull-right"><%=professor.getLogin()%></a>
->>>>>>> c675916a2b9913dc5797efdf574ce0424002f918
                         </li>
                     </ul>
                 </div>
